@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="es">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Cotización de costos</title>
+  <link href="/css/cotizacion.css" rel="stylesheet" type="text/css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+<header>
+  <img crossorigin="anonymous" id="logo" src="https://cdn.glitch.global/e2546e49-e7f7-451d-a483-b52dadb42ca0/logo.png?v=1672192657729" alt="Logo">
+  <div class="deco big"></div>
+  <div class="deco med"></div>
+  <div class="deco small"></div>
+</header>
+<main>
+  <div id="titulo">
+    <h1>Cotización de vivienda - Mi lote</h1>
+    <h1>27-12-2022</h1>
+  </div>
+  <hr>
+  <p>Los precios mostrados son un <b>aproximado</b> calculado según los coeficientes de construcción nacionales del año 2022.
+    No deberían tomarse como una cantidad exacta ni que debería ser cumplida al pie de la letra por su maestro de obra.
+    Los precios no representan el costo de una vivienda amueblada.</p>
+  <div id="spans">
+    <div>
+      <b>Área Techada:</b>
+      <span>{{area}}</span>
+      <span>m<sup>2</sup></span>
+    </div>
+    <div>
+      <b>Precio por m<sup>2</sup>:</b>
+      <span>{{pm2}}</span>
+    </div>
+  </div>
+  <table>
+    {{#each columnas}}
+    <tr><td colspan="2"><b>{{ name }}</b></td></tr>
+    <tr>
+      <td>&emsp;{{ option }}</td>
+      <td>{{ precio }}</td>
+    </tr>
+    {{/each}}
+  </table>
+  <div id="total">
+    <b>Total:</b> {{total}}
+  </div>
+</main>
+<footer>
+  © Mi Lote 2022. Todos los derechos reservados.
+</footer>
+</body>
+<script>
+window.jsPDF = window.jspdf.jsPDF;
+window.onload = function() {
+  html2canvas(document.body, {
+    scrollY: -window.scrollY,
+    windowWidth: 800,
+    proxy: "https://github.com/niklasvh/html2canvas-proxy-nodejs",
+    useCORS: true
+  }).then(function(canvas) {
+    const doc = new jsPDF();
+    doc.addImage(canvas, 'PNG', 0, 0);
+    document.body.appendChild(canvas);
+    doc.save("Cotización.pdf");
+    window.close();
+  });
+};
+</script>
+</html>
