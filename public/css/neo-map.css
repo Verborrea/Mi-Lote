@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+* {
+  font-family: Segoe UI;
+}
+
+/* ===================== Search Bar =====================*/
+#search {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: inset 0px -2px 0px 0px #e5e5e5;
+  background-color: var(--back2);
+}
+
+#search>span {
+  color: var(--text2b);
+  margin-left: 1.5rem;
+  font: 12pt 'Poppins', sans-serif;
+}
+
+input, #buscar-btn {
+  padding: 0.5rem;
+  font-size: 12pt;
+  border-radius: 5px;
+  margin-left: 2px;
+}
+
+input {
+  border: none;
+  border-bottom: 1px solid #c7c7c7;
+  border-radius: 0;
+}
+
+#buscar-btn {
+  color: white;
+  background-color: var(--enfasis);
+  border: none;
+}
+
+#distrito {width: 40ch;}
+#calle {width: 40ch;}
+#mznro {width: 13ch;}
+
+/* ====================== WorkArea ======================*/
+
+h1, .lote-span, .uso-escogido, #zona-nombre, .zona-usos>div, .zona-span {
+  color: var(--text2a);
+}
+
+#work-area {
+  height: calc(100% - 3em);
+  display: flex;
+}
+
+#info {
+  width: 50ch;
+  padding: 2rem;
+  overflow-y: scroll;
+  background-color: var(--back2);
+  color: var(--text2);
+}
+
+#mapa {
+  width: calc(100% - 50ch);
+  background: #c3c3c3;
+}
+
+h1 {
+  font-family: 'Poppins';
+}
+
+.lote-info-div, .uso-residencial, #uso-datos>*, #info-zona-content {
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+  margin-left: 1em;
+  position: relative;
+  margin-right: 1em;
+}
+
+.lote-span, #zona-nombre, .zona-span, .zona-usos, #buscar-btn {
+  font-weight: 500;
+}
+
+span#zona-id {
+  font: 10pt 'Varela Round', sans-serif;
+  color: #999999;
+}
+
+#zona-descripcion {
+  color: var(--text2b);
+}
+
+.zona-usos {
+  position: relative;
+}
+
+#zona-usos {
+  margin-top: 1em;
+}
+
+.zona-info-usos {
+  margin: 1em 0;
+}
+
+#zona-usos>button {
+  border: none;
+  padding: 4px 8px;
+  margin-inline-end: 6px;
+  display: inline-block;
+  margin-block-end: 6px;
+}
+
+.secondary, .otros-div>*:nth-child(2) {
+  color: var(--text2b);
+}
+
+#zona-usos>button.active {
+  background-color: var(--enfasis);
+  color: var(--text1);
+  transform: scale(1.1);
+}
+
+#zona-usos>button:hover {
+  background-color: #969696;
+  transform: scale(1.1);
+}
+
+.zona-info-uso {
+  border: 1px dashed #969696;
+  border-radius: 7px;
+  padding: 0.5em;
+}
+
+.uso-escogido {
+  font-weight: 600;
+  font-size: 13pt;
+  position: relative;
+}
+
+#info>article:nth-child(n+2) {
+  margin-block-start: 2em;
+  margin-block-end: 2em;
+}
+
+.uso-nombre {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin: 0.5em 0.5em 1em;
+}
+
+/* ====================== Tool-tip ======================*/
+i.fa-solid {
+  position: absolute;
+  right: 0;
+  color: var(--enfasis);
+  z-index: 1000000;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.tooltip {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  inset: 0 0 0 0;
+  z-index: 999999;
+}
+.tooltip.arealibre::after {
+  content: 'Superficie de terreno sin proyecciones de áreas techadas.';
+}
+.tooltip.areatech::after {
+  content: 'Suma de la proyección de los límites del techo que encierra cada piso.';
+}
+.tooltip.usoscomp::after {
+  content: 'Escoja una zona de acuerdo al uso que le dará al lote.';
+}
+.tooltip.uso::after {
+  content: attr(data);
+}
+.tooltip::after {
+  visibility: hidden;
+  width: 19ch;
+  position: absolute;
+  right: 1.5em;
+  top: 0px;
+  color: var(--text1);
+  background-color: var(--back1);
+  font-weight: 400;
+  padding: 1em;
+  border-radius: 10px;
+  font: 10pt 'Poppins';
+  line-height: 19px;
+}
+.tooltip:hover::after {
+  visibility: visible;
+}
+.zona-info-general {
+  margin-bottom: 0.5rem;
+}
+.zona-info-general>i.fa-solid {
+  position: static;
+  transform: translateY(0%);
+}
+.uso-nombre>.fa-solid {
+  position: static;
+  transform: translateY(0);
+}
+/* ==================== Calculadora =======================*/
+
+table {
+  width: 100%;
+  table-layout: fixed;
+  overflow-wrap: break-word;
+}
+
+th {
+  background-color: var(--enfasis);
+  color: white;
+  font: 11pt 'Poppins';
+  font-weight: 400;
+  padding: 0.5em;
+}
+
+td {
+  background-color: #d8d8d8;
+  font: 10pt 'Poppins';
+  font-weight: 400;
+  padding: 0.5em;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  /* ================== Search Bar ==================*/
+  #search {
+    flex-direction: column;
+    padding: 1em;
+    box-shadow: none;
+  }
+  #search>span {
+    margin-left: 0;
+    font: 15pt 'Poppins', sans-serif;
+    text-align: center;
+    font-weight: 500;
+  }
+  .inputs {
+    width: 100%;
+    padding: 0 1em;
+  }
+  input, #buscar-btn{
+    display: block;
+    margin-block-start: 10px;
+    margin-block-end: 10px;
+    margin-left: 0;
+    font-family: 'Poppins', sans-serif;
+  }
+  .input-row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #distrito {width: 100%;}
+  #calle {width: 100%;}
+  #mznro {width: 13ch; flex-basis: 65%; margin-block-start: 0;}
+  #buscar-btn {flex-basis: 30%; margin-block-start: 0;}
+
+  /* ================== Work-area ================== */
+  #work-area {
+    flex-direction: column-reverse;
+  }
+  #info {
+    width: auto;
+    padding: 1em;
+  }
+  #mapa {
+    width: auto;
+    height: 450px;
+  }
+  .uso-residencial, #uso-datos>* {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+  }
+}

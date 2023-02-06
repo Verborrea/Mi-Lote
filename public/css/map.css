@@ -306,10 +306,6 @@ input[type=range]::-moz-range-thumb {
   height: 38px;
 }
 
-#abajo {
-    margin: 0 2.5rem;
-  }
-
 .btn_container button {
   font-size: 14pt;
   padding: 0.5rem 0;
@@ -394,9 +390,7 @@ input[type=range]::-moz-range-thumb {
   #a_cal {
     margin: 1rem;
   }
-  #abajo {
-    margin: 0 1rem;
-  }
+
   #papa_2d, #papa_3d {
     margin: 0 1rem 1rem 1rem;
   }

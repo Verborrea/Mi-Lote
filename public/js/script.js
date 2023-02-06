@@ -1,3 +1,61 @@
+// 3d.js
+var fact_esc = 0;  //para el canvas
+var x_min, y_min;
+
+var can2;
+var ctx2;
+var canvas_height = 400;
+var canvas_width = 400;
+
+var container;
+
+var camera, controls, scene, renderer;
+var light;
+var CircleMirror;
+
+var a_c, a_l, a_r;
+var met_to_px = 1;
+var pisos = 3;
+var pisos2 = 1;
+
+let mat_b, mat_p1, mat_p2;
+let georet, geolib, geocons, geoesca;
+
+let prisms = [];
+let escale = [];
+let ret_forma = 0;
+let lib_forma = 0;
+
+var p_esc = [];
+var escalera = 0;
+
+function dis_1() {
+  document.getElementById('info1').style.display = 'block';
+  document.getElementById('info2').style.display = 'none';
+  document.getElementById('info3').style.display = 'none';
+  document.getElementById('btn_1').style.background = '#26ba90';
+  document.getElementById('btn_2').style.background = '#fafafa';
+  document.getElementById('btn_3').style.background = '#fafafa';
+}
+function dis_2() {
+  document.getElementById('info1').style.display = 'none';
+  document.getElementById('info2').style.display = 'block';
+  document.getElementById('info3').style.display = 'none';
+  document.getElementById('btn_1').style.background = '#fafafa';
+  document.getElementById('btn_2').style.background = '#26ba90';
+  document.getElementById('btn_3').style.background = '#fafafa';
+}
+function dis_3() {
+  document.getElementById('info1').style.display = 'none';
+  document.getElementById('info2').style.display = 'none';
+  document.getElementById('info3').style.display = 'block';
+  document.getElementById('btn_1').style.background = '#fafafa';
+  document.getElementById('btn_2').style.background = '#fafafa';
+  document.getElementById('btn_3').style.background = '#26ba90';
+}
+
+//--------------------------------------------------------------
+
 var map;
 var lLayers = [];
 var zonasLayer;
@@ -115,16 +173,6 @@ function redondear(str, e){
   return Number.parseFloat(str).toFixed(e);
 }
 
-function change_pisos(){
-  let value = document.getElementById("pisos_lt").value;
-  if (pisos_prev > value) {
-    subpiso_3d();
-  } else if (pisos_prev < value) {
-    addpiso_3d();
-  }
-  pisos_prev = value;
-}
-
 // funciones importantes =========================
 
 function sel_zona(){
@@ -159,7 +207,7 @@ function sel_zona(){
 
 function resize2d(){
   console.log("resize");
-  let cont_2d = document.getElementById("papa_2d");
+  let cont_2d = document.getElementById("canvas_container");
   let ww = cont_2d.offsetWidth + "px";
   can2.style.width = ww
   cont_2d.style.height = ww;
@@ -167,21 +215,14 @@ function resize2d(){
   if(document.getElementById('area_lt').textContent){
     draw_lote_2d();
     draw_lote_2d();
-    clear_3d();
     if(geometry.length == 5){
       draw_acons_2d();
-      draw_3d();
-      animate_3d();
     }
   }
 }
 
 function GetMap(){
   sel = document.getElementById('sel_tipo');
-  
-  // ============== load 3D canvas ================
-  PrismGeometry.prototype = Object.create( THREE.ExtrudeGeometry.prototype );
-  init_3d();
   
   // ============== preparativos 2d ================
   can2 = document.getElementById("modelo_2d");
@@ -526,7 +567,6 @@ function sel_subtipo() {
   //-------------
   clear_spaces();
   draw_lote_2d();
-  clear_3d();
   //-------------
   document.getElementById('coef').innerHTML = coefs[sel.value];
   document.getElementById('alib_z').innerHTML = alibs[sel.value]+ "%";
@@ -536,8 +576,6 @@ function sel_subtipo() {
   document.getElementById('ret').innerHTML = rets[sel.value]+ " m";
   document.getElementById("pisos_lt").max = pisos;
   document.getElementById("pisos_lt").value = pisos;
-  pisos_prev = pisos;
-  change_pisos();
 
   if(area_total != 0){
     document.getElementById('acons').innerHTML = Math.round(area_total * coefs[sel.value])+ " m<sup>2</sup>";
@@ -555,8 +593,6 @@ function sel_subtipo() {
   }
   if(geometry.length == 5){
     draw_acons_2d();
-    draw_3d();
-    animate_3d();
   }
 }
 

@@ -1,106 +1,95 @@
 <!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Mi Lote</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="https://cdn.glitch.com/4855031b-abce-4c44-bba6-e505bb13b746%2Ffavicon.ico?v=1614220224560"
-    />
-    <link rel="stylesheet" href="/css/layout.css" />
-    <link rel="stylesheet" href="/css/index.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
-    <script data-ad-client="ca-pub-5692106300445811" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  </head>
-  <body>
-    <header>
-      <div class="logo-div">
-        <a href="/"
-          ><h1 id="logo-h1">
-            <img
-              id="img_logo"
-              src="https://cdn.glitch.com/4855031b-abce-4c44-bba6-e505bb13b746%2Floco.png?v=1615064707320"
-              alt="Mi Lote logo"
-            />mi lote
-          <div id="alpha">beta</div>
-          </h1>
-        </a>
-      </div>
-      <input id="nav_toggle" type="checkbox" class="nav_toggle" />
-      <nav>
-        <ul>
-          <li><a href="/">Inicio</a></li>
-          <li><a href="/nosotros">Nosotros</a></li>
-          <li>
-            <a href="">Servicios</a>
-            <ul>
-              <li><a href="/map">Conoce tu lote</a></li>
-              <li><a href="/calculadora/100">Calculadora de precios</a></li>
-              <li><a href="/doc">Documentación</a></li>
-            </ul>
-          </li>
-          <li><a href="">Contáctanos</a></li>
-        </ul>
-      </nav>
-      <label for="nav_toggle" class="nav_toggle_label">
-        <span></span>
-      </label>
-    </header>
-    <div id="main">
-      <section>
-        <div class="container">
-          <div class="column1">
-            <h1>Descubre tu lote con un solo click</h1>
-            <h2>
-              Descubre todo sobre tu lote, obten planos y reglamentación en tan solo un instante
-            </h2>
-            <a href="/map">Empieza ahora</a>
-          </div>
-          <div class="column2">
-            <img 
-            src="https://cdn.glitch.com/4855031b-abce-4c44-bba6-e505bb13b746%2Fimg_mapa.png?v=1621045380690"
-            alt="img1"
-            class="img_index">
-          </div>
-        </div>
-      </section>
-      <section id="impar">
-        <div class="container">
-          <div class="column1">
-            <img 
-            src="https://cdn.glitch.com/4855031b-abce-4c44-bba6-e505bb13b746%2Fimg_doc.png?v=1621049016351"
-            alt="img2"
-            class="img_index">
-          </div>
-          <div class="column2">
-            <h1>¿Piensas construir tu casa?</h1>
-            <h2>
-              Calcula el precio de ampliación o construcción de manera rápida y sencilla
-            </h2>
-            <a href="/calculadora/100">Calcular</a>
-          </div>
-        </div>
-      </section>
-      <section>
-        <div class="container">
-          <div class="column1">
-            <h1>¿cómo funciona?</h1>
-            <h2>
-              Descubre cómo usar la herramientas de <b>MiLote</b> y aprende los términos usados
-            </h2>
-            <a href="/doc">Aprende más</a>
-          </div>
-          <div class="column2">
-            <img 
-            src="https://cdn.glitch.com/4855031b-abce-4c44-bba6-e505bb13b746%2Fimg_doc.png?v=1621049016351"
-            alt="img2"
-            class="img_index">
-          </div>
-        </div>
-      </section>
+<html lang="es-pe">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="content-language" content="es-pe">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description"
+    content="Mi Lote es una aplicación web que permite obtener los datos urbanísticos de cada lote en la ciudad de Arequipa de manera fácil y rápida.">
+  
+  <title>Mi Lote - Descubre tu lote</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/neo.css">
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+
+<body>
+  <header>
+    <a class="logo" href="/">
+      <img src="https://cdn.glitch.global/e2546e49-e7f7-451d-a483-b52dadb42ca0/logo_temporal.png?v=1674252546218"
+           alt="logo" width="150px">
+    </a>
+    <div class="burger-btn" onclick="burgerBtn(this)">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
     </div>
-    <footer>Made with <a href="https://glitch.com">Glitch</a>!</footer>
-  </body>
+    <nav>
+      <ul class="nav" data-visible="false">
+        <li><a href="/map">Mapa</a></li>
+        <li><a href="#">Calculadora</a></li>
+        <li><a href="#">Documentación</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <article class="hidden">
+      <h1>Descubre todo sobre tu lote</h1>
+      <p>¿Cuántos pisos puedo construir? ¿Cuánta área libre debo dejar? Averigua todo esto y demás con nuestro mapa interactivo.</p>
+      <a class="button" href="/map">Ir al mapa</a>
+    </article>
+    <article class="hidden">
+      <h1>Calcula el precio de la casa de tus sueños</h1>
+      <p>Utiliza nuestra calculadora de viviendas para obtener un precio preciso dependiendo de tus gustos.</p>
+      <a class="button" href="#">Ir a la calculadora</a>
+    </article>
+    <article class="hidden">
+      <h1>Información al día y confiable</h1>
+      <p>Los datos que usamos para ayudarte en la construcción de tu lote provienen de fuentes seguras y confiable.</p>
+      <a href="/doc">Averigua más aquí ></a>
+    </article>
+  </main>
+  <footer>
+    © 2022 Mi lote - Glitch version
+  </footer>
+</body>
 </html>
+<!-- CSS Scripts -->
+<script defer>
+  // Navbar burger button toggle on mobile 
+  function burgerBtn(btn) {
+    btn.classList.toggle("change");
+
+    const primaryNav = document.querySelector(".nav");
+    const visibility = primaryNav.getAttribute("data-visible");
+    if (visibility === "false") {
+      primaryNav.setAttribute("data-visible", "true")
+    } else {
+      primaryNav.setAttribute("data-visible", "false")
+    }
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      } else {
+        entry.target.classList.remove("show");
+      }
+    });
+  });
+
+  const hiddenElements = document.querySelectorAll(".hidden");
+  hiddenElements.forEach((e) => observer.observe(e));
+</script>
+{{!-- 
+  "https://cdn.glitch.com/4855031b-abce-4c44-bba6-e505bb13b746%2Fimg_mapa.png?v=1621045380690"
+  "https://cdn.glitch.com/4855031b-abce-4c44-bba6-e505bb13b746%2Fimg_doc.png?v=1621049016351"
+  "https://cdn.glitch.com/4855031b-abce-4c44-bba6-e505bb13b746%2Fimg_doc.png?v=1621049016351"
+--}}

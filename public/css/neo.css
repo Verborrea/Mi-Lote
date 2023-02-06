@@ -1,0 +1,136 @@
+
+* {
+  font-family: 'Poppins';
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+:root {
+  --back1: #1d1d1f;
+  --text1: white;
+  --hover1: rgb(77, 77, 77);
+  --enfasis: #e32f2f;
+  --enfasis-text: white;
+  --back2: white;
+  --text2a: #1d1d1f;
+  --text2b: rgb(116, 116, 116);
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* ======================== Header ======================== */
+
+header {
+  background-color: var(--back1);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5%;
+  flex-direction: row;
+}
+
+header a{
+  text-decoration: none;
+  color: var(--text1);
+}
+
+.logo {
+  display: block;
+}
+
+.logo>img {
+  display: block;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+}
+
+.burger-btn {
+  display: none;
+}
+
+li>a {
+  display: block;
+  padding: 1em;
+  font-size: 13pt;
+  font-weight: 500;
+}
+
+li>a:hover {
+  color: var(--hover1);
+}
+
+nav>ul {
+  display: flex;
+  list-style-type: none;
+  flex-direction: row;
+  transition: 0.4s;
+  transform: scale(1);
+  z-index: 9999999;
+}
+
+/* ===================== Header - End ===================== */
+
+@media (max-width: 700px) {
+  header {
+    flex-direction: column;
+  }
+  .logo>img {
+    transform: translate(0%,0%);
+    margin: 1em auto;
+    position: unset;
+  }
+  nav>ul{
+    flex-direction: column;
+    flex-direction: column;
+    position: fixed;
+    background: var(--back1);
+    left: 0;
+    right: 0;
+    transform: translateX(0%);
+  }
+  nav>ul[data-visible="false"] {
+    transform: translateX(100%);
+  }
+  
+  /* ============= Burger Button ============= */
+  .burger-btn {
+    display: inline-block;
+    cursor: pointer;
+    position: absolute;
+    top: 1.25em;
+    right: 1.25em;
+  }
+
+  .burger-btn>* {
+    width: 35px;
+    height: 4px;
+    background-color: var(--text1);
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+
+  .change .bar1 {
+    transform: translate(0, 10px) rotate(-45deg);
+  }
+
+  .change .bar2 {opacity: 0;}
+
+  .change .bar3 {
+    transform: translate(0, -10px) rotate(45deg);
+  }
+  /* ========================================= */
+}
+
+footer {
+  background-color: var(--back1);
+  color: var(--text1);
+  padding: 1rem 0;
+  text-align: center;
+  font-size: 13pt;
+  font-weight: 500;
+}

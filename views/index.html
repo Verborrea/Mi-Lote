@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es-pe">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="content-language" content="es-pe">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description"
+    content="Mi Lote es una aplicación web que permite obtener los datos urbanísticos de cada lote en la ciudad de Arequipa de manera fácil y rápida.">
+  
+  <title>Mi Lote - Descubre tu lote</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/neo.css">
+  <link rel="stylesheet" href="/css/neo-map.css">
+  <!-- <script type="text/javascript"
+          src="https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AqwCoTdEYge6bMdrCh9uhrfZ-Z8yNGiupnDMBx3aPjeTze_oM8n0YcpRbYZKE7Sk"
+          async defer></script> -->
+  <script src="/js/zonificacion.js"></script> 
+</head>
+
+<body>
+  <header>
+    <a class="logo" href="/">
+      <img src="https://cdn.glitch.global/e2546e49-e7f7-451d-a483-b52dadb42ca0/logo_temporal.png?v=1674252546218"
+           alt="logo" width="150px">
+    </a>
+    <div class="burger-btn" onclick="burgerBtn(this)">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+    <nav>
+      <ul class="nav" data-visible="false">
+        <li><a href="/map">Mapa</a></li>
+        <li><a href="#">Calculadora</a></li>
+        <li><a href="#">Documentación</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="search">
+      <span>¿No encuentras tu lote en el mapa? Intenta aquí:</span>
+      <div class="inputs">
+        <input id="distrito" type="text" placeholder="Distrito">
+        <input id="calle" type="text" placeholder="Urb/Calle/Psj">
+        <span class="input-row">
+          <input id="mznro" type="text" placeholder="Mzn. y/o Nro.">
+          <button id="buscar-btn">Buscar</button>
+        </span>
+      </div>
+    </section>
+    <div id="work-area">
+      <section id="info">
+        <article id="info-lote">
+          <h1>Información del Lote</h1>
+          <div class="lote-info-div">
+            <span class="lote-span">Mzn Y Nro: </span>
+            <span class="secondary" id="mznynro">B7</span>
+          </div>
+          <div class="lote-info-div">
+            <span class="lote-span">Distrito: </span>
+            <span class="secondary" id="distrito">Cerro Colorado</span>
+          </div>
+          <div class="lote-info-div">
+            <span class="lote-span">Área Total: </span>
+            <span class="secondary" id="area_total">270 m<sup>2</sup></span>
+          </div>
+          <div class="lote-info-div">
+            <i class="fa-solid fa-circle-info"><div class="tooltip arealibre"></div></i>
+            <span class="lote-span">Área Libre: </span>
+            <span class="secondary" id="area_libre">95 m<sup>2</sup></span>
+          </div>
+          <div class="lote-info-div">
+            <i class="fa-solid fa-circle-info"><div class="tooltip areatech"></div></i>
+            <span class="lote-span">Área Techada Máx: </span>
+            <span class="secondary" id="area_techada">1980 m<sup>2</sup></span>
+          </div>
+        </article>
+        <article id="info-zona">
+          <h1>Información de la Zona</h1>
+          <div id="info-zona-content">
+            <div class="zona-info-general">
+              <span id="zona-nombre">Nombre de la Zona</span>
+              <span id="zona-id">&lt;ID&gt;</span>
+            </div>
+            <div id="zona-descripcion">
+              Descripción.
+            </div>
+            <div class="zona-info-usos">
+              <div class="zona-usos">
+                <div>Usos Compatibles:</div>
+                <i class="fa-solid fa-circle-info"><div class="tooltip usoscomp"></div></i>
+              </div>
+              <div id="zona-usos">
+                <button class="active">Ninguno</button>
+              </div>
+            </div>
+            <div class="zona-info-uso">
+              <div class="uso-nombre">
+                <div class="uso-escogido">Sobre el Uso</div>
+                <i class="fa-solid fa-circle-info">
+                  <div class="tooltip uso" data="Seleccione un uso compatible primero"></div>
+                </i>
+              </div>
+              <div id="uso-datos">
+              </div>
+            </div>
+          </div>
+        </article>
+        <article id="calculadora">
+          <h1>Calculadora de precios</h1>
+          <table>
+            <tr>
+              <th>Básica</th>
+              <th>Media</th>
+              <th>De Lujo</th>
+            </tr>
+            <tr>
+              <td>s/ 0.00</td>
+              <td>s/ 0.00</td>
+              <td>s/ 0.00</td>
+            </tr>
+          </table>
+        </article>
+      </section>
+      <section id="mapa"></section>
+    </div>
+  </main>
+  <footer>
+    © 2022 Mi lote - Glitch version
+  </footer>
+</body>
+<!-- CSS Scripts -->
+<script>
+  // Navbar burger button toggle on mobile 
+  function burgerBtn(btn) {
+    btn.classList.toggle("change");
+
+    const primaryNav = document.querySelector(".nav");
+    const visibility = primaryNav.getAttribute("data-visible");
+    if (visibility === "false") {
+      primaryNav.setAttribute("data-visible", "true")
+    } else {
+      primaryNav.setAttribute("data-visible", "false")
+    }
+  }
+
+  // Change the height of work area to fit window
+  function resizeWorkArea(e) {
+    const work_area = document.querySelector("#work-area");
+
+    if (window.innerWidth > 700) {
+      const search_height = document.querySelector("#search").offsetHeight;;
+      const header_height = document.querySelector("header").offsetHeight;;
+      const footer_height = document.querySelector("footer").offsetHeight;;
+
+      const extra_space = window.innerHeight - (search_height + header_height + footer_height);
+      work_area.setAttribute("style", "height: " + extra_space.toString() + "px");
+    }
+    else {
+      work_area.setAttribute("style", "height: auto");
+    }
+  }
+
+  window.onload = resizeWorkArea;
+  window.onresize = resizeWorkArea;
+
+</script>
+</html>

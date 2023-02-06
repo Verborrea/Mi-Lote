@@ -1,88 +1,79 @@
-section {
-  /*   height: 100vh; */
-  background: white;
-  padding: 2rem 0;
+main {
+  background-color: #141416;
+  color: white;
 }
 
-.container {
-  margin: 0 auto;
-  width: min(90%, 80rem);
+article {
+  height: 100vh;
+  height: 100dvh;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
-.container > * {
-  flex-basis: 100%;
-  padding: 3rem 2rem;
-  color: #222222;
-  line-height: 1.125;
+article>* {
+  text-align: center;
 }
 
-.img_index {
-  height: auto;
-  width: 100%;
-  max-height: 100%;
-  display: block;
-  margin: 0px auto;
-  max-width: 600px;
-  transition-duration: 1s;
+h1 {
+  font-size: 48px;
 }
 
-.container > * b {
-  color: var(--green);
+p {
+  margin: 2em 0;
+  font-size: 20px;
 }
 
-.container > * h1 {
-  font-size: 45pt;
-  font-weight: 600;
-  line-height: 1.125;
-  margin-bottom: 1.5rem;
+a.button {
+  padding: 0.5rem 1rem;
+  background-color: var(--enfasis);
+  color: var(--enfasis-text);
+  border: none;
+  border-radius: 10px;
+  font-size: 12pt;
+  transition: all ease-out 0.4s;
 }
 
-.container > * h2 {
-  font-size: 20pt;
-  margin-bottom: 1.5rem;
+a.button:hover {
+  background-color: var(--hover1);
 }
 
-.container > * a {
+a {
   text-decoration: none;
-  display: block;
-  color: #222222;
-  width: fit-content;
-  font-size: 16pt;
-  padding: 0.5em;
-  border: 1px solid #767676;
-  border-radius: 6px;
-  background-color: #f0f0f0;
+  color: silver;
+  font-size: 21px;
 }
 
-.container > * a:hover {
-  background-color: #d4d4d4;
-  transition: background-color 500ms;
+a:not(.button):hover {
+  text-decoration: underline;
 }
 
-.img_index:hover {
-  transform: scale(1.1);
-}
-
-#impar {
-  background: gray;
-  text-align: right;
-}
-
-#impar .container > * a {
-  margin: 0 auto;
-}
-
-@media (max-width: 900px) {
-  .container {
-    display: flex;
-    flex-direction: column-reverse;
+@media (max-width: 700px) {
+  h1 {font-size: 24px;}
+  a  {font-size: 18px;}
+  p  {font-size: 16px;}
+  article {
+    padding: 0 1.5em;
   }
-  .container > * {
-    text-align: center;
+}
+
+/* Scroll Animation */
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 1s;
+}
+
+@media(prefers-reduced-motion) {
+  .hidden {
+    transition: none;
   }
-  .container > * a {
-    margin: 0 auto;
-  }
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
 }

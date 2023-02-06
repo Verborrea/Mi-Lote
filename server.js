@@ -22,12 +22,12 @@ app.use(express.json());       // to support JSON-encoded bodies
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (request, response) => {
-  response.sendFile(__dirname + "/views/map.html");
-  // response.render('index');
+  // response.sendFile(__dirname + "/views/index.html");
+  response.render('index');
 });
 
 app.get("/map", (request, response) => {
-  response.sendFile(__dirname + "/views/map.html");
+  response.sendFile(__dirname + "/views/index.html");
 });
 
 app.get("/nosotros", (request, response) => {
