@@ -1,482 +1,459 @@
 {
-	"zonas": [
-		{
-			"id": "RDB",
-			"nombre": "Residencial de Densidad Baja",
-			"descripcion": "Viviendas individuales que permiten una baja concentración poblacional a través de viviendas unifamiliares.",
-			"compatibles": ["RDB", "CV", "ZR"],
-			"info": {
-				"Densidad": "Hasta 165 hab/ha",
-				"Lote Mínimo": "300 m<sup>2</sup>",
-				"Frente Mínimo": "12 m",
-				"Altura de Edificación": "2 pisos",
-				"Coeficiente de Edificación": "1.2",
-				"Área Libre": "40%",
-				"Espacios de Estacionamiento": "1 c/vivienda"
-			}
+	"RDB": {
+		"nombre": "Residencial de Densidad Baja",
+		"descripcion": "Viviendas individuales que permiten una baja concentración poblacional a través de viviendas unifamiliares.",
+		"compatibles": ["RDB", "CV", "ZR"],
+		"info": {
+			"Densidad": "Hasta 165 hab/ha",
+			"Lote Mínimo": "300 m<sup>2</sup>",
+			"Frente Mínimo": "12 m",
+			"Altura de Edificación": "2 pisos",
+			"Coeficiente de Edificación": "1.2",
+			"Área Libre": "40%",
+			"Espacios de Estacionamiento": "1 c/vivienda"
 		},
-		{
-			"id": "RDM-1",
-			"nombre": "Residencial de Densidad Media tipo 1",
-			"descripcion": "Viviendas tratadas individualmente o en conjunto que permiten una concentración poblacional media a través de unidades unifamiliares y multifamiliares.",
-			"compatibles": ["RDM-1", "CV", "CS", "E1", "H1", "ZR"],
-			"info" : {
-				"Unifamiliar": {
-					"Densidad": "De 166 a 900 hab/ha",
-					"Lote Mínimo": "90 m<sup>2</sup>",
-					"Frente Mínimo": "8 m",
-					"Altura de Edificación": "3 pisos",
-					"Coeficiente de Edificación": "2.1",
-					"Área Libre": "30%",
-					"Espacios de Estacionamiento": "1 c/2 viviendas"
-				},
-				"Multifamiliar": {
-					"Densidad": "De 166 a 1300 hab/ha",
-					"Lote Mínimo": "150 m<sup>2</sup>",
-					"Frente Mínimo": "8 m",
-					"Altura de Edificación": "4 pisos",
-					"Coeficiente de Edificación": "2.8",
-					"Área Libre": "35%",
-					"Espacios de Estacionamiento": "1 c/2 viviendas"
-				}
-			}
-		},
-		{
-			"id": "RDM-2",
-			"nombre": "Residencial de Densidad Media tipo 2",
-			"descripcion": "Viviendas tratadas individualmente o en conjunto que permiten una concentración poblacional media a través de unidades multifamiliares.",
-			"compatibles": ["RDM-2", "CV", "CS", "CZ", "E1", "H1", "H2", "ZR"],
-			"info": {
-				"Multifamiliar": {
-					"Densidad": "De 901 a 1400 hab/ha",
-					"Lote Mínimo": "150 m<sup>2</sup>",
-					"Frente Mínimo": "8 m",
-					"Altura de Edificación": "5 pisos",
-					"Coeficiente de Edificación": "3.5",
-					"Área Libre": "35%",
-					"Espacios de Estacionamiento": "1 c/2 viviendas"
-				},
-				"Multifamiliar*": {
-					"Densidad": "De 901 a 1400 hab/ha",
-					"Lote Mínimo": "180 m<sup>2</sup>",
-					"Frente Mínimo": "8 m",
-					"Altura de Edificación": "6 pisos",
-					"Coeficiente de Edificación": "4.2",
-					"Área Libre": "40%",
-					"Espacios de Estacionamiento": "1 c/2 viviendas"
-				}
-			}
-		},
-		{
-			"id": "RDA-1",
-			"nombre": "Residencial de Densidad Alta tipo 1",
-			"descripcion": "Viviendas tratadas en conjunto que permitan la obtención de una alta concentración poblacional.",
-			"compatibles": ["RDA-1", "CV", "CS", "CZ", "E1", "H1", "H2", "ZR"],
-			"info": {
-				"Multifamiliar": {
-					"Densidad": "De 1401 a 2250 hab/ha",
-					"Lote Mínimo": "240 m<sup>2</sup>",
-					"Frente Mínimo": "15 m",
-					"Altura de Edificación": "6 pisos o 1.5(a+r)",
-					"Coeficiente de Edificación": "4.2",
-					"Área Libre": "45% + 5% por c/piso adicional respecto de la altura",
-					"Espacios de Estacionamiento": "1 c/2 viviendas"
-				},
-				"Multifamiliar*": {
-					"Densidad": "De 1401 a 2250 hab/ha",
-					"Lote Mínimo": "300 m<sup>2</sup>",
-					"Frente Mínimo": "15 m",
-					"Altura de Edificación": "7 pisos o 1.5(a+r)",
-					"Coeficiente de Edificación": "4.2",
-					"Área Libre": "50% + 5% por c/piso adicional respecto de la altura",
-					"Espacios de Estacionamiento": "1 c/2 viviendas"
-				}
-			}
-		},
-		{
-			"id": "RDA-2",
-			"nombre": "Residencial de Densidad Alta tipo 2",
-			"descripcion": "Viviendas tratadas en conjunto que permitan la obtención de una alta concentración poblacional.",
-			"compatibles": ["RDA-2", "CZ", "CM", "E1", "H1", "H2", "ZR"],
-			"info": {
-				"Multifamiliar*": {
-					"Densidad": "De 2251 a 2800 hab/ha",
-					"Lote Mínimo": "600 m<sup>2</sup>",
-					"Frente Mínimo": "15 m",
-					"Altura de Edificación": "10 pisos o 1.5(a+r)",
-					"Coeficiente de Edificación": "6.0",
-					"Área Libre": "55% + 5% por c/piso adicional respecto de la altura",
-					"Espacios de Estacionamiento": "1 c/2 viviendas"
-				},
-				"Conj. Residencial": {
-					"Densidad": "De 2251 a 2800 hab/ha",
-					"Lote Mínimo": "1000 m<sup>2</sup>",
-					"Frente Mínimo": "s. d.",
-					"Altura de Edificación": "12 pisos o 1.5(a+r)",
-					"Coeficiente de Edificación": "6.0",
-					"Área Libre": "60% + 5% por c/piso adicional respecto de la altura",
-					"Espacios de Estacionamiento": "1 c/2 viviendas"
-				}
-			}
-		},
-		{
-			"id": "I1R",
-			"nombre": "Vivienda Taller",
-			"descripcion": "Es la zona destinada a vivienda compatible con la Industria elemental.",
-			"compatibles": ["RDB", "I1R", "CV", "CS", "I1"],
-			"info": {
-				"Densidad": "Hasta 900 hab/ha",
+		"area_libre":1,
+		"area_techada":1
+	},
+	"RDM-1": {
+		"nombre": "Residencial de Densidad Media tipo 1",
+		"descripcion": "Viviendas tratadas individualmente o en conjunto que permiten una concentración poblacional media a través de unidades unifamiliares y multifamiliares.",
+		"compatibles": ["RDM-1", "CV", "CS", "E1", "H1", "ZR"],
+		"info" : {
+			"Unifamiliar": {
+				"Densidad": "De 166 a 900 hab/ha",
+				"Lote Mínimo": "90 m<sup>2</sup>",
+				"Frente Mínimo": "8 m",
+				"Altura de Edificación": "3 pisos",
+				"Coeficiente de Edificación": "2.1",
+				"Área Libre": "30%",
+				"Espacios de Estacionamiento": "1 c/2 viviendas"
+			},
+			"Multifamiliar": {
+				"Densidad": "De 166 a 1300 hab/ha",
 				"Lote Mínimo": "150 m<sup>2</sup>",
 				"Frente Mínimo": "8 m",
 				"Altura de Edificación": "4 pisos",
 				"Coeficiente de Edificación": "2.8",
-				"Área Libre": "30%",
-				"Espacios de Estacionamiento": "1 c/3 viviendas"
+				"Área Libre": "35%",
+				"Espacios de Estacionamiento": "1 c/2 viviendas"
 			}
 		},
-		{
-			"id": "CE",
-			"nombre": "Comercio Especializado",
-			"descripcion": "Toda actividad comercial-industrial que no pueda considerarse molesta o peligrosa por sus propias características.",
-			"compatibles": ["RDA-1", "RDA-2", "CE", "CV", "CS", "I1", "I2", "E1", "H1", "H2"],
-			"info": {
-				"Nivel de servicio": "De 1000 a 200'000",
-				"Lote Mínimo": "450 m<sup>2</sup>",
-				"Altura de Edificación": "1.5 (a+r)",
-				"Coeficiente de Edificación": "4.0",
-				"Espacios de Estacionamiento": "Personal: 1 c/20 personas.<br>Público: 1 c/45 m<sup>2</sup> área de venta."
+		"area_libre":1,
+		"area_techada":1
+	},
+	"RDM-2": {
+		"nombre": "Residencial de Densidad Media tipo 2",
+		"descripcion": "Viviendas tratadas individualmente o en conjunto que permiten una concentración poblacional media a través de unidades multifamiliares.",
+		"compatibles": ["RDM-2", "CV", "CS", "CZ", "E1", "H1", "H2", "ZR"],
+		"info": {
+			"Multifamiliar": {
+				"Densidad": "De 901 a 1400 hab/ha",
+				"Lote Mínimo": "150 m<sup>2</sup>",
+				"Frente Mínimo": "8 m",
+				"Altura de Edificación": "5 pisos",
+				"Coeficiente de Edificación": "3.5",
+				"Área Libre": "35%",
+				"Espacios de Estacionamiento": "1 c/2 viviendas"
+			},
+			"Multifamiliar*": {
+				"Densidad": "De 901 a 1400 hab/ha",
+				"Lote Mínimo": "180 m<sup>2</sup>",
+				"Frente Mínimo": "8 m",
+				"Altura de Edificación": "6 pisos",
+				"Coeficiente de Edificación": "4.2",
+				"Área Libre": "40%",
+				"Espacios de Estacionamiento": "1 c/2 viviendas"
 			}
 		},
-		{
-			"id": "CV",
-			"nombre": "Comercio Vecinal",
-			"descripcion": "Es el tipo de comercio destinado a ofrecer bienes de consumo diario, especialmente alimentos y artículos o servicios de primera necesidad.",
-			"compatibles": ["RDM-2", "CV", "I1", "E1", "H1", "H2"],
-			"info": {
-				"Nivel de servicio": "De 2000 a 7500",
-				"Lote Mínimo": "Resultado del diseño",
-				"Altura de Edificación": "1.5 (a+r)",
-				"Coeficiente de Edificación": "3.0",
-				"Espacios de Estacionamiento": "Personal: 1 c/20 personas.<br>Público: 1 c/60 m<sup>2</sup> área de venta."
-			}
-		},
-		{
-			"id": "CS",
-			"nombre": "Comercio Sectorial",
-			"descripcion": "Es el tipo de comercio que se dan en la periferia de las Zonas Comerciales Zonales, pero a una escala menor en cuanto a volumen de ventas y radio de servicio.",
-			"compatibles": ["RDM-2", "CV", "CS", "I1", "I2", "E1", "E2", "H1", "H2"],
-			"info": {
-				"Nivel de servicio": "De 7500 a 30'000",
-				"Lote Mínimo": "Resultado del diseño",
-				"Altura de Edificación": "1.5 (a+r)",
-				"Coeficiente de Edificación": "4.0",
-				"Espacios de Estacionamiento": "Personal: 1 c/20 personas.<br>Público: 1 c/45 m<sup>2</sup> área de venta."
-			}
-		},
-		{
-			"id": "CZ",
-			"nombre": "Comercio Zonal",
-			"descripcion": "Es el tipo de comercio que se da a lo largo de vías principales o en sus intersecciones. La característica fundamental de este tipo de comercio están dadas por el grado de especialización comercial en función de su area: residenciales y/o industrial.",
-			"compatibles": ["RDA-1", "RDA-2", "CE", "CV", "CS", "CZ", "I1", "I2", "E1", "E2", "H1", "H2"],
-			"info": {
-				"Nivel de servicio": "De 30'000 a 300'000",
-				"Lote Mínimo": "Existente",
-				"Altura de Edificación": "1.5 (a+r)",
-				"Coeficiente de Edificación": "5.5",
-				"Espacios de Estacionamiento": "Personal: 1 c/20 personas.<br>Público: 1 c/45 m<sup>2</sup> área de venta."
-			}
-		},
-		{
-			"id": "CIn",
-			"nombre": "Comercio Industrial",
-			"descripcion": "Es toda actividad comercial directamente vinculada con la industria o que requiere servicio permanente o frecuente de vehículos pesados de transporte de carga y provoque ruidos o vibraciones. Es una actividad de venta de equipo industrial y no de reparación.",
-			"compatibles": ["RDA-2", "I1R", "CE", "CZ", "CIn", "CM", "I1", "I2", "E1", "E2", "H1", "H2"],
-			"info": {
-				"Nivel de servicio": "Metropolitano y regional",
-				"Lote Mínimo": "450 m<sup>2</sup>",
-				"Altura de Edificación": "1.5 (a+r)",
-				"Coeficiente de Edificación": "4.0",
-				"Espacios de Estacionamiento": "Personal: 1 c/20 personas.<br>Público: 1 c/45 m<sup>2</sup> área de venta."
-			}
-		},
-		{
-			"id": "CM",
-			"nombre": "Comercio Metropolitano",
-			"descripcion": "Es el conjunto comercial en el que los establecimientos, por su importancia y localización responden a las necesidades y los recursos de la población metropolitana y su región. Incluye la mayoría de los servicios comerciales.",
-			"compatibles": ["RDA-2", "CE", "CV", "CS", "CZ", "CIn", "CM", "I1", "I2", "E1", "E2", "H1", "H2"],
-			"info": {
-				"Nivel de servicio": "De 300'000 a 1'000'000",
-				"Lote Mínimo": "Existente",
-				"Altura de Edificación": "1.5 (a+r)",
-				"Coeficiente de Edificación": "7.0",
-				"Espacios de Estacionamiento": "Personal: 1 c/20 personas.<br>Público: 1 c/45 m<sup>2</sup> área de venta."
-			}
-		},
-		{
-			"id": "I1",
-			"nombre": "Zonas de Industria Elemental",
-			"descripcion": "Es la zona destinada para establecimientos industriales complementarios o de apoyo a industria de mayor escala. Sus características son: Grado tecnológico medio Producción en serie y dirigida al comercio mayorista Capital de operación reducido Tenencia aglomerante en el área urbana No son molestas, ni peligrosas.",
-			"compatibles": ["RDM-1", "RDM-2", "RDA-1", "I1R", "CE", "I1", "E1", "E2", "H1", "H2"],
-			"info": {
+		"area_libre":1,
+		"area_techada":1
+	},
+	"RDA-1": {
+		"nombre": "Residencial de Densidad Alta tipo 1",
+		"descripcion": "Viviendas tratadas en conjunto que permitan la obtención de una alta concentración poblacional.",
+		"compatibles": ["RDA-1", "CV", "CS", "CZ", "E1", "H1", "H2", "ZR"],
+		"info": {
+			"Multifamiliar": {
+				"Densidad": "De 1401 a 2250 hab/ha",
+				"Lote Mínimo": "240 m<sup>2</sup>",
+				"Frente Mínimo": "15 m",
+				"Altura de Edificación": "6 pisos o 1.5(a+r)",
+				"Coeficiente de Edificación": "4.2",
+				"Área Libre": "45% + 5% por c/piso adicional respecto de la altura",
+				"Espacios de Estacionamiento": "1 c/2 viviendas"
+			},
+			"Multifamiliar*": {
+				"Densidad": "De 1401 a 2250 hab/ha",
 				"Lote Mínimo": "300 m<sup>2</sup>",
-				"Frente Mínimo": "10 m",
-				"Altura de Edificación": "Según proyecto",
-				"Coeficiente de Edificación": "Según proyecto",
-				"Área Libre": "Según proyecto"
+				"Frente Mínimo": "15 m",
+				"Altura de Edificación": "7 pisos o 1.5(a+r)",
+				"Coeficiente de Edificación": "4.2",
+				"Área Libre": "50% + 5% por c/piso adicional respecto de la altura",
+				"Espacios de Estacionamiento": "1 c/2 viviendas"
 			}
 		},
-		{
-			"id": "I2",
-			"nombre": "Zonas de Industria Liviana",
-			"descripcion": "Zona destinada para establecimientos industriales que tienen las características siguientes: Orientación al área del mercado local y a la infraestructura vial urbana; Posee contacto con el área central; Venta al por mayor; Dimensión económica media; No son molestos, ni peligrosos.",
-			"compatibles": ["RDM-1", "RDM-2", "RDA-1", "CE", "CZ", "I1", "I2", "I3","E1", "E2", "H1", "H2"],
-			"info": {
+		"area_libre":1,
+		"area_techada":1
+	},
+	"RDA-2": {
+		"nombre": "Residencial de Densidad Alta tipo 2",
+		"descripcion": "Viviendas tratadas en conjunto que permitan la obtención de una alta concentración poblacional.",
+		"compatibles": ["RDA-2", "CZ", "CM", "E1", "H1", "H2", "ZR"],
+		"info": {
+			"Multifamiliar*": {
+				"Densidad": "De 2251 a 2800 hab/ha",
+				"Lote Mínimo": "600 m<sup>2</sup>",
+				"Frente Mínimo": "15 m",
+				"Altura de Edificación": "10 pisos o 1.5(a+r)",
+				"Coeficiente de Edificación": "6.0",
+				"Área Libre": "55% + 5% por c/piso adicional respecto de la altura",
+				"Espacios de Estacionamiento": "1 c/2 viviendas"
+			},
+			"Conj. Residencial": {
+				"Densidad": "De 2251 a 2800 hab/ha",
 				"Lote Mínimo": "1000 m<sup>2</sup>",
-				"Frente Mínimo": "20 m",
-				"Altura de Edificación": "Según proyecto",
-				"Coeficiente de Edificación": "Según proyecto",
-				"Área Libre": "Según proyecto"
+				"Frente Mínimo": "s. d.",
+				"Altura de Edificación": "12 pisos o 1.5(a+r)",
+				"Coeficiente de Edificación": "6.0",
+				"Área Libre": "60% + 5% por c/piso adicional respecto de la altura",
+				"Espacios de Estacionamiento": "1 c/2 viviendas"
 			}
 		},
-		{
-			"id": "I3",
-			"nombre": "Zonas de Gran Industria",
-			"descripcion": "Zonas destinadas para establecimientos industriales que tiene las características siguientes: Conforman concentraciones industriales, con utilización de gran volumen de materia prima Orientación hacia la infraestructura vial regional (carreteras, ferrocarriles) Producción de gran escala Las áreas periféricas satisfacen mejor sus necesidades Las economías externas, su complementariedad y relaciones interindustriales favorecen su concentración Son molestas y/o con cierto grado de peligrosidad.",
-			"compatibles": ["I1", "I2", "I3"],
-			"info": {
-				"Lote Mínimo": "2500 m<sup>2</sup>",
-				"Frente Mínimo": "30 m",
-				"Altura de Edificación": "Según proyecto",
-				"Coeficiente de Edificación": "Según proyecto",
-				"Área Libre": "Según proyecto"
-			}
+		"area_libre":1,
+		"area_techada":1
+	},
+	"I1R": {
+		"nombre": "Vivienda Taller",
+		"descripcion": "Es la zona destinada a vivienda compatible con la Industria elemental.",
+		"compatibles": ["RDB", "I1R", "CV", "CS", "I1"],
+		"info": {
+			"Densidad": "Hasta 900 hab/ha",
+			"Lote Mínimo": "150 m<sup>2</sup>",
+			"Frente Mínimo": "8 m",
+			"Altura de Edificación": "4 pisos",
+			"Coeficiente de Edificación": "2.8",
+			"Área Libre": "30%",
+			"Espacios de Estacionamiento": "1 c/3 viviendas"
 		},
-		{
-			"id": "I4",
-			"nombre": "Zonas de Gran Industria Pesada",
-			"descripcion": "Es la zona destinada para establecimientos industriales que producen insumos para las industrias de apoyo y de otras industrias. Sus características son: Industrias de proceso básico en gran escala De gran dimensión económica Orientadas hacia la infraestructura regional y grandes mercados Son molestas y peligrosas (producen ruidos o vibraciones o provocan humos, vapores, gases, malos olores, etc. también aquellas industrias que usan materiales altamente inflamables o detonantes).",
-			"compatibles": ["I4"],
-			"info": {
-				"Lote Mínimo": "Según necesidad",
-				"Frente Mínimo": "Según proyecto",
-				"Altura de Edificación": "Según proyecto",
-				"Coeficiente de Edificación": "Según proyecto",
-				"Área Libre": "Según proyecto"
-			}
+		"area_libre":1,
+		"area_techada":1
+	},
+	"CE": {
+		"nombre": "Comercio Especializado",
+		"descripcion": "Toda actividad comercial-industrial que no pueda considerarse molesta o peligrosa por sus propias características.",
+		"compatibles": ["RDA-1", "RDA-2", "CE", "CV", "CS", "I1", "I2", "E1", "H1", "H2"],
+		"info": {
+			"Nivel de servicio": "De 1000 a 200'000",
+			"Lote Mínimo": "450 m<sup>2</sup>",
+			"Altura de Edificación": "1.5 (a+r)",
+			"Coeficiente de Edificación": "4.0",
+			"Espacios de Estacionamiento": "Personal: 1 c/20 personas.<br>Público: 1 c/45 m<sup>2</sup> área de venta."
 		},
-		{
-			"id": "E1",
-			"nombre": "Educación tipo 1",
-			"descripcion": "Educación Básica",
-			"compatibles": ["E1", "CV", "ZR"],
-			"info": {
-				"Nivel de servicio": "Inicial hasta 7000; E1 hasta 30'000",
-				"Espacios de Estacionamiento": "1 c/20 alumnos + 1 c/3 trabajadores docentes y administrativos, ubicados dentro del predio. 1 de los cuales como mínimo deberá ser para personas con movilidad reducida"
-			}
+		"area_techada":1
+	},
+	"CV": {
+		"nombre": "Comercio Vecinal",
+		"descripcion": "Es el tipo de comercio destinado a ofrecer bienes de consumo diario, especialmente alimentos y artículos o servicios de primera necesidad.",
+		"compatibles": ["RDM-2", "CV", "I1", "E1", "H1", "H2"],
+		"info": {
+			"Nivel de servicio": "De 2000 a 7500",
+			"Lote Mínimo": "Resultado del diseño",
+			"Altura de Edificación": "1.5 (a+r)",
+			"Coeficiente de Edificación": "3.0",
+			"Espacios de Estacionamiento": "Personal: 1 c/20 personas.<br>Público: 1 c/60 m<sup>2</sup> área de venta."
 		},
-		{
-			"id": "E2",
-			"nombre": "Educación tipo 2",
-			"descripcion": "Educación Superior Tecnológica",
-			"compatibles": ["E2", "CV", "ZR"],
-			"info": {
-				"Nivel de servicio": "Hasta 50'000",
-				"Espacios de Estacionamiento": "1 c/20 alumnos + 1 c/3 trabajadores docentes y administrativos, ubicados dentro del predio. 1 de los cuales como mínimo deberá ser para personas con movilidad reducida"
-			}
+		"area_techada":1
+	},
+	"CS": {
+		"nombre": "Comercio Sectorial",
+		"descripcion": "Es el tipo de comercio que se dan en la periferia de las Zonas Comerciales Zonales, pero a una escala menor en cuanto a volumen de ventas y radio de servicio.",
+		"compatibles": ["RDM-2", "CV", "CS", "I1", "I2", "E1", "E2", "H1", "H2"],
+		"info": {
+			"Nivel de servicio": "De 7500 a 30'000",
+			"Lote Mínimo": "Resultado del diseño",
+			"Altura de Edificación": "1.5 (a+r)",
+			"Coeficiente de Edificación": "4.0",
+			"Espacios de Estacionamiento": "Personal: 1 c/20 personas.<br>Público: 1 c/45 m<sup>2</sup> área de venta."
 		},
-		{
-			"id": "E3",
-			"nombre": "Educación tipo 3",
-			"descripcion": "Educación Superior Universitaria",
-			"compatibles": ["E3", "CV", "ZR"],
-			"info": {
-				"Nivel de servicio": "Más de 50'000",
-				"Espacios de Estacionamiento": "1 c/20 alumnos + 1 c/3 trabajadores docentes y administrativos, ubicados dentro del predio. 1 de los cuales como mínimo deberá ser para personas con movilidad reducida"
-			}
+		"area_techada":1
+	},
+	"CZ": {
+		"nombre": "Comercio Zonal",
+		"descripcion": "Es el tipo de comercio que se da a lo largo de vías principales o en sus intersecciones. La característica fundamental de este tipo de comercio están dadas por el grado de especialización comercial en función de su area: residenciales y/o industrial.",
+		"compatibles": ["RDA-1", "RDA-2", "CE", "CV", "CS", "CZ", "I1", "I2", "E1", "E2", "H1", "H2"],
+		"info": {
+			"Nivel de servicio": "De 30'000 a 300'000",
+			"Lote Mínimo": "Existente",
+			"Altura de Edificación": "1.5 (a+r)",
+			"Coeficiente de Edificación": "5.5",
+			"Espacios de Estacionamiento": "Personal: 1 c/20 personas.<br>Público: 1 c/45 m<sup>2</sup> área de venta."
 		},
-		{
-			"id": "H1",
-			"nombre": "Salud tipo 1",
-			"descripcion": "Posta Médica",
-			"compatibles": ["H1"],
-			"info": {
-				"Nivel de servicio": "2000 a 7000 hab"
-			}
+		"area_techada":1
+	},
+	"CIn": {
+		"nombre": "Comercio Industrial",
+		"descripcion": "Es toda actividad comercial directamente vinculada con la industria o que requiere servicio permanente o frecuente de vehículos pesados de transporte de carga y provoque ruidos o vibraciones. Es una actividad de venta de equipo industrial y no de reparación.",
+		"compatibles": ["RDA-2", "I1R", "CE", "CZ", "CIn", "CM", "I1", "I2", "E1", "E2", "H1", "H2"],
+		"info": {
+			"Nivel de servicio": "Metropolitano y regional",
+			"Lote Mínimo": "450 m<sup>2</sup>",
+			"Altura de Edificación": "1.5 (a+r)",
+			"Coeficiente de Edificación": "4.0",
+			"Espacios de Estacionamiento": "Personal: 1 c/20 personas.<br>Público: 1 c/45 m<sup>2</sup> área de venta."
 		},
-		{
-			"id": "H2",
-			"nombre": "Salud tipo 2",
-			"descripcion": "Centro de Salud",
-			"compatibles": ["H2"],
-			"info": {
-				"Nivel de servicio": "20'000 a 50'000 hab"
-			}
+		"area_techada":1
+	},
+	"CM": {
+		"nombre": "Comercio Metropolitano",
+		"descripcion": "Es el conjunto comercial en el que los establecimientos, por su importancia y localización responden a las necesidades y los recursos de la población metropolitana y su región. Incluye la mayoría de los servicios comerciales.",
+		"compatibles": ["RDA-2", "CE", "CV", "CS", "CZ", "CIn", "CM", "I1", "I2", "E1", "E2", "H1", "H2"],
+		"info": {
+			"Nivel de servicio": "De 300'000 a 1'000'000",
+			"Lote Mínimo": "Existente",
+			"Altura de Edificación": "1.5 (a+r)",
+			"Coeficiente de Edificación": "7.0",
+			"Espacios de Estacionamiento": "Personal: 1 c/20 personas.<br>Público: 1 c/45 m<sup>2</sup> área de venta."
 		},
-		{
-			"id": "H3",
-			"nombre": "Salud tipo 3",
-			"descripcion": "Hospital General",
-			"compatibles": ["H3"],
-			"info": {
-				"Nivel de servicio": "30'000 a 125'000 hab"
-			}
-		},
-		{
-			"id": "H4",
-			"nombre": "Salud tipo 4",
-			"descripcion": "Hospital Especializado",
-			"compatibles": ["H4"],
-			"info": {
-				"Nivel de servicio": "125'000 hab"
-			}
-		},
-		{
-			"id": "OU1",
-			"nombre": "Usos Especiales tipo 1",
-			"descripcion": "Incluyen las siguientes instalaciones: Centros Cívicos; dependencias administrativas del Estado; culturales; establecimientos institucionales representativos del sector privado, nacional o extranjero; establecimientos religiosos, asilos, orfelinatos.",
-			"compatibles": ["OU1"],
-			"info": {
-				"Nota": "Se regirá por los parámetros correspondientes a la zonificación comercial o residencial predominante."
-			}
-		},
-		{
-			"id": "OU2",
-			"nombre": "Usos Especiales tipo 2",
-			"descripcion": "Incluyen las siguientes instalaciones: Terminales terrestres, ferroviarios, aéreos; grandes complejos deportivos y de espectáculos, estadios, coliseos, zoológicos; Servicios Públicos como instalaciones de producción y almacenamiento de energía eléctrica, gas, telefonía, comunicaciones, agua potable y de tratamiento sanitario de aguas servidas; establecimientos de seguridad y de las fuerzas armadas.",
-			"compatibles": ["OU2"],
-			"info": {
-				"Nota": "Se regirá por los parámetros correspondientes a la zonificación comercial o residencial predominante."
-			}
-		},
-		{
-			"id": "ZR",
-			"nombre": "Zona de Recreación",
-			"descripcion": "Son áreas destinadas fundamentalmente a la realización de actividades recreativas activas y/o pasivas, tales como Plazas, Parques, Campos Deportivos, Juegos Infantiles y Clubes deportivos. Las áreas agrícolas zonificadas como Zonas de Recreación, seguirán manteniendo su condición hasta que se viabilice su incorporación como Zona de Recreación mediante la evaluación de Planificación Integral y/o Plan Específico por parte del Instituto Municipal de Planeamiento, y la conformidad correspondiente.",
-			"compatibles": ["ZR"],
-			"info": {
-				"Nota": "Se regirá por los parámetros que se establezcan en el planeamiento integral que la genere. Permitiéndose un 5% de área construida como máximo."
-			}
-		},
-		{
-			"id": "ZRE-CH",
-			"nombre": "Zona de Reglamentación Especial Centro Histórico",
-			"descripcion": "Se desarrollará el Plan Específico del Centro Histórico y su Área de Amortiguamiento, siendo responsable de ello la Gerencia de Centro Histórico y Zona Monumental de la Municipalidad Provincial de Arequipa, el mismo que será evaluado por el Instituto Municipal de Planeamiento y recibirá la conformidad correspondiente.",
-			"compatibles": ["ZRE-CH"],
-			"info": {
-				"Nota": "Se regirá por los parámetros que se establezcan en el plan específico que las generen."
-			}
-		},
-		{
-			"id": "ZRE-PP",
-			"nombre": "Zona de Reglamentación Especial de Valor Patrimonial Paisajístico",
-			"descripcion": "zonas ubicadas principalmente en los pueblos tradicionales que guardan relación estrecha con su entorno circundante, donde se determinan parámetros urbanísticos.",
-			"compatibles": ["ZR","ZRE-PP"],
-			"info": {
-				"Densidad Neta": "165 hab/ha",
-				"Lote Normativo": "300 m<sup>2</sup> o el lote existente",
-				"Altura de Edificación": "6m hacia el frente; 9m al interior con retiro de 4m",
-				"Coeficiente de Edificación": "2.30 en predios hasta 150 m<sup>2</sup>; 1.85 en predios sin construcción y área de terreno mayor a 151 m<sup>2</sup>",
-				"Área Libre": "40% uso residencial; 40% uso comercial"
-			}
-		},
-		{
-			"id": "ZRE-PA",
-			"nombre": "Zona de Reglamentación Patrimonio Agrícola",
-			"descripcion": "Zonas en las que su valor está definido por la interacción del hombre con la naturaleza. Está sujeta al desarrollo de un Plan Específico, el mismo que será evaluado por el Instituto Municipal de Planeamiento y recibirá la conformidad correspondiente.",
-			"compatibles": ["ZRE-PA"],
-			"info": {
-				"Nota": "Se regirá por los parámetros que se establezcan en el plan específico que las generen."
-			}
-		},
-		{
-			"id": "ZRE-PN",
-			"nombre": "Zona de Reglamentación Patrimonio Natural",
-			"descripcion": "Zonas definidas por valores de carácter natural, en donde se desarrollará un Plan Específico, el mismo que será evaluado por el Instituto Municipal de Planeamiento y recibirá la conformidad correspondiente.",
-			"compatibles": ["ZR","ZRE-PN"],
-			"info": {
-				"Nota": "Se regirá por los parámetros que se establezcan en el plan específico que las generen."
-			}
-		},
-		{
-			"id": "ZRE-RE",
-			"nombre": "Zona de Reglamentación Especial de Recuperación",
-			"descripcion": "Zonas que por su actual estado, deberán ser sujetas a un proceso de Renovación Urbana establecida en el Plan Específico correspondiente, el mismo que será evaluado por el Instituto Municipal de Planeamiento y recibirá la conformidad correspondiente.",
-			"compatibles": ["ZR","ZRE-RE"],
-			"info": {
-				"Nota": "Se regirá por los parámetros que se establezcan en el plan específico que las generen."
-			}
-		},
-		{
-			"id": "ZRE-RI1",
-			"nombre": "Zona de Reglamentación Especial por Riesgos Muy Altos con restricciones a su consolidación",
-			"descripcion": "Conformada por las áreas identificadas como de alto riesgo no mitigable y en donde el grado de consolidación es escaso. Se deberán desarrollar políticas para su recuperación física y ambiental y tratamiento como espacios públicos verdes y de forestación. Cualquier edificación existente deberá ser reubicada paulatinamente.",
-			"compatibles": ["ZRE-RI1"],
-			"info": {
-				"Nota": "Zonas que contienen usos no conformes: no están autorizadas nuevas obras ni cambios de uso."
-			}
-		},
-		{
-			"id": "ZRE-RI2",
-			"nombre": "Zona de Reglamentación Especial por Riesgos Muy Altos de paulatina desocupación",
-			"descripcion": "Conformada por las áreas identificadas como de alto riesgo no mitigable y en donde el grado de consolidación es escaso. Se deberán desarrollar políticas para su recuperación física y ambiental y tratamiento como espacios públicos verdes y de forestación. Cualquier edificación existente deberá ser reubicada paulatinamente.",
-			"compatibles": ["ZRE-RI2"],
-			"info": {
-				"Nota": "No urbanizable ni edificable. Zonas de recuperación física y ambiental y tratamiento como espacios públicos verdes y de forestación."
-			}
-		},
-		{
-			"id": "ZRE-RU",
-			"nombre": "Zona de Reglamentación Especial para Desarrollo y/o Renovación Urbana",
-			"descripcion": "Zonas que por su tamaño, ubicación y propiedad del Estado, tienen un gran potencial para el desarrollo de actividades de carácter metropolitano, en donde se desarrollará un Plan Específico, el mismo que será evaluado por el Instituto Municipal de Planeamiento y recibirá la conformidad correspondiente.",
-			"compatibles": ["ZRE-RU"],
-			"info": {
-				"Nota": "Se regirá por los parámetros que se establezcan en el plan específico que las generen."
-			}
-		},
-		{
-			"id": "ZM",
-			"nombre": "Zona Monumental",
-			"descripcion": "Constituyen un tipo específico de ZRE, en donde se localizan bienes inmuebles integrantes del Patrimonio Cultural de la Nación. Las intervenciones en este tipo de zonas se rigen según lo dispuesto en la Ley General del Patrimonio Cultural de la Nación.",
-			"compatibles": ["ZM"],
-			"info": {
-				"Nota": "Se regirá por normas del Ministerio de Cultura."
-			}
-		},
-		{
-			"id": "ZAQ",
-			"nombre": "Zona Patrimonio Arqueológico",
-			"descripcion": "Son áreas que contienen restos arqueológicos, que han sido delimitados y declarados por el Ministerio de Cultura, por tanto, no son urbanizables ni edificables. Cualquier intervención en estas áreas deberá contar con la aprobación del Ministerio de Cultura.",
-			"compatibles": ["ZAQ"],
-			"info": {
-				"Nota": "No urbanizable ni edificable, se regirá por normas del Ministerio de Cultura."
-			}
-		},
-		{
-			"id": "RP",
-			"nombre": "Reserva Paisajista",
-			"descripcion": "Definida por los espacios aledaños a los cauces ribereños y las áreas identificadas con alto valor natural, cultural y patrimonial, incluye la ronda hidráulica, el área de manejo y preservación ambiental y las andenerías prehispánicas. No es urbanizable ni edificable; solamente se permitirán obras de pequeña envergadura (caminerías, estares, servicios básicos y similares) que complementen su carácter paisajista, proyectados bajo el criterio de planificación integral, previa evaluación y conformidad del Instituto Municipal de Planeamiento (IMPLA).",
-			"compatibles": ["ZR","RP","ZA"],
-			"info": {
-				"Nota": "No urbanizable ni edificable."
-			}
-		},
-		{
-			"id": "ZA",
-			"nombre": "Zona Agrícola",
-			"descripcion": "Constituida por áreas destinadas a la agricultura y la ganadería dentro del área urbana de la ciudad.",
-			"compatibles": ["ZR","ZA"],
-			"info": {
-				"Nota": "No urbanizable ni edificable."
-			}
-		},
-		{
-			"id": "EA",
-			"nombre": "Expansión Agrícola",
-			"descripcion": "Son las áreas identificadas con vocación para la expansión de la frontera agrícola y de las actividades agropecuarias y agroindustriales. ",
-			"compatibles": ["ZA","EA"],
-			"info": {
-				"Nota": "No urbanizable ni edificable."
-			}
+		"area_techada":1
+	},
+	"I1": {
+		"nombre": "Zonas de Industria Elemental",
+		"descripcion": "Es la zona destinada para establecimientos industriales complementarios o de apoyo a industria de mayor escala. Sus características son: Grado tecnológico medio Producción en serie y dirigida al comercio mayorista Capital de operación reducido Tenencia aglomerante en el área urbana No son molestas, ni peligrosas.",
+		"compatibles": ["RDM-1", "RDM-2", "RDA-1", "I1R", "CE", "I1", "E1", "E2", "H1", "H2"],
+		"info": {
+			"Lote Mínimo": "300 m<sup>2</sup>",
+			"Frente Mínimo": "10 m",
+			"Altura de Edificación": "Según proyecto",
+			"Coeficiente de Edificación": "Según proyecto",
+			"Área Libre": "Según proyecto"
 		}
-	]
+	},
+	"I2": {
+		"nombre": "Zonas de Industria Liviana",
+		"descripcion": "Zona destinada para establecimientos industriales que tienen las características siguientes: Orientación al área del mercado local y a la infraestructura vial urbana; Posee contacto con el área central; Venta al por mayor; Dimensión económica media; No son molestos, ni peligrosos.",
+		"compatibles": ["RDM-1", "RDM-2", "RDA-1", "CE", "CZ", "I1", "I2", "I3","E1", "E2", "H1", "H2"],
+		"info": {
+			"Lote Mínimo": "1000 m<sup>2</sup>",
+			"Frente Mínimo": "20 m",
+			"Altura de Edificación": "Según proyecto",
+			"Coeficiente de Edificación": "Según proyecto",
+			"Área Libre": "Según proyecto"
+		}
+	},
+	"I3": {
+		"nombre": "Zonas de Gran Industria",
+		"descripcion": "Zonas destinadas para establecimientos industriales que tiene las características siguientes: Conforman concentraciones industriales, con utilización de gran volumen de materia prima Orientación hacia la infraestructura vial regional (carreteras, ferrocarriles) Producción de gran escala Las áreas periféricas satisfacen mejor sus necesidades Las economías externas, su complementariedad y relaciones interindustriales favorecen su concentración Son molestas y/o con cierto grado de peligrosidad.",
+		"compatibles": ["I1", "I2", "I3"],
+		"info": {
+			"Lote Mínimo": "2500 m<sup>2</sup>",
+			"Frente Mínimo": "30 m",
+			"Altura de Edificación": "Según proyecto",
+			"Coeficiente de Edificación": "Según proyecto",
+			"Área Libre": "Según proyecto"
+		}
+	},
+	"I4": {
+		"nombre": "Zonas de Gran Industria Pesada",
+		"descripcion": "Es la zona destinada para establecimientos industriales que producen insumos para las industrias de apoyo y de otras industrias. Sus características son: Industrias de proceso básico en gran escala De gran dimensión económica Orientadas hacia la infraestructura regional y grandes mercados Son molestas y peligrosas (producen ruidos o vibraciones o provocan humos, vapores, gases, malos olores, etc. también aquellas industrias que usan materiales altamente inflamables o detonantes).",
+		"compatibles": ["I4"],
+		"info": {
+			"Lote Mínimo": "Según necesidad",
+			"Frente Mínimo": "Según proyecto",
+			"Altura de Edificación": "Según proyecto",
+			"Coeficiente de Edificación": "Según proyecto",
+			"Área Libre": "Según proyecto"
+		}
+	},
+	"E1": {
+		"nombre": "Educación tipo 1",
+		"descripcion": "Educación Básica",
+		"compatibles": ["E1", "CV", "ZR"],
+		"info": {
+			"Nivel de servicio": "Inicial hasta 7000<br> E1 hasta 30'000",
+			"Espacios de Estacionamiento": "1 c/20 alumnos + 1 c/3 trabajadores docentes y administrativos, ubicados dentro del predio. 1 de los cuales como mínimo deberá ser para personas con movilidad reducida"
+		}
+	},
+	"E2": {
+		"nombre": "Educación tipo 2",
+		"descripcion": "Educación Superior Tecnológica",
+		"compatibles": ["E2", "CV", "ZR"],
+		"info": {
+			"Nivel de servicio": "Hasta 50'000",
+			"Espacios de Estacionamiento": "1 c/20 alumnos + 1 c/3 trabajadores docentes y administrativos, ubicados dentro del predio. 1 de los cuales como mínimo deberá ser para personas con movilidad reducida"
+		}
+	},
+	"E3": {
+		"nombre": "Educación tipo 3",
+		"descripcion": "Educación Superior Universitaria",
+		"compatibles": ["E3", "CV", "ZR"],
+		"info": {
+			"Nivel de servicio": "Más de 50'000",
+			"Espacios de Estacionamiento": "1 c/20 alumnos + 1 c/3 trabajadores docentes y administrativos, ubicados dentro del predio. 1 de los cuales como mínimo deberá ser para personas con movilidad reducida"
+		}
+	},
+	"H1": {
+		"nombre": "Salud tipo 1",
+		"descripcion": "Posta Médica",
+		"compatibles": ["H1"],
+		"info": {
+			"Nivel de servicio": "2000 a 7000 hab"
+		}
+	},
+	"H2": {
+		"nombre": "Salud tipo 2",
+		"descripcion": "Centro de Salud",
+		"compatibles": ["H2"],
+		"info": {
+			"Nivel de servicio": "20'000 a 50'000 hab"
+		}
+	},
+	"H3": {
+		"nombre": "Salud tipo 3",
+		"descripcion": "Hospital General",
+		"compatibles": ["H3"],
+		"info": {
+			"Nivel de servicio": "30'000 a 125'000 hab"
+		}
+	},
+	"H4": {
+		"nombre": "Salud tipo 4",
+		"descripcion": "Hospital Especializado",
+		"compatibles": ["H4"],
+		"info": {
+			"Nivel de servicio": "125'000 hab"
+		}
+	},
+	"OU1": {
+		"nombre": "Usos Especiales tipo 1",
+		"descripcion": "Incluyen las siguientes instalaciones: Centros Cívicos<br> dependencias administrativas del Estado<br> culturales<br> establecimientos institucionales representativos del sector privado, nacional o extranjero<br> establecimientos religiosos, asilos, orfelinatos.",
+		"compatibles": ["OU1"],
+		"info": {
+			"Nota": "Se regirá por los parámetros correspondientes a la zonificación comercial o residencial predominante."
+		}
+	},
+	"OU2": {
+		"nombre": "Usos Especiales tipo 2",
+		"descripcion": "Incluyen las siguientes instalaciones: Terminales terrestres, ferroviarios, aéreos<br> grandes complejos deportivos y de espectáculos, estadios, coliseos, zoológicos<br> Servicios Públicos como instalaciones de producción y almacenamiento de energía eléctrica, gas, telefonía, comunicaciones, agua potable y de tratamiento sanitario de aguas servidas<br> establecimientos de seguridad y de las fuerzas armadas.",
+		"compatibles": ["OU2"],
+		"info": {
+			"Nota": "Se regirá por los parámetros correspondientes a la zonificación comercial o residencial predominante."
+		}
+	},
+	"ZR": {
+		"nombre": "Zona de Recreación",
+		"descripcion": "Son áreas destinadas fundamentalmente a la realización de actividades recreativas activas y/o pasivas, tales como Plazas, Parques, Campos Deportivos, Juegos Infantiles y Clubes deportivos. Las áreas agrícolas zonificadas como Zonas de Recreación, seguirán manteniendo su condición hasta que se viabilice su incorporación como Zona de Recreación mediante la evaluación de Planificación Integral y/o Plan Específico por parte del Instituto Municipal de Planeamiento, y la conformidad correspondiente.",
+		"compatibles": ["ZR"],
+		"info": {
+			"Nota": "Se regirá por los parámetros que se establezcan en el planeamiento integral que la genere. Permitiéndose un 5% de área construida como máximo."
+		}
+	},
+	"ZRE-CH": {
+		"nombre": "Zona de Reglamentación Especial Centro Histórico",
+		"descripcion": "Se desarrollará el Plan Específico del Centro Histórico y su Área de Amortiguamiento, siendo responsable de ello la Gerencia de Centro Histórico y Zona Monumental de la Municipalidad Provincial de Arequipa, el mismo que será evaluado por el Instituto Municipal de Planeamiento y recibirá la conformidad correspondiente.",
+		"compatibles": ["ZRE-CH"],
+		"info": {
+			"Nota": "Se regirá por los parámetros que se establezcan en el plan específico que las generen."
+		}
+	},
+	"ZRE-PP": {
+		"nombre": "Zona de Reglamentación Especial de Valor Patrimonial Paisajístico",
+		"descripcion": "Zonas ubicadas principalmente en los pueblos tradicionales que guardan relación estrecha con su entorno circundante, donde se determinan parámetros urbanísticos.",
+		"compatibles": ["ZR","ZRE-PP"],
+		"info": {
+			"Densidad Neta": "165 hab/ha",
+			"Lote Normativo": "300 m<sup>2</sup> o el lote existente",
+			"Altura de Edificación": "6m hacia el frente<br> 9m al interior con retiro de 4m",
+			"Coeficiente de Edificación": "2.30 en predios hasta 150 m<sup>2</sup><br> 1.85 en predios sin construcción y área de terreno mayor a 151 m<sup>2</sup>",
+			"Área Libre": "40% uso residencial o comercial"
+		}
+	},
+	"ZRE-PA": {
+		"nombre": "Zona de Reglamentación Patrimonio Agrícola",
+		"descripcion": "Zonas en las que su valor está definido por la interacción del hombre con la naturaleza. Está sujeta al desarrollo de un Plan Específico, el mismo que será evaluado por el Instituto Municipal de Planeamiento y recibirá la conformidad correspondiente.",
+		"compatibles": ["ZRE-PA"],
+		"info": {
+			"Nota": "Se regirá por los parámetros que se establezcan en el plan específico que las generen."
+		}
+	},
+	"ZRE-PN": {
+		"nombre": "Zona de Reglamentación Patrimonio Natural",
+		"descripcion": "Zonas definidas por valores de carácter natural, en donde se desarrollará un Plan Específico, el mismo que será evaluado por el Instituto Municipal de Planeamiento y recibirá la conformidad correspondiente.",
+		"compatibles": ["ZR","ZRE-PN"],
+		"info": {
+			"Nota": "Se regirá por los parámetros que se establezcan en el plan específico que las generen."
+		}
+	},
+	"ZRE-RE": {
+		"nombre": "Zona de Reglamentación Especial de Recuperación",
+		"descripcion": "Zonas que por su actual estado, deberán ser sujetas a un proceso de Renovación Urbana establecida en el Plan Específico correspondiente, el mismo que será evaluado por el Instituto Municipal de Planeamiento y recibirá la conformidad correspondiente.",
+		"compatibles": ["ZR","ZRE-RE"],
+		"info": {
+			"Nota": "Se regirá por los parámetros que se establezcan en el plan específico que las generen."
+		}
+	},
+	"ZRE-RI1": {
+		"nombre": "Zona de Reglamentación Especial por Riesgos Muy Altos con restricciones a su consolidación",
+		"descripcion": "Conformada por las áreas identificadas como de alto riesgo no mitigable y en donde el grado de consolidación es escaso. Se deberán desarrollar políticas para su recuperación física y ambiental y tratamiento como espacios públicos verdes y de forestación. Cualquier edificación existente deberá ser reubicada paulatinamente.",
+		"compatibles": ["ZRE-RI1"],
+		"info": {
+			"Nota": "Zonas que contienen usos no conformes: no están autorizadas nuevas obras ni cambios de uso."
+		}
+	},
+	"ZRE-RI2": {
+		"nombre": "Zona de Reglamentación Especial por Riesgos Muy Altos de paulatina desocupación",
+		"descripcion": "Conformada por las áreas identificadas como de alto riesgo no mitigable y en donde el grado de consolidación es escaso. Se deberán desarrollar políticas para su recuperación física y ambiental y tratamiento como espacios públicos verdes y de forestación. Cualquier edificación existente deberá ser reubicada paulatinamente.",
+		"compatibles": ["ZRE-RI2"],
+		"info": {
+			"Nota": "No urbanizable ni edificable. Zonas de recuperación física y ambiental y tratamiento como espacios públicos verdes y de forestación."
+		}
+	},
+	"ZRE-RU": {
+		"nombre": "Zona de Reglamentación Especial para Desarrollo y/o Renovación Urbana",
+		"descripcion": "Zonas que por su tamaño, ubicación y propiedad del Estado, tienen un gran potencial para el desarrollo de actividades de carácter metropolitano, en donde se desarrollará un Plan Específico, el mismo que será evaluado por el Instituto Municipal de Planeamiento y recibirá la conformidad correspondiente.",
+		"compatibles": ["ZRE-RU"],
+		"info": {
+			"Nota": "Se regirá por los parámetros que se establezcan en el plan específico que las generen."
+		}
+	},
+	"ZM": {
+		"nombre": "Zona Monumental",
+		"descripcion": "Constituyen un tipo específico de ZRE, en donde se localizan bienes inmuebles integrantes del Patrimonio Cultural de la Nación. Las intervenciones en este tipo de zonas se rigen según lo dispuesto en la Ley General del Patrimonio Cultural de la Nación.",
+		"compatibles": ["ZM"],
+		"info": {
+			"Nota": "Se regirá por normas del Ministerio de Cultura."
+		}
+	},
+	"ZAQ": {
+		"nombre": "Zona Patrimonio Arqueológico",
+		"descripcion": "Son áreas que contienen restos arqueológicos, que han sido delimitados y declarados por el Ministerio de Cultura, por tanto, no son urbanizables ni edificables. Cualquier intervención en estas áreas deberá contar con la aprobación del Ministerio de Cultura.",
+		"compatibles": ["ZAQ"],
+		"info": {
+			"Nota": "No urbanizable ni edificable, se regirá por normas del Ministerio de Cultura."
+		}
+	},
+	"RP": {
+		"nombre": "Reserva Paisajista",
+		"descripcion": "Definida por los espacios aledaños a los cauces ribereños y las áreas identificadas con alto valor natural, cultural y patrimonial, incluye la ronda hidráulica, el área de manejo y preservación ambiental y las andenerías prehispánicas. No es urbanizable ni edificable<br> solamente se permitirán obras de pequeña envergadura (caminerías, estares, servicios básicos y similares) que complementen su carácter paisajista, proyectados bajo el criterio de planificación integral, previa evaluación y conformidad del Instituto Municipal de Planeamiento (IMPLA).",
+		"compatibles": ["ZR","RP","ZA"],
+		"info": {
+			"Nota": "No urbanizable ni edificable."
+		}
+	},
+	"ZA": {
+		"nombre": "Zona Agrícola",
+		"descripcion": "Constituida por áreas destinadas a la agricultura y la ganadería dentro del área urbana de la ciudad.",
+		"compatibles": ["ZR","ZA"],
+		"info": {
+			"Nota": "No urbanizable ni edificable."
+		}
+	},
+	"EA": {
+		"nombre": "Expansión Agrícola",
+		"descripcion": "Son las áreas identificadas con vocación para la expansión de la frontera agrícola y de las actividades agropecuarias y agroindustriales. ",
+		"compatibles": ["ZA","EA"],
+		"info": {
+			"Nota": "No urbanizable ni edificable."
+		}
+	}
 }

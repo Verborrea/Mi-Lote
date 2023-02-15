@@ -1,6 +1,7 @@
 var zonificacion = [];
 var distritos = [];
 let uso_actual;	// boton de Uso Compatible activo (color rojo)
+let area_lote;
 
 function GetMap()
 {
@@ -10,21 +11,64 @@ function GetMap()
 	});
 }
 
-// Actualizar el apartado #info
-// {"z":"ZRE-RI2","n":"51","d":"q"}
+// Actualizar la informaciòn del Lote
 function selectLote(lote) {
-	selectZona(lote.z);
-	document.querySelector("#mznynro") = lote.n;
-	document.querySelector("#distrito") = distritos[lote.d];
+	document.querySelector("#mznynro").innerText = lote.metadata.n;
+	document.querySelector("#distrito").innerText = distritos[lote.metadata.d];
+
+	// area_lote = Microsoft.Maps.SpatialMath.Geometry.area(lote);
+	area_lote = 1000.254;
+	document.querySelector('#area_total').innerHTML = Math.round(area_lote) + " m<sup>2</sup>";
+
+	selectZona(lote.metadata.z);
+}
+
+// {metadata:{n:'B7', d:'o', z:'RDM-2'}}
+
+function getAreaLibre(porcentaje) {
+	let ratio = Number(porcentaje.replace('%',''));
+	let area_libre = (Math.round(area_lote) * ratio) / 100;
+	return Math.round(area_libre) + " m<sup>2</sup>";
+}
+
+function getAreaTechada(coeficiente) {
+	let area_techada = Math.round(area_lote) * Number(coeficiente);
+	return Math.round(area_techada) + " m<sup>2</sup>";
+}
+
+// Actualizar área libre y àrea techada.
+function actualizarAreas(aditional_info) {
+	let area_libre = "Según proyecto";
+	let area_techada = "Según proyecto";
+
+	let uso = uso_actual.innerText;
+
+	// Actualizar area libre
+	if ('area_libre' in zonificacion[uso]) {
+		area_libre = getAreaLibre(aditional_info["Área Libre"]);
+	}
+	if (uso == "ZRE-PP") {
+		area_libre = getAreaLibre("40%");
+	}
+	document.querySelector('#area_libre').innerHTML = area_libre;
+
+	// Actualizar area techada max.
+	if ('area_techada' in zonificacion[uso]) {
+		area_techada = getAreaTechada(aditional_info["Coeficiente de Edificación"]);
+	}
+	if (uso == "ZRE-PP") {
+		area_techada = getAreaTechada((area_lote > 151)?"2.3":"1.85");
+	}
+	document.querySelector('#area_techada').innerHTML = area_techada;
 }
 
 // Actualizar el apartado de informacion con la zona seleccionada
-function selectZona(_zona)
+function selectZona(zona_id)
 {
-	let zona = zonificacion.find(o => o.id === _zona);
+	let zona = zonificacion[zona_id];
 
 	document.querySelector("#zona-nombre").innerText = zona.nombre;
-	document.querySelector("#zona-id").innerText = "<" + zona.id + ">";
+	document.querySelector("#zona-id").innerText = "<" + zona_id + ">";
 	document.querySelector("#zona-descripcion").innerText = zona.descripcion;
 	document.querySelector("#zona-usos").innerHTML = "";	// limpiar los botones de uso
 
@@ -33,7 +77,7 @@ function selectZona(_zona)
 		let btn = document.createElement('button');
 		btn.innerText= z_comp;
 		btn.setAttribute("onclick", "selectUso(this)");
-		if (z_comp === zona.id) default_btn = btn;
+		if (z_comp === zona_id) default_btn = btn;
 		document.querySelector("#zona-usos").appendChild(btn);
 	});
 
@@ -47,7 +91,8 @@ function selectUso(btn_uso)
 	uso_actual.classList.remove("active");
 	uso_actual = btn_uso;
 	btn_uso.classList.add("active");
-	let uso = zonificacion.find(o => o.id === btn_uso.innerText);
+	let uso_id = btn_uso.innerText;
+	let uso = zonificacion[uso_id];
 
 	let descripcion = uso.descripcion.substring(0,150) + (uso.descripcion.length > 150 ? "..." : "");
 	let info = document.querySelector(".zona-info-uso");
@@ -60,7 +105,7 @@ function selectUso(btn_uso)
 
 	let aditional_info = uso.info;
 	
-	if (["RDM-1","RDM-2","RDA-1","RDA-2"].includes(uso.id)) {
+	if (["RDM-1","RDM-2","RDA-1","RDA-2"].includes(uso_id)) {
 		let div = document.createElement("div");
 		div.classList.add("uso-residencial");
 		div.innerHTML = '<span class="zona-span">Uso Residencial: </span>';
@@ -82,11 +127,12 @@ function selectUso(btn_uso)
 // Prepapar la info de la zona residencial para llamar a showUsoInfo()
 function selectUsoResidencial(uso_residencial)
 {
-	let zona = zonificacion.find(o => o.id === uso_actual.innerText);
+	let zona = zonificacion[uso_actual.innerText];
 	showUsoInfo(zona["info"][uso_residencial]);
 }
 
 // Actualizar la información adicional de los .otros-div según 'infoObject'
+// y actualiza el area libre y techada del lote en m2
 function showUsoInfo(infoObject)
 {
 	document.querySelector("#uso-datos").innerHTML = "";
@@ -100,12 +146,13 @@ function showUsoInfo(infoObject)
 
 		document.querySelector("#uso-datos").appendChild(div);
 	}
+	actualizarAreas(infoObject);
 }
 
 // Obtener json de zonificacion
 fetch("../zonificacion.json")
 .then(res => res.json())
-.then(data => zonificacion = data.zonas)
+.then(data => zonificacion = data)
 
 // Obtener json de distritos
 fetch("../distritos.json")

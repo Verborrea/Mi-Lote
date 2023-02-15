@@ -19,10 +19,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/neo.css">
   <link rel="stylesheet" href="/css/neo-map.css">
-  <!-- <script type="text/javascript"
-          src="https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AqwCoTdEYge6bMdrCh9uhrfZ-Z8yNGiupnDMBx3aPjeTze_oM8n0YcpRbYZKE7Sk"
-          async defer></script> -->
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+  integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+  crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+  integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+  crossorigin=""></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"
+  integrity="sha512-Abr21JO2YqcJ03XGZRPuZSWKBhJpUAR6+2wH5zBeO4wAw4oksr8PRdF+BKIRsxvCdq+Mv4670rZ+dLnIyabbGw=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- ------- -->
   <script src="/js/zonificacion.js"></script> 
+  <script src="/js/map-functionality.js" defer></script> 
 </head>
 
 <body>
@@ -49,10 +58,10 @@
     <section id="search">
       <span>¿No encuentras tu lote en el mapa? Intenta aquí:</span>
       <div class="inputs">
-        <input id="distrito" type="text" placeholder="Distrito">
-        <input id="calle" type="text" placeholder="Urb/Calle/Psj">
+        <input id="busqueda_distrito" type="text" placeholder="Distrito">
+        <input id="busqueda_calle" type="text" placeholder="Urb/Calle/Psj">
         <span class="input-row">
-          <input id="mznro" type="text" placeholder="Mzn. y/o Nro.">
+          <input id="busqueda_mznynro" type="text" placeholder="Mzn. y/o Nro.">
           <button id="buscar-btn">Buscar</button>
         </span>
       </div>
@@ -63,26 +72,42 @@
           <h1>Información del Lote</h1>
           <div class="lote-info-div">
             <span class="lote-span">Mzn Y Nro: </span>
-            <span class="secondary" id="mznynro">B7</span>
+            <span class="secondary" id="mznynro">-</span>
           </div>
           <div class="lote-info-div">
             <span class="lote-span">Distrito: </span>
-            <span class="secondary" id="distrito">Cerro Colorado</span>
+            <span class="secondary" id="distrito">-</span>
           </div>
           <div class="lote-info-div">
             <span class="lote-span">Área Total: </span>
-            <span class="secondary" id="area_total">270 m<sup>2</sup></span>
+            <span class="secondary" id="area_total">0 m<sup>2</sup></span>
           </div>
           <div class="lote-info-div">
             <i class="fa-solid fa-circle-info"><div class="tooltip arealibre"></div></i>
             <span class="lote-span">Área Libre: </span>
-            <span class="secondary" id="area_libre">95 m<sup>2</sup></span>
+            <span class="secondary" id="area_libre">0 m<sup>2</sup></span>
           </div>
           <div class="lote-info-div">
             <i class="fa-solid fa-circle-info"><div class="tooltip areatech"></div></i>
             <span class="lote-span">Área Techada Máx: </span>
-            <span class="secondary" id="area_techada">1980 m<sup>2</sup></span>
+            <span class="secondary" id="area_techada">0 m<sup>2</sup></span>
           </div>
+        </article>
+        <article id="calculadora">
+          <h1>Calculadora de precios</h1>
+          <table>
+            <tr>
+              <th>Básica</th>
+              <th>Media</th>
+              <th>De Lujo</th>
+            </tr>
+            <tr>
+              <td>s/ 0.00</td>
+              <td>s/ 0.00</td>
+              <td>s/ 0.00</td>
+            </tr>
+          </table>
+          <a href="#" target="_blank">Ver más opciones</a>
         </article>
         <article id="info-zona">
           <h1>Información de la Zona</h1>
@@ -114,21 +139,6 @@
               </div>
             </div>
           </div>
-        </article>
-        <article id="calculadora">
-          <h1>Calculadora de precios</h1>
-          <table>
-            <tr>
-              <th>Básica</th>
-              <th>Media</th>
-              <th>De Lujo</th>
-            </tr>
-            <tr>
-              <td>s/ 0.00</td>
-              <td>s/ 0.00</td>
-              <td>s/ 0.00</td>
-            </tr>
-          </table>
         </article>
       </section>
       <section id="mapa"></section>

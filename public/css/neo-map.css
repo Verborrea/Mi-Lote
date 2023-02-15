@@ -213,6 +213,7 @@ table {
   width: 100%;
   table-layout: fixed;
   overflow-wrap: break-word;
+  margin-block-start: 0.5em;
 }
 
 th {
@@ -229,6 +230,24 @@ td {
   font-weight: 400;
   padding: 0.5em;
   text-align: center;
+}
+
+#calculadora>a {
+  text-decoration: none;
+  display: block;
+  padding: 0.5rem 1rem;
+  background-color: var(--enfasis);
+  color: var(--enfasis-text);
+  border: none;
+  border-radius: 10px;
+  font-size: 12pt;
+  transition: all ease-out 0.4s;
+  width: fit-content;
+  margin: 1em auto;
+}
+
+#calculadora>a:hover {
+  background-color: var(--text2b);
 }
 
 /* Responsive */
