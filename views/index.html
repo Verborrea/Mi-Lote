@@ -4,36 +4,25 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="content-language" content="es-pe">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="description"
     content="Mi Lote es una aplicación web que permite obtener los datos urbanísticos de cada lote en la ciudad de Arequipa de manera fácil y rápida.">
+  
   <title>Mi Lote - Descubre tu lote</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/neo.css">
-  <link rel="stylesheet" href="/css/neo-map.css">
-  <!-- Leaflet -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
-    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
-  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
-    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"
-    integrity="sha512-Abr21JO2YqcJ03XGZRPuZSWKBhJpUAR6+2wH5zBeO4wAw4oksr8PRdF+BKIRsxvCdq+Mv4670rZ+dLnIyabbGw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <!-- ------- -->
-  <script src="/js/zonificacion.js"></script>
-  <script src="/js/map-functionality.js" defer></script>
+  <link rel="stylesheet" href="/css/index.css">
 </head>
 
 <body>
   <header>
     <a class="logo" href="/">
       <img src="https://cdn.glitch.global/e2546e49-e7f7-451d-a483-b52dadb42ca0/logo_temporal.png?v=1674252546218"
-        alt="logo" width="150px">
+           alt="logo" width="150px">
     </a>
     <div class="burger-btn" onclick="burgerBtn(this)">
       <div class="bar1"></div>
@@ -50,107 +39,29 @@
     </nav>
   </header>
   <main>
-    <section id="search">
-      <span>¿No encuentras tu lote en el mapa? Intenta aquí:</span>
-      <div class="inputs">
-        <input id="busqueda_distrito" type="text" placeholder="Distrito">
-        <input id="busqueda_calle" type="text" placeholder="Urb/Calle/Psj">
-        <span class="input-row">
-          <input id="busqueda_mznynro" type="text" placeholder="Mzn. y/o Nro.">
-          <button id="buscar-btn">Buscar</button>
-        </span>
-      </div>
-    </section>
-    <div id="work-area">
-      <section id="info">
-        <article id="info-lote">
-          <h1>Información del Lote</h1>
-          <div class="lote-info-div">
-            <span class="lote-span">Mzn Y Nro: </span>
-            <span class="secondary" id="mznynro">-</span>
-          </div>
-          <div class="lote-info-div">
-            <span class="lote-span">Distrito: </span>
-            <span class="secondary" id="distrito">-</span>
-          </div>
-          <div class="lote-info-div">
-            <span class="lote-span">Área Total: </span>
-            <span class="secondary" id="area_total">0 m<sup>2</sup></span>
-          </div>
-          <div class="lote-info-div">
-            <i class="fa-solid fa-circle-info">
-              <div class="tooltip arealibre"></div>
-            </i>
-            <span class="lote-span">Área Libre: </span>
-            <span class="secondary" id="area_libre">0 m<sup>2</sup></span>
-          </div>
-          <div class="lote-info-div">
-            <i class="fa-solid fa-circle-info">
-              <div class="tooltip areatech"></div>
-            </i>
-            <span class="lote-span">Área Techada Máx: </span>
-            <span class="secondary" id="area_techada">0 m<sup>2</sup></span>
-          </div>
-        </article>
-        <article id="calculadora">
-          <h1>Calculadora de precios</h1>
-          <table>
-            <tr>
-              <th>Básica</th>
-              <th>Media</th>
-              <th>De Lujo</th>
-            </tr>
-            <tr>
-              <td>s/ 0.00</td>
-              <td>s/ 0.00</td>
-              <td>s/ 0.00</td>
-            </tr>
-          </table>
-          <a href="#" target="_blank">Ver más opciones</a>
-        </article>
-        <article id="info-zona">
-          <h1>Información de la Zona</h1>
-          <div id="info-zona-content">
-            <div class="zona-info-general">
-              <span id="zona-nombre">Nombre de la Zona</span>
-              <span id="zona-id">&lt;ID&gt;</span>
-            </div>
-            <div id="zona-descripcion">
-              Descripción.
-            </div>
-            <div class="zona-info-usos">
-              <div class="zona-usos">
-                <div>Usos Compatibles:</div>
-                <i class="fa-solid fa-circle-info">
-                  <div class="tooltip usoscomp"></div>
-                </i>
-              </div>
-              <div id="zona-usos">
-                <button class="active">Ninguno</button>
-              </div>
-            </div>
-            <div class="zona-info-uso">
-              <div class="uso-nombre">
-                <div class="uso-escogido">Sobre el Uso</div>
-                <i class="fa-solid fa-circle-info">
-                  <div class="tooltip uso" data="Seleccione un uso compatible primero"></div>
-                </i>
-              </div>
-              <div id="uso-datos">
-              </div>
-            </div>
-          </div>
-        </article>
-      </section>
-      <section id="mapa"></section>
-    </div>
+    <article class="hidden">
+      <h1>Descubre todo sobre tu lote</h1>
+      <p>¿Cuántos pisos puedo construir? ¿Cuánta área libre debo dejar? Averigua todo esto y demás con nuestro mapa interactivo.</p>
+      <a class="button" href="/map">Ir al mapa</a>
+    </article>
+    <article class="hidden">
+      <h1>Calcula el precio de la casa de tus sueños</h1>
+      <p>Utiliza nuestra calculadora de viviendas para obtener un precio preciso dependiendo de tus gustos.</p>
+      <a class="button" href="#">Ir a la calculadora</a>
+    </article>
+    <article class="hidden">
+      <h1>Información al día y confiable</h1>
+      <p>Los datos que usamos para ayudarte en la construcción de tu lote provienen de fuentes seguras y confiable.</p>
+      <a href="/doc">Averigua más aquí ></a>
+    </article>
   </main>
   <footer>
     © 2022 Mi lote - Glitch version
   </footer>
 </body>
+</html>
 <!-- CSS Scripts -->
-<script>
+<script defer>
   // Navbar burger button toggle on mobile 
   function burgerBtn(btn) {
     btn.classList.toggle("change");
@@ -164,26 +75,21 @@
     }
   }
 
-  // Change the height of work area to fit window
-  function resizeWorkArea(e) {
-    const work_area = document.querySelector("#work-area");
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      } else {
+        entry.target.classList.remove("show");
+      }
+    });
+  });
 
-    if (window.innerWidth > 700) {
-      const search_height = document.querySelector("#search").offsetHeight;;
-      const header_height = document.querySelector("header").offsetHeight;;
-      const footer_height = document.querySelector("footer").offsetHeight;;
-
-      const extra_space = window.innerHeight - (search_height + header_height + footer_height);
-      work_area.setAttribute("style", "height: " + extra_space.toString() + "px");
-    }
-    else {
-      work_area.setAttribute("style", "height: auto");
-    }
-  }
-
-  window.onload = resizeWorkArea;
-  window.onresize = resizeWorkArea;
-
+  const hiddenElements = document.querySelectorAll(".hidden");
+  hiddenElements.forEach((e) => observer.observe(e));
 </script>
-
-</html>
+{{!-- 
+  "https://cdn.glitch.com/4855031b-abce-4c44-bba6-e505bb13b746%2Fimg_mapa.png?v=1621045380690"
+  "https://cdn.glitch.com/4855031b-abce-4c44-bba6-e505bb13b746%2Fimg_doc.png?v=1621049016351"
+  "https://cdn.glitch.com/4855031b-abce-4c44-bba6-e505bb13b746%2Fimg_doc.png?v=1621049016351"
+--}}

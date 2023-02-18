@@ -23,12 +23,11 @@ app.use(express.urlencoded({ extended: true }));
 // routes
 
 app.get("/", (request, response) => {
-  // response.sendFile(__dirname + "/views/index.html");
-  response.render('index');
+  response.sendFile(__dirname + "/views/index.html");
 });
 
 app.get("/map", (request, response) => {
-  response.sendFile(__dirname + "/views/index.html");
+  response.sendFile(__dirname + "/views/map.html");
 });
 
 app.get("/calculadora/", (request, response) => {
