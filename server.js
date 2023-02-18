@@ -26,11 +26,11 @@ app.get("/", (request, response) => {
   response.sendFile(__dirname + "/views/index.html");
 });
 
-app.get("/map", (request, response) => {
+app.get("/mapa", (request, response) => {
   response.sendFile(__dirname + "/views/map.html");
 });
 
-app.get("/calculadora/", (request, response) => {
+app.get("/calculadora", (request, response) => {
   response.render('cal', {output: 100});
 });
 
