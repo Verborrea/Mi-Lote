@@ -1,15 +1,14 @@
 const express = require("express");
-const app = express();
-// const schedule = require('node-schedule');
 const https = require('https');
 const fs = require('fs');
+const cron = require('node-cron');
 const precios_json_name = './precios.json';
 const precios_json = require(precios_json_name);
 
+const app = express();
+
 app.set('view engine', 'hbs');
 
-// make all the files in 'public' available
-// https://expressjs.com/en/starter/static-files.html
 app.use(express.static("public"));
 
 app.use((request, response, next) => {
@@ -21,6 +20,8 @@ app.use((request, response, next) => {
 app.use(express.json());       // to support JSON-encoded bodies
 app.use(express.urlencoded({ extended: true }));
 
+// routes
+
 app.get("/", (request, response) => {
   // response.sendFile(__dirname + "/views/index.html");
   response.render('index');
@@ -30,10 +31,6 @@ app.get("/map", (request, response) => {
   response.sendFile(__dirname + "/views/index.html");
 });
 
-app.get("/nosotros", (request, response) => {
-  response.render('nosotros');
-});
-
 app.get("/calculadora/", (request, response) => {
   response.render('cal', {output: 100});
 });
@@ -41,12 +38,6 @@ app.get("/calculadora/", (request, response) => {
 app.get("/calculadora/:area", (request, response) => {
   response.render('cal', {output: request.params.area});
 });
-
-app.get("/doc", (request, response) => {
-  response.render('doc/doc');
-});
-
-// ----------------------------------- nuevo -----------------------------------
 
 app.post("/print_cot", (request, response) => {
   let format = { maximumFractionDigits: 2, minimumFractionDigits: 2 };
@@ -79,8 +70,6 @@ app.post("/print_cot", (request, response) => {
 app.get("/precios", (request, response) => {
   response.sendFile(__dirname + "/precios.json");
 })
-
-var cron = require('node-cron');
 
 cron.schedule('* 1 * * *', () => {
   let url = "https://api.currencyapi.com/v2/latest?apikey=b28ce780-77db-11ec-8706-6d30cb3e206b&base_currency=USD";
@@ -115,12 +104,6 @@ cron.schedule('* 1 * * *', () => {
   }).on("error", (error) => {
       console.error(error.message);
   });
-});
-
-// ----------------------------------- fin -----------------------------------
-
-app.get("/doc/:page", (request, response) => {
-  response.render('doc/' + request.params.page.substring(0,3));
 });
 
 // listen for requests :)
