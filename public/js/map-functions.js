@@ -1,51 +1,40 @@
-function displayLayer(mapa, capa) {
-  if (!mapa.hasLayer(capa)) {
-    mapa.addLayer(capa);
-  }
+function exp(zona) {
+	return ['==', ['get', 'z'], zona];
 }
 
-
-function hideLayer(mapa, capa) {
-  if (mapa.hasLayer(capa)) {
-    mapa.removeLayer(capa);
-  }
-}
-
-
-function colorPorZona(feature) {
-  switch (feature.properties.z) {
-    case 'I1R': return {color: "#F7B801"};
-    case 'RDB': return {color: "#F7B801"};
-    case 'RDM-1': return {color: "#F18701"};
-    case 'RDM-2': return {color: "#F18701"};
-    case 'RDA-1': return {color: "#F35B04"};
-    case 'RDA-2': return {color: "#F35B04"};
-    case 'CE': return {color: "#f30431"};
-    case 'CV': return {color: "#f30431"};
-    case 'CS': return {color: "#f30431"};
-    case 'CZ': return {color: "#f30431"};
-    case 'CIn': return {color: "#f30431"};
-    case 'CM': return {color: "#f30431"};
-    case 'I1': return {color: "#7678ED"};
-    case 'I2': return {color: "#7678ED"};
-    case 'I3': return {color: "#7678ED"};
-    case 'I4': return {color: "#7678ED"};
-    case 'E1': return {color: "#1178cf"};
-    case 'E2': return {color: "#1178cf"};
-    case 'E3': return {color: "#1178cf"};
-    case 'H1': return {color: "#76ede7"};
-    case 'H2': return {color: "#76ede7"};
-    case 'H3': return {color: "#76ede7"};
-    case 'H4': return {color: "#76ede7"};
-    case 'OU1': return {color: "#f4caf1"};
-    case 'OU2': return {color: "#f4caf1"};
-    case 'ZR': return {color: "#f4caf1"};
-    case 'ZRE-CH': return {color: "#a3a3a3"};
-    case 'ZM': return {color: "#6d3d14"};
-    case 'ZAQ': return {color: "#6d3d14"};
-    case 'RP': return {color: "#2ec660"};
-    case 'ZA': return {color: "#2ec660"};
-    case 'EA': return {color: "#2ec660"};
-    default: return {color: "#ff2af1"};
-  }
-}
+const coloresPorZona = [
+  'case',
+  exp('I1R'), '#F7B801',
+  exp('RDB'), '#F7B801',
+  exp('RDM-1'), '#F18701',
+  exp('RDM-2'), '#F18701',
+  exp('RDA-1'), '#F35B04',
+  exp('RDA-2'), '#F35B04',
+  exp('CE'), '#f30431',
+  exp('CV'), '#f30431',
+  exp('CS'), '#f30431',
+  exp('CZ'), '#f30431',
+  exp('CIn'), '#f30431',
+  exp('CM'), '#f30431',
+  exp('I1'), '#7678ED',
+  exp('I2'), '#7678ED',
+  exp('I3'), '#7678ED',
+  exp('I4'), '#7678ED',
+  exp('E1'), '#1178cf',
+  exp('E2'), '#1178cf',
+  exp('E3'), '#1178cf',
+  exp('H1'), '#76ede7',
+  exp('H2'), '#76ede7',
+  exp('H3'), '#76ede7',
+  exp('H4'), '#76ede7',
+  exp('OU1'), '#f4caf1',
+  exp('OU2'), '#f4caf1',
+  exp('ZR'), '#f4caf1',
+  exp('ZRE-CH'), '#a3a3a3',
+  exp('ZM'), '#6d3d14',
+  exp('ZAQ'), '#6d3d14',
+  exp('RP'), '#2ec660',
+  exp('ZA'), '#2ec660',
+  exp('EA'), '#2ec660',
+  '#ff2af1'
+];
