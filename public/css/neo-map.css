@@ -37,6 +37,11 @@ input {
   color: white;
   background-color: var(--enfasis);
   border: none;
+  transition: all ease-out 0.4s;
+}
+
+#buscar-btn:hover {
+  background-color: var(--hover-enfasis);
 }
 
 #distrito {width: 40ch;}
@@ -247,7 +252,7 @@ td {
 }
 
 #calculadora>a:hover {
-  background-color: var(--text2b);
+  background-color: var(--hover-enfasis);
 }
 
 /* Responsive */
