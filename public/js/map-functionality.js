@@ -9,6 +9,9 @@ const map = new mapboxgl.Map({
 	zoom: 12
 });
 
+let hoveredLoteId = null;
+let clikedLoteId = null;
+
 map.on('load', () => {
 
 	map.addSource('zonas', {
@@ -26,5 +29,74 @@ map.on('load', () => {
 			'fill-color': coloresPorZona
 		}
 	}, 'road-label');
+
+	map.addSource('lotes', {
+		type: 'geojson',
+		data: '/json/0.geojson',
+		promoteId: 'id'
+	});
+
+	map.addLayer({
+		'id': 'lotes-layer',
+		'type': 'fill',
+		'source': 'lotes',
+		'minzoom': MIN_ZOOM_TO_DISPLAY_LOTES,
+		'paint': {
+			'fill-color': coloresPorZona,
+			'fill-opacity': [
+				'case',
+				['boolean', ['feature-state', 'clicked'], false], 1,
+				['boolean', ['feature-state', 'hover'], false], 0.75,
+				0.5
+			]
+		}
+	}, 'road-label');
+
+	map.on('mousemove', 'lotes-layer', (e) => {
+		if (e.features.length > 0) {
+			if (hoveredLoteId !== null) {
+				map.setFeatureState(
+					{ source: 'lotes', id: hoveredLoteId },
+					{ hover: false }
+				);
+			}
+			hoveredLoteId = e.features[0].properties.id;
+			map.setFeatureState(
+				{ source: 'lotes', id: hoveredLoteId },
+				{ hover: true }
+			);
+		}
+	});
+	 
+	map.on('mouseleave', 'lotes-layer', () => {
+		if (hoveredLoteId !== null) {
+			map.setFeatureState(
+				{ source: 'lotes', id: hoveredLoteId },
+				{ hover: false }
+			);
+		}
+		hoveredLoteId = null;
+	});
+
+	map.on('click', 'lotes-layer', (e) => {
+		if (e.features.length > 0) {
+
+			if (clikedLoteId !== null) {
+				map.setFeatureState(
+					{ source: 'lotes', id: clikedLoteId },
+					{ clicked: false }
+				);
+			}
+
+			clikedLoteId = e.features[0].properties.id;
+			map.setFeatureState(
+				{ source: 'lotes', id: clikedLoteId },
+				{ clicked: true }
+			);
+
+			let lote = e.features[0];
+			selectLote(lote);
+		}
+	});
 
 });

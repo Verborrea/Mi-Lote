@@ -5,17 +5,17 @@ let area_lote;
 
 // Actualizar la informaciòn del Lote
 function selectLote(lote) {
-	document.querySelector('#mznynro').innerText = lote.metadata.n ?? '-';
-	document.querySelector('#distrito').innerText = distritos[lote.metadata.d];
+	document.querySelector('#mznynro').innerText = lote.properties.n ?? '-';
+	document.querySelector('#distrito').innerText = distritos[lote.properties.d];
 
 	// area_lote = Microsoft.Maps.SpatialMath.Geometry.area(lote);
-	area_lote = 1000.254;
+	area_lote = turf.area(lote);
 	document.querySelector('#area_total').innerHTML = Math.round(area_lote) + ' m<sup>2</sup>';
 
-	selectZona(lote.metadata.z);
+	selectZona(lote.properties.z);
 }
 
-// {metadata:{n:'B7', d:'o', z:'RDM-2'}}
+// {n:'B7', d:'o', z:'RDM-2'}
 
 function getAreaLibre(porcentaje) {
 	let ratio = Number(porcentaje.replace('%',''));

@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="/css/neo-map.css">
   <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.js'></script>
   <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.css' rel='stylesheet' />
+  <script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
   <script src="/js/zonificacion.js"></script>
   <script src="/js/map-functions.js"></script>
 </head>
@@ -85,22 +86,6 @@
             <span class="secondary" id="area_techada">0 m<sup>2</sup></span>
           </div>
         </article>
-        <article id="calculadora">
-          <h1>Calculadora de precios</h1>
-          <table>
-            <tr>
-              <th>Básica</th>
-              <th>Media</th>
-              <th>De Lujo</th>
-            </tr>
-            <tr>
-              <td>s/ 0.00</td>
-              <td>s/ 0.00</td>
-              <td>s/ 0.00</td>
-            </tr>
-          </table>
-          <a href="#" target="_blank">Ver más opciones</a>
-        </article>
         <article id="info-zona">
           <h1>Información de la Zona</h1>
           <div id="info-zona-content">
@@ -133,6 +118,22 @@
               </div>
             </div>
           </div>
+        </article>
+        <article id="calculadora">
+          <h1>Calculadora de precios</h1>
+          <table>
+            <tr>
+              <th>Básica</th>
+              <th>Media</th>
+              <th>De Lujo</th>
+            </tr>
+            <tr>
+              <td>s/ 0.00</td>
+              <td>s/ 0.00</td>
+              <td>s/ 0.00</td>
+            </tr>
+          </table>
+          <a href="#" target="_blank">Ver más opciones</a>
         </article>
       </section>
       <section id="mapa"></section>
