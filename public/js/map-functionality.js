@@ -31,8 +31,8 @@ map.on('load', () => {
 	}, 'road-label');
 
 	map.addSource('lotes', {
-		type: 'geojson',
-		data: '/json/0.geojson',
+		type: 'vector',
+		url: 'mapbox://alan-25.6jf4vx4n',
 		promoteId: 'id'
 	});
 
@@ -40,6 +40,7 @@ map.on('load', () => {
 		'id': 'lotes-layer',
 		'type': 'fill',
 		'source': 'lotes',
+		'source-layer': 'lotes-6xf6px',
 		'minzoom': MIN_ZOOM_TO_DISPLAY_LOTES,
 		'paint': {
 			'fill-color': coloresPorZona,
@@ -56,13 +57,13 @@ map.on('load', () => {
 		if (e.features.length > 0) {
 			if (hoveredLoteId !== null) {
 				map.setFeatureState(
-					{ source: 'lotes', id: hoveredLoteId },
+					{ source: 'lotes', id: hoveredLoteId, sourceLayer: 'lotes-6xf6px' },
 					{ hover: false }
 				);
 			}
 			hoveredLoteId = e.features[0].properties.id;
 			map.setFeatureState(
-				{ source: 'lotes', id: hoveredLoteId },
+				{ source: 'lotes', id: hoveredLoteId, sourceLayer: 'lotes-6xf6px' },
 				{ hover: true }
 			);
 		}
@@ -71,7 +72,7 @@ map.on('load', () => {
 	map.on('mouseleave', 'lotes-layer', () => {
 		if (hoveredLoteId !== null) {
 			map.setFeatureState(
-				{ source: 'lotes', id: hoveredLoteId },
+				{ source: 'lotes', id: hoveredLoteId, sourceLayer: 'lotes-6xf6px' },
 				{ hover: false }
 			);
 		}
@@ -83,14 +84,14 @@ map.on('load', () => {
 
 			if (clikedLoteId !== null) {
 				map.setFeatureState(
-					{ source: 'lotes', id: clikedLoteId },
+					{ source: 'lotes', id: clikedLoteId, sourceLayer: 'lotes-6xf6px' },
 					{ clicked: false }
 				);
 			}
 
 			clikedLoteId = e.features[0].properties.id;
 			map.setFeatureState(
-				{ source: 'lotes', id: clikedLoteId },
+				{ source: 'lotes', id: clikedLoteId, sourceLayer: 'lotes-6xf6px' },
 				{ clicked: true }
 			);
 
