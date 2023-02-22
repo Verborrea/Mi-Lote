@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
 * {
-  font-family: Segoe UI;
+  /* font-family: Segoe UI; */
 }
 
 /* ===================== Search Bar =====================*/
@@ -17,7 +17,7 @@
 #search>span {
   color: var(--text2b);
   margin-left: 1.5rem;
-  font: 12pt 'Poppins', sans-serif;
+  font-size: 12pt;
 }
 
 input, #buscar-btn {
@@ -70,10 +70,6 @@ h1, .lote-span, .uso-escogido, #zona-nombre, .zona-usos>div, .zona-span {
 #mapa {
   width: calc(100% - 50ch);
   background: #c3c3c3;
-}
-
-h1 {
-  font-family: 'Poppins';
 }
 
 .lote-info-div, .uso-residencial, #uso-datos>*, #info-zona-content {
@@ -195,7 +191,7 @@ i.fa-solid {
   font-weight: 400;
   padding: 1em;
   border-radius: 10px;
-  font: 10pt 'Poppins';
+  font-size: 10pt;
   line-height: 19px;
 }
 .tooltip:hover::after {
@@ -227,14 +223,14 @@ table {
 th {
   background-color: var(--enfasis);
   color: white;
-  font: 11pt 'Poppins';
+  font-size: 11pt;
   font-weight: 400;
   padding: 0.5em;
 }
 
 td {
   background-color: #d8d8d8;
-  font: 10pt 'Poppins';
+  font-size: 10pt;
   font-weight: 400;
   padding: 0.5em;
   text-align: center;
@@ -281,7 +277,7 @@ tr:last-of-type td:last-of-type {
   }
   #search>span {
     margin-left: 0;
-    font: 14pt 'Poppins', sans-serif;
+    font-size: 14pt;
     text-align: center;
     font-weight: 500;
   }
@@ -294,7 +290,6 @@ tr:last-of-type td:last-of-type {
     margin-block-start: 10px;
     margin-block-end: 10px;
     margin-left: 0;
-    font-family: 'Poppins', sans-serif;
     width: 100%;
   }
 
