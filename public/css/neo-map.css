@@ -212,6 +212,9 @@ i.fa-solid {
   position: static;
   transform: translateY(0);
 }
+select {
+  color: var(--text2b);
+}
 /* ==================== Calculadora =======================*/
 
 table {
@@ -255,6 +258,19 @@ td {
   background-color: var(--hover-enfasis);
 }
 
+th:first-of-type {
+  border-top-left-radius: 10px;
+}
+th:last-of-type {
+  border-top-right-radius: 10px;
+}
+tr:last-of-type td:first-of-type {
+  border-bottom-left-radius: 10px;
+}
+tr:last-of-type td:last-of-type {
+  border-bottom-right-radius: 10px;
+}
+
 /* Responsive */
 @media (max-width: 700px) {
   /* ================== Search Bar ==================*/
@@ -265,7 +281,7 @@ td {
   }
   #search>span {
     margin-left: 0;
-    font: 15pt 'Poppins', sans-serif;
+    font: 14pt 'Poppins', sans-serif;
     text-align: center;
     font-weight: 500;
   }
@@ -279,10 +295,7 @@ td {
     margin-block-end: 10px;
     margin-left: 0;
     font-family: 'Poppins', sans-serif;
-  }
-  .input-row {
-    display: flex;
-    justify-content: space-between;
+    width: 100%;
   }
 
   #distrito {width: 100%;}

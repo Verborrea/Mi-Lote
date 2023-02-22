@@ -15,8 +15,6 @@ function selectLote(lote) {
 	selectZona(lote.properties.z);
 }
 
-// {n:'B7', d:'o', z:'RDM-2'}
-
 function getAreaLibre(porcentaje) {
 	let ratio = Number(porcentaje.replace('%',''));
 	let area_libre = (Math.round(area_lote) * ratio) / 100;
