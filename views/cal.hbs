@@ -46,113 +46,50 @@
     </nav>
   </header>
   <main>
-        <div id="main">
-      <div id="titulo">
-        CALCULADORA DE PRECIOS
-      </div>
-      <div id="content">
-        <p style="text-align:justify">
-          La herramienta calculadora le permite calcular un precio <b>aproximado</b> de la construcción de su lote (sin tomar en cuenta los muebles), para ello solo debe ingresar el área techada de su lote y escoger entre una serie de opciones respecto a las estructuras, acabados e instalaciones deseados.
-        </p>
-        <br>
-        <p style="text-align:justify">
-          Si desconoce el área techada de su lote puede usar la herramienta <a href="#mapa">Mapa</a> para descubrirlo. Si desea saber cómo usar la herramienta o cómo funciona puede revisar un tutorial paso a paso <a href="/doc#calculadora">aquí</a>
-        </p>
-      </div>
-      <form id="cal_form" action="/print_cot" method="post" target="_blank">
-        <div id="info">
+
+    <article id="inicio">
+      <h1 class="titulo">La manera más <b>fácil</b> y <b>rápida</b> de hacer presupuestos</h1>
+      <a class="button" href="#calculadora">Empieza Ahora ></a>
+    </article>
+
+    <article id="como-funciona">
+      <h2>¿Cómo funciona?</h2>
+      <p>
+        Los precios mostrados aquí corresponden a los Valores Unitarios Oficiales de Edificación publicados en la <a target="_blank"
+        href="https://www.gob.pe/institucion/munimala/informes-publicaciones/2843639-valores-unitarios-oficiales-de-edificacion"
+        >Resolución Ministerial No. 350-2021</a>. Estas son aproximaciones realizadas por el Ministerio de Vivienda cada año según
+        los costos del mercado. 
+      </p>
+    </article>
+
+    <article id="calculadora">
+      <h1 class="type-writer">Listo...</h1>
+      <h1 class="type-writer">Empecemos!</h1>
+      {{!-- <form>
         <div>
-          <span class="info_span">Área Techada:</span>
-          <input type="text" id="area_input" size="6" oninput="calcular()" name="area" value="{{ output }}" autocomplete="off">
-          <span>m<sup>2</sup></span>
-        </div>
-        <div>
-          <span class="info_span">Moneda:</span>
-          <select id="moneda_input" onchange="cambio_mon()" name="moneda">
-            <option value="0">Soles s/.</option>
-            <option value="1">Dólares $</option>
+          <label>Muros y Columnas</label>
+          <select>
+            <option>Estructuras Laminares c/techo incluido</option>
+            <option>Concreto armado</option>
           </select>
         </div>
-      </div>
-      <div id="bts">
-        <div class="btn_container">
-          <button type="button" id="primerbutton" pos="0" onclick="show_op(0)">Muros y Columnas</button>
-          <div class="material-icons md-14" onclick="show_tooltip(this)">info
-            <div class="tooltiptext">
-              Texto muy largo el cual pues bueno es muy largo. Aunque no tan largo como pienso
-            </div>
+        <section>
+          <div>Tu vivienda costaría aprox. </div>
+          <div>
+            <span>s/</span>
+            <span id="precio-total">89'116.00</span>
+            <span>x m<sup>2</sup></span>
           </div>
-        </div>
-        <div class="options" pos="0" id="myc"></div>
-        <div class="btn_container">
-          <button type="button" pos="1" onclick="show_op(1)">Techos</button>
-          <div class="material-icons md-14" onclick="show_tooltip(this)">info
-            <div class="tooltiptext">
-              Texto muy largo el cual pues bueno es muy largo. Aunque no tan largo como pienso
-            </div>
+          <div>Teniendo un costo total de: </div>
+          <div>
+            <span>s/</span>
+            <span id="precio-total">9'756'132.00</span>
           </div>
-        </div>
-        <div class="options" pos="1" id="tch"></div>
-        <div class="btn_container">
-          <button type="button" pos="2" onclick="show_op(2)">Pisos</button>
-          <div class="material-icons md-14" onclick="show_tooltip(this)">info
-            <div class="tooltiptext">
-              Texto muy largo el cual pues bueno es muy largo. Aunque no tan largo como pienso
-            </div>
-          </div>
-        </div>
-        <div class="options" pos="2" id="pis"></div>
-        <div class="btn_container">
-          <button type="button" pos="3" onclick="show_op(3)">Puertas y Ventanas</button>
-          <div class="material-icons md-14" onclick="show_tooltip(this)">info
-            <div class="tooltiptext">
-              Texto muy largo el cual pues bueno es muy largo. Aunque no tan largo como pienso
-            </div>
-          </div>
-        </div>
-        <div class="options" pos="3" id="pyv"></div>
-        <div class="btn_container">
-          <button type="button" pos="4" onclick="show_op(4)">Revestimientos</button>
-          <div class="material-icons md-14" onclick="show_tooltip(this)">info
-            <div class="tooltiptext">
-              Texto muy largo el cual pues bueno es muy largo. Aunque no tan largo como pienso
-            </div>
-          </div>
-        </div>  
-        <div class="options" pos="4" id="rev"></div>
-        <div class="btn_container">
-          <button type="button" pos="5" onclick="show_op(5)">Baños</button>
-          <div class="material-icons md-14" onclick="show_tooltip(this)">info
-            <div class="tooltiptext">
-              Texto muy largo el cual pues bueno es muy largo. Aunque no tan largo como pienso
-            </div>
-          </div>
-        </div>
-        <div class="options" pos="5" id="ban"></div>
-        <div class="btn_container">
-          <button type="button" id="lasbutton" pos="6" onclick="show_op(6)">Instalaciones</button>
-          <div class="material-icons md-14" onclick="show_tooltip(this)">info
-            <div class="tooltiptext">
-              Texto muy largo el cual pues bueno es muy largo. Aunque no tan largo como pienso
-            </div>
-          </div>
-        </div>
-        <div class="options" pos="6" id="ins"></div>
-      </div>
-      <div id="p_m2">
-        <b>Precio m<sup>2</sup>: </b>
-        <input type="text" id="res1" name="pm2" readonly >
-      </div>
-      <div id="total">
-        <b>TOTAL: </b>
-        <input type="text" id="res2" name="total" readonly >
-      </div>
-      </form>
-      <div>
-        <span class="material-symbols-outlined">print</span>
-        <input class="print_button" type="submit" form="cal_form" value="Imprimir Cotización">
-      </div>
-    </div>
+        </section>
+        <input type="submit" value="Imprimir Cotización">
+      </form> --}}
+    </article>
+
   </main>
   <footer>
     © 2022 Mi lote - Glitch version
