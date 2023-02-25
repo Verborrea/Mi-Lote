@@ -38,3 +38,19 @@ const coloresPorZona = [
   exp('EA'), '#2ec660',
   '#ff2af1'
 ];
+
+const iconColors = [
+  'Default', '#e32f2f','casa.svg',
+  'Residencial','#ffac00','casa.svg',
+  'Comercial','#e32f2f','tienda.svg',
+  'Industrial','#2f8de3','fabrica.svg',
+  'Recreación','#80de81','parque.svg',
+  'Educación','#2f8de3','parque.svg',
+  'Salud','#2f8de3','parque.svg',
+]
+
+function getIconData(zona) {
+  color = iconColors[iconColors.indexOf(zona) + 1];
+  image = iconColors[iconColors.indexOf(zona) + 2];
+  return {color : color, image : image};
+}

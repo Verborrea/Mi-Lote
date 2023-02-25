@@ -35,10 +35,7 @@ function actualizarAreas(aditional_info) {
 
 	// Actualizar area libre
 	if ('area_libre' in zonificacion[uso]) {
-		area_libre = getAreaLibre(aditional_info['Área Libre']);
-	}
-	if (uso == 'ZRE-PP') {
-		area_libre = getAreaLibre('40%');
+		area_libre = getAreaLibre(aditional_info['Área Libre'].substring(0,2));
 	}
 	document.querySelector('#area_libre').innerHTML = area_libre;
 
@@ -70,6 +67,17 @@ function selectZona(zona_id)
 		if (z_comp === zona_id) default_btn = btn;
 		document.querySelector('#zona-usos').appendChild(btn);
 	});
+
+	// Actualizar icono
+	let iconData = getIconData(zona['tipo'] ?? 'Default');
+	let icon = document.querySelector('#zona-icono');
+
+	if(icon.firstChild) icon.removeChild(icon.firstChild);
+
+	icon.style.background = iconData['color'];
+	let img = document.createElement("img");
+	img.src = '../icons/' + iconData['image'];
+	icon.appendChild(img);
 
 	uso_actual = default_btn;
 	selectUso(default_btn);

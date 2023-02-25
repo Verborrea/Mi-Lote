@@ -19,8 +19,8 @@
   <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.js'></script>
   <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.css' rel='stylesheet' />
   <script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
-  <script src="/js/zonificacion.js"></script>
   <script src="/js/map-functions.js"></script>
+  <script src="/js/zonificacion.js"></script>
 </head>
 
 <body>
@@ -104,8 +104,11 @@
           <h1>Información de la Zona</h1>
           <div id="info-zona-content">
             <div class="zona-info-general">
-              <span id="zona-nombre">Nombre de la Zona</span>
+              <div>
+                <span id="zona-nombre">Nombre de la Zona</span>
               <span id="zona-id">&lt;ID&gt;</span>
+              </div>
+              <div id="zona-icono"><img src="../icons/casa.svg"></div>
             </div>
             <div id="zona-descripcion">
               Descripción.

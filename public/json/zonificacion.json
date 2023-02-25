@@ -3,6 +3,7 @@
 		"nombre": "Residencial de Densidad Baja",
 		"descripcion": "Viviendas individuales que permiten una baja concentración poblacional a través de viviendas unifamiliares.",
 		"compatibles": ["RDB", "CV", "ZR"],
+		"tipo": "Residencial",
 		"info": {
 			"Densidad": "Hasta 165 hab/ha",
 			"Lote Mínimo": "300 m<sup>2</sup>",
@@ -16,9 +17,10 @@
 		"area_techada":1
 	},
 	"RDM-1": {
-		"nombre": "Residencial de Densidad Media tipo 1",
+		"nombre": "Residencial de Densidad Media 1",
 		"descripcion": "Viviendas tratadas individualmente o en conjunto que permiten una concentración poblacional media a través de unidades unifamiliares y multifamiliares.",
 		"compatibles": ["RDM-1", "CV", "CS", "E1", "H1", "ZR"],
+		"tipo": "Residencial",
 		"info" : {
 			"Unifamiliar": {
 				"Densidad": "De 166 a 900 hab/ha",
@@ -43,9 +45,10 @@
 		"area_techada":1
 	},
 	"RDM-2": {
-		"nombre": "Residencial de Densidad Media tipo 2",
+		"nombre": "Residencial de Densidad Media 2",
 		"descripcion": "Viviendas tratadas individualmente o en conjunto que permiten una concentración poblacional media a través de unidades multifamiliares.",
 		"compatibles": ["RDM-2", "CV", "CS", "CZ", "E1", "H1", "H2", "ZR"],
+		"tipo": "Residencial",
 		"info": {
 			"Multifamiliar": {
 				"Densidad": "De 901 a 1400 hab/ha",
@@ -70,9 +73,10 @@
 		"area_techada":1
 	},
 	"RDA-1": {
-		"nombre": "Residencial de Densidad Alta tipo 1",
+		"nombre": "Residencial de Densidad Alta 1",
 		"descripcion": "Viviendas tratadas en conjunto que permitan la obtención de una alta concentración poblacional.",
 		"compatibles": ["RDA-1", "CV", "CS", "CZ", "E1", "H1", "H2", "ZR"],
+		"tipo": "Residencial",
 		"info": {
 			"Multifamiliar": {
 				"Densidad": "De 1401 a 2250 hab/ha",
@@ -97,9 +101,10 @@
 		"area_techada":1
 	},
 	"RDA-2": {
-		"nombre": "Residencial de Densidad Alta tipo 2",
+		"nombre": "Residencial de Densidad Alta 2",
 		"descripcion": "Viviendas tratadas en conjunto que permitan la obtención de una alta concentración poblacional.",
 		"compatibles": ["RDA-2", "CZ", "CM", "E1", "H1", "H2", "ZR"],
+		"tipo": "Residencial",
 		"info": {
 			"Multifamiliar*": {
 				"Densidad": "De 2251 a 2800 hab/ha",
@@ -127,6 +132,7 @@
 		"nombre": "Vivienda Taller",
 		"descripcion": "Es la zona destinada a vivienda compatible con la Industria elemental.",
 		"compatibles": ["RDB", "I1R", "CV", "CS", "I1"],
+		"tipo": "Residencial",
 		"info": {
 			"Densidad": "Hasta 900 hab/ha",
 			"Lote Mínimo": "150 m<sup>2</sup>",
@@ -143,6 +149,7 @@
 		"nombre": "Comercio Especializado",
 		"descripcion": "Toda actividad comercial-industrial que no pueda considerarse molesta o peligrosa por sus propias características.",
 		"compatibles": ["RDA-1", "RDA-2", "CE", "CV", "CS", "I1", "I2", "E1", "H1", "H2"],
+		"tipo": "Comercial",
 		"info": {
 			"Nivel de servicio": "De 1000 a 200'000",
 			"Lote Mínimo": "450 m<sup>2</sup>",
@@ -156,6 +163,7 @@
 		"nombre": "Comercio Vecinal",
 		"descripcion": "Es el tipo de comercio destinado a ofrecer bienes de consumo diario, especialmente alimentos y artículos o servicios de primera necesidad.",
 		"compatibles": ["RDM-2", "CV", "I1", "E1", "H1", "H2"],
+		"tipo": "Comercial",
 		"info": {
 			"Nivel de servicio": "De 2000 a 7500",
 			"Lote Mínimo": "Resultado del diseño",
@@ -169,6 +177,7 @@
 		"nombre": "Comercio Sectorial",
 		"descripcion": "Es el tipo de comercio que se dan en la periferia de las Zonas Comerciales Zonales, pero a una escala menor en cuanto a volumen de ventas y radio de servicio.",
 		"compatibles": ["RDM-2", "CV", "CS", "I1", "I2", "E1", "E2", "H1", "H2"],
+		"tipo": "Comercial",
 		"info": {
 			"Nivel de servicio": "De 7500 a 30'000",
 			"Lote Mínimo": "Resultado del diseño",
@@ -180,8 +189,9 @@
 	},
 	"CZ": {
 		"nombre": "Comercio Zonal",
-		"descripcion": "Es el tipo de comercio que se da a lo largo de vías principales o en sus intersecciones. La característica fundamental de este tipo de comercio están dadas por el grado de especialización comercial en función de su area: residenciales y/o industrial.",
+		"descripcion": "Es el tipo de comercio que se da a lo largo de vías principales o en sus intersecciones. Se caracteriza por el grado de especialización comercial en función de su área: residencial y/o industrial.",
 		"compatibles": ["RDA-1", "RDA-2", "CE", "CV", "CS", "CZ", "I1", "I2", "E1", "E2", "H1", "H2"],
+		"tipo": "Comercial",
 		"info": {
 			"Nivel de servicio": "De 30'000 a 300'000",
 			"Lote Mínimo": "Existente",
@@ -195,6 +205,7 @@
 		"nombre": "Comercio Industrial",
 		"descripcion": "Es toda actividad comercial directamente vinculada con la industria o que requiere servicio permanente o frecuente de vehículos pesados de transporte de carga y provoque ruidos o vibraciones. Es una actividad de venta de equipo industrial y no de reparación.",
 		"compatibles": ["RDA-2", "I1R", "CE", "CZ", "CIn", "CM", "I1", "I2", "E1", "E2", "H1", "H2"],
+		"tipo": "Comercial",
 		"info": {
 			"Nivel de servicio": "Metropolitano y regional",
 			"Lote Mínimo": "450 m<sup>2</sup>",
@@ -208,6 +219,7 @@
 		"nombre": "Comercio Metropolitano",
 		"descripcion": "Es el conjunto comercial en el que los establecimientos, por su importancia y localización responden a las necesidades y los recursos de la población metropolitana y su región. Incluye la mayoría de los servicios comerciales.",
 		"compatibles": ["RDA-2", "CE", "CV", "CS", "CZ", "CIn", "CM", "I1", "I2", "E1", "E2", "H1", "H2"],
+		"tipo": "Comercial",
 		"info": {
 			"Nivel de servicio": "De 300'000 a 1'000'000",
 			"Lote Mínimo": "Existente",
@@ -219,8 +231,9 @@
 	},
 	"I1": {
 		"nombre": "Zonas de Industria Elemental",
-		"descripcion": "Es la zona destinada para establecimientos industriales complementarios o de apoyo a industria de mayor escala. Sus características son: Grado tecnológico medio Producción en serie y dirigida al comercio mayorista Capital de operación reducido Tenencia aglomerante en el área urbana No son molestas, ni peligrosas.",
+		"descripcion": "Es la zona destinada para establecimientos industriales complementarios o de apoyo a industria de mayor escala. La industria debe poseer un grado tecnológico medio, producción en serie y dirigida al comercio mayorista, capital de operación reducido, tenencia aglomerante en el área urbana y no ser molesta ni peligrosa.",
 		"compatibles": ["RDM-1", "RDM-2", "RDA-1", "I1R", "CE", "I1", "E1", "E2", "H1", "H2"],
+		"tipo": "Industrial",
 		"info": {
 			"Lote Mínimo": "300 m<sup>2</sup>",
 			"Frente Mínimo": "10 m",
@@ -231,8 +244,9 @@
 	},
 	"I2": {
 		"nombre": "Zonas de Industria Liviana",
-		"descripcion": "Zona destinada para establecimientos industriales que tienen las características siguientes: Orientación al área del mercado local y a la infraestructura vial urbana; Posee contacto con el área central; Venta al por mayor; Dimensión económica media; No son molestos, ni peligrosos.",
+		"descripcion": "Zona destinada para establecimientos industriales que se orienta al área del mercado local y a la infraestructura vial urbana. Posee contacto con el área central, venta al por mayor, dimensión económica media y no es molesta, ni peligrosa.",
 		"compatibles": ["RDM-1", "RDM-2", "RDA-1", "CE", "CZ", "I1", "I2", "I3","E1", "E2", "H1", "H2"],
+		"tipo": "Industrial",
 		"info": {
 			"Lote Mínimo": "1000 m<sup>2</sup>",
 			"Frente Mínimo": "20 m",
@@ -243,8 +257,9 @@
 	},
 	"I3": {
 		"nombre": "Zonas de Gran Industria",
-		"descripcion": "Zonas destinadas para establecimientos industriales que tiene las características siguientes: Conforman concentraciones industriales, con utilización de gran volumen de materia prima Orientación hacia la infraestructura vial regional (carreteras, ferrocarriles) Producción de gran escala Las áreas periféricas satisfacen mejor sus necesidades Las economías externas, su complementariedad y relaciones interindustriales favorecen su concentración Son molestas y/o con cierto grado de peligrosidad.",
+		"descripcion": "Concentraciones industriales que utilizan gran volumen de materia prima. Poseen orientación hacia la infraestructura vial regional o a la producción a gran escala. Por lo que las áreas periféricas, economías externas y relaciones interindustriales satisfacen mejor sus necesidades. Son molestas y/o con cierto grado de peligrosidad.",
 		"compatibles": ["I1", "I2", "I3"],
+		"tipo": "Industrial",
 		"info": {
 			"Lote Mínimo": "2500 m<sup>2</sup>",
 			"Frente Mínimo": "30 m",
@@ -255,8 +270,9 @@
 	},
 	"I4": {
 		"nombre": "Zonas de Gran Industria Pesada",
-		"descripcion": "Es la zona destinada para establecimientos industriales que producen insumos para las industrias de apoyo y de otras industrias. Sus características son: Industrias de proceso básico en gran escala De gran dimensión económica Orientadas hacia la infraestructura regional y grandes mercados Son molestas y peligrosas (producen ruidos o vibraciones o provocan humos, vapores, gases, malos olores, etc. también aquellas industrias que usan materiales altamente inflamables o detonantes).",
+		"descripcion": "Zona destinada para establecimientos industriales que producen insumos para otras industrias. Conformada por industrias de proceso básico en gran escala, de gran dimensión económica, orientadas hacia la infraestructura regional y grandes mercados. Estas son molestas y peligrosas (producen ruidos, vibraciones, vapores, gases, malos olores, etc. también pueden usar materiales altamente inflamables o detonantes).",
 		"compatibles": ["I4"],
+		"tipo": "Industrial",
 		"info": {
 			"Lote Mínimo": "Según necesidad",
 			"Frente Mínimo": "Según proyecto",
@@ -266,18 +282,20 @@
 		}
 	},
 	"E1": {
-		"nombre": "Educación tipo 1",
+		"nombre": "Educación 1",
 		"descripcion": "Educación Básica",
 		"compatibles": ["E1", "CV", "ZR"],
+		"tipo": "Educación",
 		"info": {
 			"Nivel de servicio": "Inicial hasta 7000<br> E1 hasta 30'000",
 			"Espacios de Estacionamiento": "1 c/20 alumnos + 1 c/3 trabajadores docentes y administrativos, ubicados dentro del predio. 1 de los cuales como mínimo deberá ser para personas con movilidad reducida"
 		}
 	},
 	"E2": {
-		"nombre": "Educación tipo 2",
+		"nombre": "Educación 2",
 		"descripcion": "Educación Superior Tecnológica",
 		"compatibles": ["E2", "CV", "ZR"],
+		"tipo": "Educación",
 		"info": {
 			"Nivel de servicio": "Hasta 50'000",
 			"Espacios de Estacionamiento": "1 c/20 alumnos + 1 c/3 trabajadores docentes y administrativos, ubicados dentro del predio. 1 de los cuales como mínimo deberá ser para personas con movilidad reducida"
@@ -287,23 +305,26 @@
 		"nombre": "Educación tipo 3",
 		"descripcion": "Educación Superior Universitaria",
 		"compatibles": ["E3", "CV", "ZR"],
+		"tipo": "Educación",
 		"info": {
 			"Nivel de servicio": "Más de 50'000",
 			"Espacios de Estacionamiento": "1 c/20 alumnos + 1 c/3 trabajadores docentes y administrativos, ubicados dentro del predio. 1 de los cuales como mínimo deberá ser para personas con movilidad reducida"
 		}
 	},
 	"H1": {
-		"nombre": "Salud tipo 1",
+		"nombre": "Salud 1",
 		"descripcion": "Posta Médica",
+		"tipo": "Salud",
 		"compatibles": ["H1"],
 		"info": {
 			"Nivel de servicio": "2000 a 7000 hab"
 		}
 	},
 	"H2": {
-		"nombre": "Salud tipo 2",
+		"nombre": "Salud 2",
 		"descripcion": "Centro de Salud",
 		"compatibles": ["H2"],
+		"tipo": "Salud",
 		"info": {
 			"Nivel de servicio": "20'000 a 50'000 hab"
 		}
@@ -312,6 +333,7 @@
 		"nombre": "Salud tipo 3",
 		"descripcion": "Hospital General",
 		"compatibles": ["H3"],
+		"tipo": "Salud",
 		"info": {
 			"Nivel de servicio": "30'000 a 125'000 hab"
 		}
@@ -320,21 +342,22 @@
 		"nombre": "Salud tipo 4",
 		"descripcion": "Hospital Especializado",
 		"compatibles": ["H4"],
+		"tipo": "Salud",
 		"info": {
 			"Nivel de servicio": "125'000 hab"
 		}
 	},
 	"OU1": {
-		"nombre": "Usos Especiales tipo 1",
-		"descripcion": "Incluyen las siguientes instalaciones: Centros Cívicos<br> dependencias administrativas del Estado<br> culturales<br> establecimientos institucionales representativos del sector privado, nacional o extranjero<br> establecimientos religiosos, asilos, orfelinatos.",
+		"nombre": "Usos Especiales 1",
+		"descripcion": "Conformados por: Centros cívicos, dependencias administrativas del Estado, establecimientos institucionales representativos del sector privado, nacional o extranjero, establecimientos religiosos, asilos y orfelinatos.",
 		"compatibles": ["OU1"],
 		"info": {
 			"Nota": "Se regirá por los parámetros correspondientes a la zonificación comercial o residencial predominante."
 		}
 	},
 	"OU2": {
-		"nombre": "Usos Especiales tipo 2",
-		"descripcion": "Incluyen las siguientes instalaciones: Terminales terrestres, ferroviarios, aéreos<br> grandes complejos deportivos y de espectáculos, estadios, coliseos, zoológicos<br> Servicios Públicos como instalaciones de producción y almacenamiento de energía eléctrica, gas, telefonía, comunicaciones, agua potable y de tratamiento sanitario de aguas servidas<br> establecimientos de seguridad y de las fuerzas armadas.",
+		"nombre": "Usos Especiales 2",
+		"descripcion": "Zona conformada por: Terminales terrestres, ferroviarios y aéreos; grandes complejos deportivos y de espectáculos como estadios, coliseos y zoológicos; instalaciones de producción y almacenamiento de energía eléctrica, gas, telefonía, comunicaciones, agua potable y de tratamiento sanitario de aguas servidas y establecimientos de seguridad y de las fuerzas armadas.",
 		"compatibles": ["OU2"],
 		"info": {
 			"Nota": "Se regirá por los parámetros correspondientes a la zonificación comercial o residencial predominante."
@@ -342,8 +365,9 @@
 	},
 	"ZR": {
 		"nombre": "Zona de Recreación",
-		"descripcion": "Son áreas destinadas fundamentalmente a la realización de actividades recreativas activas y/o pasivas, tales como Plazas, Parques, Campos Deportivos, Juegos Infantiles y Clubes deportivos. Las áreas agrícolas zonificadas como Zonas de Recreación, seguirán manteniendo su condición hasta que se viabilice su incorporación como Zona de Recreación mediante la evaluación de Planificación Integral y/o Plan Específico por parte del Instituto Municipal de Planeamiento, y la conformidad correspondiente.",
+		"descripcion": "Son áreas destinadas fundamentalmente a la realización de actividades recreativas, tales como Plazas, Parques, Campos Deportivos, Juegos Infantiles y Clubes deportivos. Las áreas agrícolas, zonificadas como Zonas de Recreación, seguirán con dicha condición hasta que se viabilice su incorporación como Zona de Recreación.",
 		"compatibles": ["ZR"],
+		"tipo": "Recreación",
 		"info": {
 			"Nota": "Se regirá por los parámetros que se establezcan en el planeamiento integral que la genere. Permitiéndose un 5% de área construida como máximo."
 		}
@@ -366,7 +390,8 @@
 			"Altura de Edificación": "6m hacia el frente<br> 9m al interior con retiro de 4m",
 			"Coeficiente de Edificación": "2.30 en predios hasta 150 m<sup>2</sup><br> 1.85 en predios sin construcción y área de terreno mayor a 151 m<sup>2</sup>",
 			"Área Libre": "40% uso residencial o comercial"
-		}
+		},
+		"area_libre":1
 	},
 	"ZRE-PA": {
 		"nombre": "Zona de Reglamentación Patrimonio Agrícola",
@@ -434,7 +459,7 @@
 	},
 	"RP": {
 		"nombre": "Reserva Paisajista",
-		"descripcion": "Definida por los espacios aledaños a los cauces ribereños y las áreas identificadas con alto valor natural, cultural y patrimonial, incluye la ronda hidráulica, el área de manejo y preservación ambiental y las andenerías prehispánicas. No es urbanizable ni edificable<br> solamente se permitirán obras de pequeña envergadura (caminerías, estares, servicios básicos y similares) que complementen su carácter paisajista, proyectados bajo el criterio de planificación integral, previa evaluación y conformidad del Instituto Municipal de Planeamiento (IMPLA).",
+		"descripcion": "Definida por los espacios aledaños a los cauces ribereños y las áreas identificadas con alto valor natural, cultural y patrimonial. Incluye la ronda hidráulica, el área de manejo y preservación ambiental y las andenerías prehispánicas. <strong>No es urbanizable ni edificable</strong>, solamente se permitirán obras de pequeña envergadura (caminerías, estares, servicios básicos y similares) que complementen su carácter paisajista, proyectados bajo el criterio de planificación integral, previa evaluación y conformidad del Instituto Municipal de Planeamiento (IMPLA).",
 		"compatibles": ["ZR","RP","ZA"],
 		"info": {
 			"Nota": "No urbanizable ni edificable."
@@ -450,7 +475,7 @@
 	},
 	"EA": {
 		"nombre": "Expansión Agrícola",
-		"descripcion": "Son las áreas identificadas con vocación para la expansión de la frontera agrícola y de las actividades agropecuarias y agroindustriales. ",
+		"descripcion": "Son las áreas identificadas con vocación para la expansión de la frontera agrícola y de las actividades agropecuarias y agroindustriales.",
 		"compatibles": ["ZA","EA"],
 		"info": {
 			"Nota": "No urbanizable ni edificable."
