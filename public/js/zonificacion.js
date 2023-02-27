@@ -3,14 +3,23 @@ var distritos = [];
 let uso_actual;	// boton de Uso Compatible activo (color rojo)
 let area_lote;
 
+function getPrecio(precio_m2) {
+	let formated_price = new Intl.NumberFormat().format(Math.round(area_lote * precio_m2));
+	return 'S/ ' + formated_price;
+}
+
 // Actualizar la informaciòn del Lote
 function selectLote(lote) {
 	document.querySelector('#mznynro').innerText = lote.properties.n ?? '-';
 	document.querySelector('#distrito').innerText = distritos[lote.properties.d];
 
-	// area_lote = Microsoft.Maps.SpatialMath.Geometry.area(lote);
 	area_lote = turf.area(lote);
 	document.querySelector('#area_total').innerHTML = Math.round(area_lote) + ' m<sup>2</sup>';
+
+	// calcular precios en base al area
+	document.querySelector('#precio-a').innerText = getPrecio(1260.37);
+	document.querySelector('#precio-b').innerText = getPrecio(846.63);
+	document.querySelector('#precio-c').innerText = getPrecio(629.12);
 
 	selectZona(lote.properties.z);
 }
