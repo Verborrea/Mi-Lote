@@ -1,3 +1,8 @@
+article {
+  width: 80ch;
+  margin: auto;
+}
+
 input#m2 {
   border: none;
   padding: 0 1ch;
@@ -15,4 +20,33 @@ input#m2:focus {
 
 h2 {
   font-size: 36px;
+}
+
+#xd {
+  height: auto;
+  display: block;
+}
+
+.categoria {
+  font-size: 16pt;
+  background: var(--enfasis);
+  padding: 0.5em;
+}
+
+.opcion {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 2fr 1fr;
+  justify-items: start;
+}
+
+.nombre {
+  grid-column-start: 2;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+
+.precio {
+  grid-column-start: 2;
+  grid-row-start: 2;
 }
