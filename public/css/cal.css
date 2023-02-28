@@ -1,67 +1,18 @@
-body {
-  /* background-color: #141416; */
-  background-color: white;
+input#m2 {
+  border: none;
+  padding: 0 1ch;
+  font-size: 16pt;
+  border-bottom: 1px solid white;
+  background: none;
+  color: white;
+}
+input#m2:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.1);
+  border-color: orange;
+  color: orange;
 }
 
-article {
-  margin-block-end: 3em;
-}
-
-/* ========================================================== */
-
-article#inicio {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 85vh;
-  height: 85dvh;
-  justify-content: center;
-}
-
-.titulo {
-  font-size: 100px;
-  max-width: 1030px;
-}
-
-.titulo>b {color: var(--enfasis);}
-
-.button {
-  text-decoration: none;
-  color: silver;
-  font-size: 21px;
-  padding-top: 20px;
-}
-
-.button:hover {
-  text-decoration: underline;
-}
-
-/* ========================================================== */
-
-#como-funciona {
-  width: max(70%, 50ch);
-  margin: 10em auto;
-}
-
-#como-funciona>p {
-  margin-top: 1em;
-  font-size: 14pt;
-}
-
-p>a {
-  color: var(--enfasis)
-}
-
-/* ========================================================== */
-
-#calculadora {
-  display: flex;
-  justify-content: flex-start;
-  width: max(70%, 50ch);
-  margin: 10em auto;
-  flex-direction: column;
-}
-
-.type-writer {
-  font-size: 75pt;
+h2 {
+  font-size: 36px;
 }

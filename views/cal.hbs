@@ -4,7 +4,6 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta http-equiv="content-language" content="es-pe">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="description"
     content="Mi Lote es una aplicación web que permite obtener los datos urbanísticos de cada lote en la ciudad de Arequipa de manera fácil y rápida.">
@@ -16,13 +15,14 @@
     type="image/x-icon"
     href="https://cdn.glitch.com/4855031b-abce-4c44-bba6-e505bb13b746%2Ffavicon.ico?v=1614220224560"
   /> --}}
-  
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/neo.css">
-  <link rel="stylesheet" href="/css/cal.css" />
-  <script src="/js/cal.js"></script>
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/cal.css">
+  <script src="/js/cal.js" defer></script>
 </head>
 
 <body>
@@ -46,50 +46,25 @@
     </nav>
   </header>
   <main>
-
-    <article id="inicio">
-      <h1 class="titulo">La manera más <b>fácil</b> y <b>rápida</b> de hacer presupuestos</h1>
-      <a class="button" href="#calculadora">Empieza Ahora ></a>
+    <article class="hidden">
+      <h1>Haz tu presupuesto en segundos</h1>
+      <a href="#calculadora">Empieza ahora ></a>
     </article>
-
-    <article id="como-funciona">
-      <h2>¿Cómo funciona?</h2>
-      <p>
-        Los precios mostrados aquí corresponden a los Valores Unitarios Oficiales de Edificación publicados en la <a target="_blank"
+    <article class="hidden">
+      <h1>¿Cómo funciona?</h1>
+      <p>Los precios mostrados aquí corresponden a los Valores Unitarios Oficiales de Edificación publicados en la <a target="_blank"
         href="https://www.gob.pe/institucion/munimala/informes-publicaciones/2843639-valores-unitarios-oficiales-de-edificacion"
         >Resolución Ministerial No. 350-2021</a>. Estas son aproximaciones realizadas por el Ministerio de Vivienda cada año según
-        los costos del mercado. 
-      </p>
+        los costos del mercado.</p>
     </article>
-
-    <article id="calculadora">
-      <h1 class="type-writer">Listo...</h1>
-      <h1 class="type-writer">Empecemos!</h1>
-      {{!-- <form>
-        <div>
-          <label>Muros y Columnas</label>
-          <select>
-            <option>Estructuras Laminares c/techo incluido</option>
-            <option>Concreto armado</option>
-          </select>
-        </div>
-        <section>
-          <div>Tu vivienda costaría aprox. </div>
-          <div>
-            <span>s/</span>
-            <span id="precio-total">89'116.00</span>
-            <span>x m<sup>2</sup></span>
-          </div>
-          <div>Teniendo un costo total de: </div>
-          <div>
-            <span>s/</span>
-            <span id="precio-total">9'756'132.00</span>
-          </div>
-        </section>
-        <input type="submit" value="Imprimir Cotización">
-      </form> --}}
+    <article class="hidden" id="calculadora">
+      <h2>¿Cuántos metros cuadrados tiene tu lote?</h2>
+      <div>
+        <input type="tel" id="m2" size="2">
+        {{!-- <span class="input" id="m2" role="textbox" inputmode="tel" contenteditable></span> --}}
+        <span> m<sup>2</sup></span>
+      </div>
     </article>
-
   </main>
   <footer>
     © 2022 Mi lote - Glitch version
@@ -110,4 +85,18 @@
       primaryNav.setAttribute("data-visible", "false")
     }
   }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      } else {
+        entry.target.classList.remove("show");
+      }
+    });
+  });
+
+  const hiddenElements = document.querySelectorAll(".hidden");
+  hiddenElements.forEach((e) => observer.observe(e));
+
 </script>
