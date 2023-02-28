@@ -37,6 +37,7 @@ app.get("/calculadora", (request, response) => {
   response.render('calculadora', {
     layout: false,
     precios: precios,
+    area: request.query.area ?? '',
     helpers: {
       loud(aString) {return aString.toUpperCase();}
     }

@@ -21,6 +21,8 @@ function selectLote(lote) {
 	document.querySelector('#precio-b').innerText = getPrecio(846.63);
 	document.querySelector('#precio-c').innerText = getPrecio(629.12);
 
+	document.querySelector('#link-calc').href = '/calculadora?area=' + Math.round(area_lote) + '#calculadora';
+
 	selectZona(lote.properties.z);
 }
 

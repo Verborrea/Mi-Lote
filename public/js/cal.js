@@ -146,32 +146,29 @@
 //   });
 // }
 
-(function(){
-    
-  var min = 27, max = 240, input = document.getElementById('m2');
+function resizeInput(input) {
+  setTimeout(function(){
+    var tmp = document.createElement('div');
+    tmp.style.cssText = 'font-size: 16pt;border: none;padding: 0 1ch;';
+    tmp.style.position = 'absolute';
+    tmp.innerHTML = input.value.replace(/&/g, "&amp;")
+                                .replace(/</g, "&lt;")
+                                .replace(/>/g, "&gt;")
+                                .replace(/"/g, "&quot;")
+                                .replace(/'/g, "&#039;")
+                                .replace(/ /g, '&nbsp;');
+    input.parentNode.appendChild(tmp);
+    var width = tmp.clientWidth;
+    tmp.parentNode.removeChild(tmp);
+    if(min <= width && width <= max)
+        input.style.width = width+'px';
+  }, 1);
+}
 
-  input.style.width = min+'px';
-  input.onkeypress = input.onkeydown = input.onkeyup = function(){
-      var input = this;
-      setTimeout(function(){
-          var tmp = document.createElement('div');
-          tmp.style.cssText = 'font-size: 16pt;border: none;padding: 0 1ch;';
-          tmp.style.position = 'absolute';
-          tmp.innerHTML = input.value.replace(/&/g, "&amp;")
-                                     .replace(/</g, "&lt;")
-                                     .replace(/>/g, "&gt;")
-                                     .replace(/"/g, "&quot;")
-                                     .replace(/'/g, "&#039;")
-                                     .replace(/ /g, '&nbsp;');
-          input.parentNode.appendChild(tmp);
-          var width = tmp.clientWidth;
-          tmp.parentNode.removeChild(tmp);
-          if(min <= width && width <= max)
-              input.style.width = width+'px';
-      }, 1);
-  }
+var min = 27, max = 240, input = document.getElementById('m2');
+input.onkeypress = input.onkeydown = input.onkeyup = resizeInput(this);
 
-})();
+resizeInput(input);
 
 document.getElementById("m2").addEventListener("change", function() {
   console.log("change event fired");
