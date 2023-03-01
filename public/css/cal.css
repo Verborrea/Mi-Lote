@@ -22,7 +22,7 @@ h2 {
   font-size: 36px;
 }
 
-#xd {
+#selector {
   height: auto;
   display: block;
   padding: 5em 0;
@@ -30,14 +30,13 @@ h2 {
 
 .categoria {
   font-size: 16pt;
-  background: var(--enfasis);
-  padding: 0.5em;
+  color: var(--enfasis);
 }
 
 .opciones {
   max-height: 800px;
   opacity: 1;
-  transition: all 1s ease;
+  transition: all .5s ease;
 }
 
 .categoria.oculta + .opciones {
@@ -52,8 +51,21 @@ h2 {
   grid-template-rows: 50px 25px;
   justify-items: start;
   align-items: end;
-  border-bottom: 1px solid silver;
-  padding: 5px 0;
+  padding: 10px;
+  position: relative;
+  border-radius: 20px;
+  font-size: 12pt;
+}
+
+.opcion:not(:last-child, [selected]):after {
+  content: '';
+  height: 1px;
+  background: silver;
+  width: 70%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
 }
 
 .opcion:hover {
@@ -69,7 +81,6 @@ h2 {
   grid-row-start: 1;
   grid-row-end: 1;
   font-weight: 400;
-  font-size: 12pt;
   text-align: left;
 }
 
@@ -78,4 +89,10 @@ h2 {
   grid-row-start: 2;
   font-style: italic;
   color: silver;
+}
+
+#precios {
+  text-align: left;
+  font-size: 20pt;
+  margin-top: 5rem;
 }
