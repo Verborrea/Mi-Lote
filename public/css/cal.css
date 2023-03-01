@@ -1,5 +1,5 @@
 article {
-  width: 80ch;
+  width: 78ch;
   margin: auto;
 }
 
@@ -95,4 +95,24 @@ h2 {
   text-align: left;
   font-size: 20pt;
   margin-top: 5rem;
+}
+
+@media (max-width: 800px) {
+  article {
+    width: auto;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  .categoria {
+    font-size: 12pt;
+  }
+  .opcion {
+    font-size: 8.5pt;
+    grid-template-rows: 40px 20px;
+    padding: 5px 10px;
+  }
+  #precios {
+    padding-left: 1em;
+  }
 }

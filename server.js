@@ -44,10 +44,6 @@ app.get("/calculadora", (request, response) => {
   });
 });
 
-// app.get("/calculadora/:area", (request, response) => {
-//   response.render('cal', {output: request.params.area});
-// });
-
 // app.post("/print_cot", (request, response) => {
 //   let format = { maximumFractionDigits: 2, minimumFractionDigits: 2 };
 //   let p = precios_json.precios;
