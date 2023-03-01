@@ -71,9 +71,10 @@
                onclick="toggleCategoria(this)" tabindex="0">{{loud @key}}</div>
           <div class="opciones">
             {{#each this}}
-              <div class="opcion" name="{{@../key}}" onclick="selectOpcion(this)" precio="{{this.soles}}">
+              <div class="opcion" name="{{@../key}}" onclick="selectOpcion(this)"
+                   PEN="{{this.PEN}}" USD="{{this.USD}}">
                 <div class="nombre">{{this.nombre}}</div>
-                <div class="precio">S/ {{this.soles}}</div>
+                <div class="precio">S/ {{this.PEN}}</div>
               </div>
             {{/each}}
           </div>

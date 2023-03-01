@@ -1,7 +1,9 @@
 let total = 0;
-let precios = {};
+let costo_opciones = {};  //objeto que guarda las opciones escogidas en ambas monedas
 let area = 0;
 let area_input = document.getElementById("m2");
+let currency = 'PEN';
+let symbol = 'S/';
 
 const url = new URL(window.location.href);
 
@@ -28,13 +30,14 @@ const url = new URL(window.location.href);
 })();
 
 function formatPrecio(precio) {
-	return new Intl.NumberFormat('es-PE', { style: 'currency', currency: 'PEN' }).format(precio);
+  let lang = (currency === 'PEN') ? 'es-PE' : 'en-US';
+	return new Intl.NumberFormat(lang, { style: 'currency', currency: currency }).format(precio);
 }
 
 function actualizarTotal() {
   total = 0;
-  for (const categoria in precios) {
-    const costo = precios[categoria];
+  for (const categoria in costo_opciones) {
+    const costo = costo_opciones[categoria][currency];
     total += Number(costo);
   }
   document.querySelector('#total').innerText = formatPrecio(total * area);
@@ -60,7 +63,26 @@ function selectOpcion(option) {
     toggleCategoria(document.querySelector('#cat-' + next_id));
   }
 
-  precios[categoria] = option.getAttribute("precio");
+  costo_opciones[categoria] = {
+    'PEN' : option.getAttribute('PEN'),
+    'USD' : option.getAttribute('USD')
+  };
+  actualizarTotal();
+}
+
+function changeCurrency() {
+  
+  currency = (currency === 'PEN') ? 'USD' : 'PEN';
+  symbol = (symbol === 'S/') ? '$' : 'S/';
+
+  // cambiar la moneda en todas las opciones
+  let opciones = document.querySelectorAll('.opcion');
+  for (const opcion of opciones) {
+    let precio_div = opcion.children[1];
+    precio_div.innerText = symbol + ' ' + opcion.getAttribute(currency);
+  }
+
+  // cambiar la moneda en el total
   actualizarTotal();
 }
 

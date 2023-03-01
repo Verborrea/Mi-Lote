@@ -2,230 +2,230 @@
   "estructura": [
     {
       "nombre": "Concreto armado especial",
-      "soles": 898.59,
-      "dolares": 10
+      "PEN": 898.59,
+      "USD": 10
     },
     {
       "nombre": "Concreto armado",
-      "soles": 534.59,
-      "dolares": 10
+      "PEN": 534.59,
+      "USD": 10
     },
     {
       "nombre": "Albañilería armada",
-      "soles": 387.87,
-      "dolares": 10
+      "PEN": 387.87,
+      "USD": 10
     },
     {
       "nombre": "Sillar",
-      "soles": 358.26,
-      "dolares": 10
+      "PEN": 358.26,
+      "USD": 10
     },
     {
       "nombre": "Ladrillo",
-      "soles": 230.09,
-      "dolares": 10
+      "PEN": 230.09,
+      "USD": 10
     },
     {
       "nombre": "Drywall",
-      "soles": 175.38,
-      "dolares": 10
+      "PEN": 175.38,
+      "USD": 10
     }
   ],
   "techos": [
     {
       "nombre": "Losa Nervada",
-      "soles": 467.23,
-      "dolares": 10
+      "PEN": 467.23,
+      "USD": 10
     },
     {
       "nombre": "Losa aligerada inclinada",
-      "soles": 321.22,
-      "dolares": 10
+      "PEN": 321.22,
+      "USD": 10
     },
     {
       "nombre": "Losa aligerada horizontal",
-      "soles": 224.78,
-      "dolares": 10
+      "PEN": 224.78,
+      "USD": 10
     },
     {
       "nombre": "Calamina con vigas metálicas",
-      "soles": 152.16,
-      "dolares": 10
+      "PEN": 152.16,
+      "USD": 10
     },
     {
       "nombre": "Madera con material impermeabilizante",
-      "soles": 57.16,
-      "dolares": 10
+      "PEN": 57.16,
+      "USD": 10
     },
     {
       "nombre": "Calamina con vigas de madera",
-      "soles": 55.82,
-      "dolares": 10
+      "PEN": 55.82,
+      "USD": 10
     }
   ],
   "pisos": [
     {
       "nombre": "Mármol con madera",
-      "soles": 188.23,
-      "dolares": 10
+      "PEN": 188.23,
+      "USD": 10
     },
     {
       "nombre": "Parquet",
-      "soles": 99.88,
-      "dolares": 10
+      "PEN": 99.88,
+      "USD": 10
     },
     {
       "nombre": "Porcelanato",
-      "soles": 82.6,
-      "dolares": 10
+      "PEN": 82.6,
+      "USD": 10
     },
     {
       "nombre": "Cerámico",
-      "soles": 67.46,
-      "dolares": 10
+      "PEN": 67.46,
+      "USD": 10
     },
     {
       "nombre": "Vinilico",
-      "soles": 50.46,
-      "dolares": 10
+      "PEN": 50.46,
+      "USD": 10
     },
     {
       "nombre": "Cemento pulido",
-      "soles": 27.26,
-      "dolares": 10
+      "PEN": 27.26,
+      "USD": 10
     }
   ],
   "puertas": [
     {
       "nombre": "Madera ornamental tallada",
-      "soles": 354.66,
-      "dolares": 10
+      "PEN": 354.66,
+      "USD": 10
     },
     {
       "nombre": "Madera de caoba",
-      "soles": 228.98,
-      "dolares": 10
+      "PEN": 228.98,
+      "USD": 10
     },
     {
       "nombre": "Madera de cedro / Aluminio",
-      "soles": 134.31,
-      "dolares": 10
+      "PEN": 134.31,
+      "USD": 10
     },
     {
       "nombre": "Sistema Moduglass con vidrio templado",
-      "soles": 79.34,
-      "dolares": 10
+      "PEN": 79.34,
+      "USD": 10
     },
     {
       "nombre": "Sistema Moduglass con vidrio crudo",
-      "soles": 46.74,
-      "dolares": 10
+      "PEN": 46.74,
+      "USD": 10
     },
     {
       "nombre": "Perfiles de fierro con madera corriente",
-      "soles": 23.37,
-      "dolares": 10
+      "PEN": 23.37,
+      "USD": 10
     }
   ],
   "revestimientos": [
     {
       "nombre": "Mármol",
-      "soles": 243.40,
-      "dolares": 10
+      "PEN": 243.40,
+      "USD": 10
     },
     {
       "nombre": "Madera fina",
-      "soles": 154.09,
-      "dolares": 10
+      "PEN": 154.09,
+      "USD": 10
     },
     {
       "nombre": "Enchape de piedra",
-      "soles": 128.19,
-      "dolares": 10
+      "PEN": 128.19,
+      "USD": 10
     },
     {
       "nombre": "Tarrajeos especiales",
-      "soles": 76.44,
-      "dolares": 10
+      "PEN": 76.44,
+      "USD": 10
     },
     {
       "nombre": "Tarrajeo frotachado",
-      "soles": 56.78,
-      "dolares": 10
+      "PEN": 56.78,
+      "USD": 10
     },
     {
       "nombre": "Caravista rústico",
-      "soles": 22.71,
-      "dolares": 10
+      "PEN": 22.71,
+      "USD": 10
     },
     {
       "nombre": "Sin revestimientos",
-      "soles": 0.00,
-      "dolares": 0
+      "PEN": 0.00,
+      "USD": 0
     }
   ],
   "baños": [
     {
       "nombre": "Lavatorio, WC, tina lujo. Enchape granito",
-      "soles": 108.08,
-      "dolares": 10
+      "PEN": 108.08,
+      "USD": 10
     },
     {
       "nombre": "Lavatorio, WC, tina. Porcelanato",
-      "soles": 50.40,
-      "dolares": 10
+      "PEN": 50.40,
+      "USD": 10
     },
     {
       "nombre": "Lavatorio, WC, ducha. Mayólica",
-      "soles": 30.84,
-      "dolares": 10
+      "PEN": 30.84,
+      "USD": 10
     },
     {
       "nombre": "Lavatorio, WC, ducha. Mayólica parcial",
-      "soles": 12.85,
-      "dolares": 10
+      "PEN": 12.85,
+      "USD": 10
     },
     {
       "nombre": "Lavatorio, WC, ducha de granito",
-      "soles": 8.83,
-      "dolares": 10
+      "PEN": 8.83,
+      "USD": 10
     },
     {
       "nombre": "Sin aparatos sanitarios",
-      "soles": 0.00,
-      "dolares": 10
+      "PEN": 0.00,
+      "USD": 10
     }
   ],
   "instalaciones": [
     {
       "nombre": "Ascensor, sistema de bombeo de agua, agua caliente y fría, corriente trifásica y cableado",
-      "soles": 385.14,
-      "dolares": 10
+      "PEN": 385.14,
+      "USD": 10
     },
     {
       "nombre": "Sistema de bombeo de agua, agua caliente y fría, corriente trifásica y cableado",
-      "soles": 168.56,
-      "dolares": 10
+      "PEN": 168.56,
+      "USD": 10
     },
     {
       "nombre": "Agua caliente y fría, corriente monofásica y cableado",
-      "soles": 95.51,
-      "dolares": 10
+      "PEN": 95.51,
+      "USD": 10
     },
     {
       "nombre": "Agua fría, corriente monofásica y cableado",
-      "soles": 34.55,
-      "dolares": 10
+      "PEN": 34.55,
+      "USD": 10
     },
     {
       "nombre": "Agua fría y corriente monofásica",
-      "soles": 20.35,
-      "dolares": 10
+      "PEN": 20.35,
+      "USD": 10
     },
     {
       "nombre": "Sin instalaciones eléctricas ni sanitarias",
-      "soles": 0.00,
-      "dolares": 0.00
+      "PEN": 0.00,
+      "USD": 0.00
     }
   ]
 }
