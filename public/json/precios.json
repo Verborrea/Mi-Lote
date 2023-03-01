@@ -65,7 +65,7 @@
   ],
   "pisos": [
     {
-      "nombre": "Marmol con madera",
+      "nombre": "Mármol con madera",
       "soles": 188.23,
       "dolares": 10
     },
@@ -129,7 +129,7 @@
   ],
   "revestimientos": [
     {
-      "nombre": "Marmol",
+      "nombre": "Mármol",
       "soles": 243.40,
       "dolares": 10
     },
