@@ -10,17 +10,12 @@
   
   <title>Mi Lote | Calculadora</title>
 
-  {{!-- <link
-    rel="shortcut icon"
-    type="image/x-icon"
-    href="https://cdn.glitch.com/4855031b-abce-4c44-bba6-e505bb13b746%2Ffavicon.ico?v=1614220224560"
-  /> --}}
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/neo.css">
   <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/slider.css">
   <link rel="stylesheet" href="/css/cal.css">
   <script src="/js/cal.js" defer></script>
 </head>
@@ -48,7 +43,7 @@
   <main>
     <article class="hidden">
       <h1>Haz tu presupuesto en segundos</h1>
-      <a href="#calculadora">Empieza ahora ></a>
+      <a href="#calculadora">Empieza ahora &gt;</a>
     </article>
     <article class="hidden">
       <h1>¿Cómo funciona?</h1>
@@ -58,31 +53,35 @@
         los costos del mercado.</p>
     </article>
     <article class="hidden" id="calculadora">
-      <h2>¿Cuántos metros cuadrados tiene tu lote?</h2>
-      <div>
-        <input type="tel" id="m2" size="2" value={{area}}>
-        <span> m<sup>2</sup></span>
-      </div>
-    </article>
-    <article class="hidden" id="selector">
-      {{#each precios}}
-        <div class="material">
-          <div class="categoria oculta" id="cat-{{@index}}"
-               onclick="toggleCategoria(this)" tabindex="0">{{loud @key}}</div>
-          <div class="opciones">
-            {{#each this}}
-              <div class="opcion" name="{{@../key}}" onclick="selectOpcion(this)"
-                   PEN="{{this.PEN}}" USD="{{this.USD}}">
-                <div class="nombre">{{this.nombre}}</div>
-                <div class="precio">S/ {{this.PEN}}</div>
-              </div>
-            {{/each}}
+      <h1>Calculadora de Precios</h1>
+      <div id="grid">
+        <div id="area">
+          Mi lote tiene
+          <input type="tel" id="m2" size="2" value={{area}}>
+          m<sup>2</sup> de área techada.
+        </div>
+        <div id="opciones">
+          {{#each precios}}
+            <div class="opcion">
+              <img src="https://cdn.glitch.global/0b13a06d-0a08-4c26-8355-bf1bfe0115b1/hormigon.jpg?v=1677788715934">
+              <div class="nombre">{{loud @key}}</div>
+              <div class="descripcion">{{this.0.nombre}}</div>
+              <div class="precio" PEN="{{this.0.PEN}}" USD="{{this.0.USD}}">S/ {{this.0.PEN}}</div>
+            </div>
+          {{/each}}
+
+        </div>
+        <div id="subopciones"></div>
+        <div id="detalles">
+          <label class="switch" for="currency">
+            <input type="checkbox" id="currency">
+            <span class="slider">S/</span>
+          </label>
+          <div id="totales">
+            <div><b>Total: </b><span id="total">S/ 0.00</span></div>
+            <div><b>Total x m<sup>2</sup>: </b><span id="totalm2">S/ 0.00</span></div>
           </div>
         </div>
-      {{/each}}
-      <div id="precios">
-        <div><span>Total: </span><span id="total">S/ 0.00</span></div>
-        <div><span>Total x m<sup>2</sup>: </span><span id="totalm2">S/ 0.00</span></div>
       </div>
     </article>
   </main>

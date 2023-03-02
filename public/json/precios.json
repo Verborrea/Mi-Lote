@@ -63,7 +63,7 @@
       "USD": 10
     }
   ],
-  "pisos": [
+  "pisos y ventanas": [
     {
       "nombre": "Mármol con madera",
       "PEN": 188.23,
@@ -198,27 +198,27 @@
   ],
   "instalaciones": [
     {
-      "nombre": "Ascensor, sistema de bombeo de agua, agua caliente y fría, corriente trifásica y cableado",
+      "nombre": "Ascensor, sistema de bombeo, agua caliente, sistema trifásico y cableado",
       "PEN": 385.14,
       "USD": 10
     },
     {
-      "nombre": "Sistema de bombeo de agua, agua caliente y fría, corriente trifásica y cableado",
+      "nombre": "Sistema de bombeo, agua caliente, sistema trifásico y cableado",
       "PEN": 168.56,
       "USD": 10
     },
     {
-      "nombre": "Agua caliente y fría, corriente monofásica y cableado",
+      "nombre": "Agua caliente, sistema monofásico y cableado",
       "PEN": 95.51,
       "USD": 10
     },
     {
-      "nombre": "Agua fría, corriente monofásica y cableado",
+      "nombre": "Agua fría, sistema monofásico y cableado",
       "PEN": 34.55,
       "USD": 10
     },
     {
-      "nombre": "Agua fría y corriente monofásica",
+      "nombre": "Agua fría y sistema monofásico",
       "PEN": 20.35,
       "USD": 10
     },

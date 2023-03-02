@@ -33,6 +33,7 @@ app.get("/mapa", (request, response) => {
 });
 
 app.get("/calculadora", (request, response) => {
+  delete require.cache[require.resolve('./public/json/precios.json')];
   let precios = require('./public/json/precios.json');
   response.render('calculadora', {
     layout: false,
@@ -43,34 +44,6 @@ app.get("/calculadora", (request, response) => {
     }
   });
 });
-
-// app.post("/print_cot", (request, response) => {
-//   let format = { maximumFractionDigits: 2, minimumFractionDigits: 2 };
-//   let p = precios_json.precios;
-//   let columnas = [];
-//   for (let i = 0; i < p.length; i++) {
-//     if (p[i].id in request.body) {
-//       let precio;
-//       if (request.body.moneda === "1") {
-//         precio = '$ ' + p[i].tipos[request.body[p[i].id]].dolares.toLocaleString('en-US', format);
-//       }else{
-//         precio = 's/ '+ p[i].tipos[request.body[p[i].id]].soles.toLocaleString('en-US', format);
-//       }
-//       columnas.push({
-//         name: p[i].name,
-//         option: p[i].tipos[request.body[p[i].id]].name,
-//         precio: precio
-//       });
-//     }
-//   }
-  
-//   response.render('cotizacion', {
-//     area: request.body.area,
-//     pm2: request.body.pm2,
-//     total: request.body.total,
-//     columnas: columnas
-//   });
-// });
 
 // cron.schedule('* 1 * * *', () => {
 //   let url = "https://api.currencyapi.com/v2/latest?apikey=b28ce780-77db-11ec-8706-6d30cb3e206b&base_currency=USD";

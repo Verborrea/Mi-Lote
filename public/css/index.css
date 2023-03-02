@@ -12,7 +12,7 @@ article {
   align-items: center;
 }
 
-article>* {
+article>p {
   text-align: center;
 }
 
