@@ -3,8 +3,8 @@ var distritos = [];
 let uso_actual;	// boton de Uso Compatible activo (color rojo)
 let area_lote;
 
-function getPrecio(precio_m2) {
-	let formated_price = new Intl.NumberFormat().format(Math.round(area_lote * precio_m2));
+function getPrecio(m2, precio_m2) {
+	let formated_price = new Intl.NumberFormat().format(Math.round(m2 * precio_m2));
 	return 'S/ ' + formated_price;
 }
 
@@ -16,13 +16,6 @@ function selectLote(lote) {
 	area_lote = turf.area(lote);
 	document.querySelector('#area_total').innerHTML = Math.round(area_lote) + ' m<sup>2</sup>';
 
-	// calcular precios en base al area
-	document.querySelector('#precio-a').innerText = getPrecio(1260.37);
-	document.querySelector('#precio-b').innerText = getPrecio(846.63);
-	document.querySelector('#precio-c').innerText = getPrecio(629.12);
-
-	document.querySelector('#link-calc').href = '/calculadora?area=' + Math.round(area_lote) + '#calculadora';
-
 	selectZona(lote.properties.z);
 }
 
@@ -33,8 +26,15 @@ function getAreaLibre(porcentaje) {
 }
 
 function getAreaTechada(coeficiente) {
-	let area_techada = Math.round(area_lote) * Number(coeficiente);
-	return Math.round(area_techada) + ' m<sup>2</sup>';
+	let area_techada = Math.round(area_lote * Number(coeficiente));
+
+	document.querySelector('#link-calc').href = '/calculadora?area=' + area_techada + '#calculadora';
+	// calcular precios en base al area
+	document.querySelector('#precio-a').innerText = getPrecio(area_techada, 1260.37);
+	document.querySelector('#precio-b').innerText = getPrecio(area_techada, 846.63);
+	document.querySelector('#precio-c').innerText = getPrecio(area_techada, 629.12);
+
+	return area_techada + ' m<sup>2</sup>';
 }
 
 // Actualizar área libre y àrea techada.

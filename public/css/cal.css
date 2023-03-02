@@ -21,7 +21,7 @@ article {
   display: grid;
   justify-items: start;
   width: 100%;
-  grid-template-columns: 1fr 1.5fr;
+  grid-template-columns: 1fr 1.25fr;
   gap: 20px;
 }
 /* ============================================= detalles */
@@ -90,7 +90,7 @@ input#m2:focus {
 }
 
 .descripcion, .precio {
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .precio {
@@ -99,8 +99,36 @@ input#m2:focus {
   grid-column-start: 2;
 }
 /* ============================================= subopciones */
-div#subopciones {
-  display: none;
+.subopciones {
+  padding: 1em;
+  max-height: 500px;
+  height: auto;
+  transition: all 1s ease;
+}
+
+.opcion.oculta+.subopciones {
+  height: 0;
+  max-height: 0;
+  opacity: 0;
+  padding: 0;
+}
+
+.opcion.oculta+.subopciones>.sub-opcion {
+  height: 0;
+  max-height: 0;
+  opacity: 0;
+  padding: 0;
+}
+
+.sub-opcion {
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+  padding: 5px;
+}
+
+.sub-opcion:not(:last-child) {
+  border-bottom: 1px solid #5B5B5B;
 }
 
 @media (max-width: 880px) {
@@ -130,5 +158,9 @@ div#subopciones {
   #totales {
     flex-direction: column;
     gap: 0;
+  }
+  .subopciones {
+    width: 100%;
+    padding: 0;
   }
 }

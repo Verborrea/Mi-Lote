@@ -1,5 +1,5 @@
 let total = 0;
-let costo_opciones = {};  //objeto que guarda las opciones escogidas en ambas monedas
+let costo_opciones = [];  //objeto que guarda las opciones escogidas en ambas monedas
 let area = 0;
 let area_input = document.getElementById("m2");
 let currency = 'PEN';
@@ -36,8 +36,8 @@ function formatPrecio(precio) {
 
 function actualizarTotal() {
   total = 0;
-  for (const categoria in costo_opciones) {
-    const costo = costo_opciones[categoria][currency];
+  for (const opcion in costo_opciones) {
+    const costo = costo_opciones[opcion][currency];
     total += Number(costo);
   }
   document.querySelector('#total').innerText = formatPrecio(total * area);
@@ -54,53 +54,56 @@ function changeCurrency() {
   // cambiar la moneda en todas las opciones
   let opciones = document.querySelectorAll('.precio');
   for (const opcion of opciones) {
-    opcion.innerText = symbol + ' ' + opcion.getAttribute(currency);
+    opcion.innerText = formatPrecio(opcion.getAttribute(currency));
   }
 
   // cambiar la moneda en el total
   actualizarTotal();
 }
 
-// function toggleCategoria(categoria) {
-//   categoria.classList.toggle('oculta');
-// }
+function toggleOpcion(opcion_id) {
+  document.getElementById(opcion_id).classList.toggle('oculta');
+}
 
-// function selectOpcion(option) {
-//   option.toggleAttribute('selected');
-//   let categoria = option.getAttribute("name");
-//   let opciones = document.getElementsByName(categoria);
-//   for (const iterator of opciones) {
-//     if (iterator != option)
-//       iterator.classList.toggle('oculta');
-//   }
+function selectSubopcion(subopcion) {
+  let opcion_id = subopcion.getAttribute("option_id");
+  toggleOpcion('op-' + opcion_id);
 
-//   let catergoria_id = option.parentNode.previousElementSibling.id[4];
-//   let next_id = parseInt(catergoria_id) + 1;
-//   if (next_id < 7) {
-//     toggleCategoria(document.querySelector('#cat-' + next_id));
-//   }
+  let nombre = subopcion.children[0].innerText;
+  let precio = subopcion.children[1];
+  let nombre_div =  document.getElementById('nombre-' + opcion_id);
+  let precio_div =  document.getElementById('precio-' + opcion_id);
 
-//   costo_opciones[categoria] = {
-//     'PEN' : option.getAttribute('PEN'),
-//     'USD' : option.getAttribute('USD')
-//   };
-//   actualizarTotal();
-// }
+  nombre_div.innerText = nombre;
+  precio_div.innerText = formatPrecio(precio.getAttribute(currency));
+  precio_div.setAttribute('PEN',precio.getAttribute('PEN'));
+  precio_div.setAttribute('USD',precio.getAttribute('USD'));
 
-// area_input.addEventListener("change", function() {
-//   area = Number(area_input.value);
-//   actualizarTotal();
-//   document.querySelector('#selector').scrollIntoView({ block: "start" });
-//   if (total === 0) {
-//     toggleCategoria(document.querySelector('.categoria'));
-//   }
-// });
+  costo_opciones[opcion_id] = {
+    'PEN' : precio.getAttribute('PEN'),
+    'USD' : precio.getAttribute('USD')
+  };
+  actualizarTotal();
 
-// // Si hay un parametro area en la URL:
-// if (url.searchParams.has('area')) {
-//   area = Number(url.searchParams.get('area'));
-//   area_input.dispatchEvent(new Event('keypress', {bubbles:true}));
-//   area_input.dispatchEvent(new Event('change', {bubbles:true}));
-// }
+  // abrir panel de subopciones de la siguiente opcion
+  if (costo_opciones.length < 7) {
+    toggleOpcion('op-' + (Number(opcion_id) + 1));
+  }
+}
+
+area_input.addEventListener("change", function() {
+  area = Number(area_input.value);
+  actualizarTotal();
+  if (total === 0) {
+    toggleOpcion('op-0');
+  }
+});
+
+// Si hay un parametro area en la URL:
+if (url.searchParams.has('area')) {
+  area = Number(url.searchParams.get('area'));
+  area_input.dispatchEvent(new Event('keypress', {bubbles:true}));
+  area_input.dispatchEvent(new Event('change', {bubbles:true}));
+}
 
 document.querySelector('#currency').addEventListener("change", changeCurrency);
