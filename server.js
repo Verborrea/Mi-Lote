@@ -45,40 +45,38 @@ app.get("/calculadora", (request, response) => {
   });
 });
 
-// cron.schedule('* 1 * * *', () => {
-//   let url = "https://api.currencyapi.com/v2/latest?apikey=b28ce780-77db-11ec-8706-6d30cb3e206b&base_currency=USD";
+cron.schedule('15 * * * * *', () => {
+  let url = "https://api.currencyapi.com/v2/latest?apikey=b28ce780-77db-11ec-8706-6d30cb3e206b&base_currency=USD";
 
-//   https.get(url,(res) => {
-//     let body = "";
+  https.get(url,(res) => {
+    let body = "";
 
-//     res.on("data", (chunk) => {
-//         body += chunk;
-//     });
+    res.on("data", (chunk) => {
+      body += chunk;
+    });
 
-//     res.on("end", () => {
-//       try {
-//         let json = JSON.parse(body);
+    res.on("end", () => {
+      try {
+        let tasa = JSON.parse(body).data.PEN;
+        let precios = JSON.parse(fs.readFileSync('./public/json/precios.json'));
 
-//         const file_content = fs.readFileSync("precios.json");
-//         let content = JSON.parse(file_content);
+        for (const categoria in precios) {
+          for (let i = 0; i < precios[categoria].length; i++) {
+            precios[categoria][i].USD = precios[categoria][i].PEN / tasa;
+          }
+        }
 
-//         for (let i = 0; i < content.precios.length; i++){
-//           for (let j = 0; j < content.precios[i].tipos.length; j++){
-//             content.precios[i].tipos[j].dolares = content.precios[i].tipos[j].soles / json.data.PEN;
-//           }
-//         }
+        fs.writeFileSync('./public/json/precios.json', JSON.stringify(precios, null, 2));
+        console.log("Precio del dólar actualizado");
+      } catch (error) {
+        console.error(error.message);
+      };
+    });
 
-//         fs.writeFileSync('precios.json', JSON.stringify(content, null, 2));
-//         console.log("Precio del dólar actualizado");
-//       } catch (error) {
-//           console.error(error.message);
-//       };
-//     });
-
-//   }).on("error", (error) => {
-//       console.error(error.message);
-//   });
-// });
+  }).on("error", (error) => {
+    console.error(error.message);
+  });
+});
 
 // listen for requests :)
 const listener = app.listen(process.env.PORT, () => {

@@ -3,164 +3,164 @@
     {
       "nombre": "Concreto armado especial",
       "PEN": 898.59,
-      "USD": 10
+      "USD": 237.56472560783777
     },
     {
       "nombre": "Concreto armado",
       "PEN": 534.59,
-      "USD": 10
+      "USD": 141.3322278933596
     },
     {
       "nombre": "Albañilería armada",
       "PEN": 387.87,
-      "USD": 10
+      "USD": 102.54312881460069
     },
     {
       "nombre": "Sillar",
       "PEN": 358.26,
-      "USD": 10
+      "USD": 94.71498525051909
     },
     {
       "nombre": "Ladrillo",
       "PEN": 230.09,
-      "USD": 10
+      "USD": 60.8300423052865
     },
     {
       "nombre": "Drywall",
       "PEN": 175.38,
-      "USD": 10
+      "USD": 46.36608639880544
     }
   ],
   "techos": [
     {
       "nombre": "Losa Nervada",
       "PEN": 467.23,
-      "USD": 10
+      "USD": 123.52392831630671
     },
     {
       "nombre": "Losa aligerada inclinada",
       "PEN": 321.22,
-      "USD": 10
+      "USD": 84.92253548308979
     },
     {
       "nombre": "Losa aligerada horizontal",
       "PEN": 224.78,
-      "USD": 10
+      "USD": 59.42621108862748
     },
     {
       "nombre": "Calamina con vigas metálicas",
       "PEN": 152.16,
-      "USD": 10
+      "USD": 40.227299044601644
     },
     {
       "nombre": "Madera con material impermeabilizante",
       "PEN": 57.16,
-      "USD": 10
+      "USD": 15.111674641097725
     },
     {
       "nombre": "Calamina con vigas de madera",
       "PEN": 55.82,
-      "USD": 10
+      "USD": 14.757412149511461
     }
   ],
   "pisos y ventanas": [
     {
       "nombre": "Mármol con madera",
       "PEN": 188.23,
-      "USD": 10
+      "USD": 49.7633050681215
     },
     {
       "nombre": "Parquet",
       "PEN": 99.88,
-      "USD": 10
+      "USD": 26.405774372862858
     },
     {
       "nombre": "Porcelanato",
       "PEN": 82.6,
-      "USD": 10
+      "USD": 21.837374481362353
     },
     {
       "nombre": "Cerámico",
       "PEN": 67.46,
-      "USD": 10
+      "USD": 17.834737076424993
     },
     {
       "nombre": "Vinilico",
       "PEN": 50.46,
-      "USD": 10
+      "USD": 13.340362183166398
     },
     {
       "nombre": "Cemento pulido",
       "PEN": 27.26,
-      "USD": 10
+      "USD": 7.20686232883702
     }
   ],
   "puertas": [
     {
       "nombre": "Madera ornamental tallada",
       "PEN": 354.66,
-      "USD": 10
+      "USD": 93.76323527312317
     },
     {
       "nombre": "Madera de caoba",
       "PEN": 228.98,
-      "USD": 10
+      "USD": 60.53658606225608
     },
     {
       "nombre": "Madera de cedro / Aluminio",
       "PEN": 134.31,
-      "USD": 10
+      "USD": 35.50820540668012
     },
     {
       "nombre": "Sistema Moduglass con vidrio templado",
       "PEN": 79.34,
-      "USD": 10
+      "USD": 20.97551200183159
     },
     {
       "nombre": "Sistema Moduglass con vidrio crudo",
       "PEN": 46.74,
-      "USD": 10
+      "USD": 12.356887206523929
     },
     {
       "nombre": "Perfiles de fierro con madera corriente",
       "PEN": 23.37,
-      "USD": 10
+      "USD": 6.1784436032619645
     }
   ],
   "revestimientos": [
     {
       "nombre": "Mármol",
-      "PEN": 243.40,
-      "USD": 10
+      "PEN": 243.4,
+      "USD": 64.34887347171426
     },
     {
       "nombre": "Madera fina",
       "PEN": 154.09,
-      "USD": 10
+      "USD": 40.73754278248336
     },
     {
       "nombre": "Enchape de piedra",
       "PEN": 128.19,
-      "USD": 10
+      "USD": 33.89023044510702
     },
     {
       "nombre": "Tarrajeos especiales",
       "PEN": 76.44,
-      "USD": 10
+      "USD": 20.208824520040416
     },
     {
       "nombre": "Tarrajeo frotachado",
       "PEN": 56.78,
-      "USD": 10
+      "USD": 15.01121214348371
     },
     {
       "nombre": "Caravista rústico",
       "PEN": 22.71,
-      "USD": 10
+      "USD": 6.003956107406043
     },
     {
       "nombre": "Sin revestimientos",
-      "PEN": 0.00,
+      "PEN": 0,
       "USD": 0
     }
   ],
@@ -168,31 +168,31 @@
     {
       "nombre": "Lavatorio, WC, tina lujo. Enchape granito",
       "PEN": 108.08,
-      "USD": 10
+      "USD": 28.57364932137583
     },
     {
       "nombre": "Lavatorio, WC, tina. Porcelanato",
-      "PEN": 50.40,
-      "USD": 10
+      "PEN": 50.4,
+      "USD": 13.32449968354313
     },
     {
       "nombre": "Lavatorio, WC, ducha. Mayólica",
       "PEN": 30.84,
-      "USD": 10
+      "USD": 8.153324806358535
     },
     {
       "nombre": "Lavatorio, WC, ducha. Mayólica parcial",
       "PEN": 12.85,
-      "USD": 10
+      "USD": 3.3972186693160564
     },
     {
       "nombre": "Lavatorio, WC, ducha de granito",
       "PEN": 8.83,
-      "USD": 10
+      "USD": 2.334431194557259
     },
     {
       "nombre": "Sin aparatos sanitarios",
-      "PEN": 0.00,
+      "PEN": 0,
       "USD": 0
     }
   ],
@@ -200,32 +200,32 @@
     {
       "nombre": "Ascensor, sistema de bombeo, agua caliente, sistema trifásico y cableado",
       "PEN": 385.14,
-      "USD": 10
+      "USD": 101.8213850817421
     },
     {
       "nombre": "Sistema de bombeo, agua caliente, sistema trifásico y cableado",
       "PEN": 168.56,
-      "USD": 10
+      "USD": 44.563048941627585
     },
     {
       "nombre": "Agua caliente, sistema monofásico y cableado",
       "PEN": 95.51,
-      "USD": 10
+      "USD": 25.250455650301678
     },
     {
       "nombre": "Agua fría, sistema monofásico y cableado",
       "PEN": 34.55,
-      "USD": 10
+      "USD": 9.134156033063793
     },
     {
       "nombre": "Agua fría y sistema monofásico",
       "PEN": 20.35,
-      "USD": 10
+      "USD": 5.380031122224261
     },
     {
       "nombre": "Sin instalaciones eléctricas ni sanitarias",
-      "PEN": 0.00,
-      "USD": 0.00
+      "PEN": 0,
+      "USD": 0
     }
   ]
 }
