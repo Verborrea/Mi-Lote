@@ -45,7 +45,7 @@ app.get("/calculadora", (request, response) => {
   });
 });
 
-cron.schedule('15 * * * * *', () => {
+cron.schedule('* 1 * * *', () => {
   let url = "https://api.currencyapi.com/v2/latest?apikey=b28ce780-77db-11ec-8706-6d30cb3e206b&base_currency=USD";
 
   https.get(url,(res) => {
