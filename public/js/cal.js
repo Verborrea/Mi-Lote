@@ -1,11 +1,13 @@
 let total = 0;
-let costo_opciones = [];  //objeto que guarda las opciones escogidas en ambas monedas
+let costo_opciones = {};  //objeto que guarda las opciones escogidas en ambas monedas
 let area = 0;
 let area_input = document.getElementById("m2");
 let currency = 'PEN';
 let symbol = 'S/';
 
 const url = new URL(window.location.href);
+
+const grid_layout = ['1fr','1fr','1fr','1fr','1fr','1fr','1fr'];  //grid-auto-layout de #opciones
 
 // Handle Input Autogrow
 (function(){
@@ -63,11 +65,34 @@ function changeCurrency() {
 
 function toggleOpcion(opcion_id) {
   document.getElementById(opcion_id).classList.toggle('oculta');
+
+  opcion_id = Number(opcion_id);
+
+
+  let option_counter = 0;
+  for (let i = 0; i < grid_layout.length; i++) {
+    if (grid_layout[i] === '1fr') {
+      if (option_counter === opcion_id) {
+        if (grid_layout[i + 1] != 'auto') {
+          grid_layout.splice(i + 1, 0, 'auto');
+          document.getElementById('opciones').style.maxHeight = 'none';
+        }
+        else {
+          grid_layout.splice(i + 1, 1);
+          document.getElementById('opciones').style.maxHeight = '580px';
+        }
+        break;
+      }
+      option_counter++;
+    }
+  }
+
+  document.getElementById('opciones').style.gridAutoRows = grid_layout.join(' ');
 }
 
 function selectSubopcion(subopcion) {
   let opcion_id = subopcion.getAttribute("option_id");
-  toggleOpcion('op-' + opcion_id);
+  toggleOpcion(opcion_id);
 
   let nombre = subopcion.children[0].innerText;
   let precio = subopcion.children[1];
@@ -86,8 +111,8 @@ function selectSubopcion(subopcion) {
   actualizarTotal();
 
   // abrir panel de subopciones de la siguiente opcion
-  if (costo_opciones.length < 7) {
-    toggleOpcion('op-' + (Number(opcion_id) + 1));
+  if (Object.keys(costo_opciones).length < 7 && opcion_id < 6) {
+    toggleOpcion(Number(opcion_id) + 1);
   }
 }
 
@@ -95,7 +120,7 @@ area_input.addEventListener("change", function() {
   area = Number(area_input.value);
   actualizarTotal();
   if (total === 0) {
-    toggleOpcion('op-0');
+    toggleOpcion('0');
   }
 });
 

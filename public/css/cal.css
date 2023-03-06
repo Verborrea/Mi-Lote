@@ -63,6 +63,10 @@ input#m2:focus {
 /* ============================================= opciones */
 #opciones {
   width: 100%;
+  display: grid;
+  grid-auto-rows: 1fr;
+  min-height: 525px;
+  max-height: 580px;
 }
 .opcion {
   width: 100%;
@@ -71,7 +75,7 @@ input#m2:focus {
   grid-template-rows: 1fr auto 1fr;
   align-items: start;
   column-gap: 1rem;
-  margin-block-end: 5px;
+  margin-block-end: 6px;
 }
 
 .opcion>img {
@@ -87,6 +91,7 @@ input#m2:focus {
   color: var(--enfasis);
   font-size: 19px;
   line-height: 19px;
+  align-self: end;
 }
 
 .descripcion, .precio {

@@ -62,7 +62,7 @@
         </div>
         <div id="opciones">
           {{#each precios}}
-            <div class="opcion oculta" id="op-{{@index}}" onclick="toggleOpcion('op-{{@index}}')">
+            <div class="opcion oculta" id="{{@index}}" onclick="toggleOpcion('{{@index}}')">
               <img src="https://cdn.glitch.global/0b13a06d-0a08-4c26-8355-bf1bfe0115b1/hormigon.jpg?v=1677788715934">
               <div class="nombre">{{loud @key}}</div>
               <div class="descripcion" id="nombre-{{@index}}">Haga click en una opción</div>

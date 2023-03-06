@@ -33,8 +33,7 @@ app.get("/mapa", (request, response) => {
 });
 
 app.get("/calculadora", (request, response) => {
-  delete require.cache[require.resolve('./public/json/precios.json')];
-  let precios = require('./public/json/precios.json');
+  let precios = JSON.parse(fs.readFileSync('./public/json/precios.json'));
   response.render('calculadora', {
     layout: false,
     precios: precios,
