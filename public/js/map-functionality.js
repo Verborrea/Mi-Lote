@@ -54,6 +54,7 @@ map.on('load', () => {
 	}, 'road-label');
 
 	map.on('mousemove', 'lotes-layer', (e) => {
+		map.getCanvas().style.cursor = 'default';
 		if (e.features.length > 0) {
 			if (hoveredLoteId !== null) {
 				map.setFeatureState(
@@ -77,6 +78,7 @@ map.on('load', () => {
 			);
 		}
 		hoveredLoteId = null;
+		map.getCanvas().style.cursor = '';
 	});
 
 	map.on('click', 'lotes-layer', (e) => {

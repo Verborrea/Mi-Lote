@@ -4,8 +4,9 @@ let uso_actual;	// boton de Uso Compatible activo (color rojo)
 let area_lote;
 
 function getPrecio(m2, precio_m2) {
-	let formated_price = new Intl.NumberFormat().format(Math.round(m2 * precio_m2));
-	return 'S/ ' + formated_price;
+	let precio = Math.round(m2 * precio_m2);
+	let cadena = new Intl.NumberFormat('es-PE', { style: 'currency', currency: 'PEN' }).format(precio);
+	return cadena.slice(0,-3);
 }
 
 // Actualizar la informaciòn del Lote
