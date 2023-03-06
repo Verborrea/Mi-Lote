@@ -53,22 +53,41 @@ function printCotizacion() {
   let cotBody = prepareCotBody();
 
   doc.myText("COTIZACIÓN",{align: "center"},0,15);
+
+  doc.setTextColor(100,100,100);
   doc.setFontSize(12);
   doc.myText(generateId(),{align: "center"},0,25);
 
-  doc.text('Área Techada: ' + area + ' m2',15, 35);
+  doc.setFontSize(10);
+  doc.setTextColor(0,0,0);
+  doc.setFontType("bold");
+  doc.text('Área Techada:',15, 35);
+  doc.setFontType("normal");
+  doc.text(area + ' m2',50, 35);
 
   doc.autoTable({
     startY: 40,
     head: [['Categoría', 'Descripción', 'Precio x m2', 'Precio']],
     body: cotBody,
+    columnStyles: {
+      2: {cellWidth: 30},
+      3: {cellWidth: 30}
+    },
+    theme: 'plain'
   });
 
   doc.setFontSize(12);
 
   let finalY = doc.lastAutoTable.finalY;
-  doc.text(15, finalY + 10, 'Total: ' + financial(total));
-  doc.text(15, finalY + 17, 'Total x m2: ' + financial(total * area));
+  doc.setFontSize(10);
+  doc.setTextColor(0,0,0);
+
+  doc.setFontType("bold");
+  doc.text('Total:',123, finalY + 10);
+
+  doc.setFontType("normal");
+  doc.text(financial(total),138, finalY + 10);
+  doc.text(financial(total * area),168, finalY + 10);
 
   doc.output('dataurlnewwindow');
 }
