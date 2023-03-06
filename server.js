@@ -44,15 +44,6 @@ app.get("/calculadora", (request, response) => {
   });
 });
 
-app.get("/cotizacion", (request, response) => {
-  let lista = {'currency': 'PEN'};
-  response.render('cotizacion', {
-    layout: false,
-    precios: lista,
-    area: request.query.area ?? ''
-  });
-});
-
 cron.schedule('* 1 * * *', () => {
   let url = "https://api.currencyapi.com/v2/latest?apikey=b28ce780-77db-11ec-8706-6d30cb3e206b&base_currency=USD";
 
