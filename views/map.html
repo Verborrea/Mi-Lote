@@ -21,6 +21,7 @@
   <script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
   <script src="/js/map-functions.js"></script>
   <script src="/js/zonificacion.js"></script>
+  <script src="/js/search.js"></script>
 </head>
 
 <body>
@@ -47,10 +48,8 @@
     <section id="search">
       <span>¿No encuentras tu lote en el mapa? Intenta aquí:</span>
       <div class="inputs">
-        <input id="busqueda_distrito" type="text" placeholder="Distrito">
-        <input id="busqueda_calle" type="text" placeholder="Urb/Calle/Psj">
-        <input id="busqueda_mznynro" type="text" placeholder="Mzn. y/o Nro.">
-        <button id="buscar-btn">Buscar</button>
+        <input id="busqueda_direccion" type="text" placeholder="Dirección">
+        <button id="buscar-btn" onclick="buscar()">Buscar</button>
       </div>
     </section>
     <div id="work-area">
@@ -164,9 +163,9 @@
     const work_area = document.querySelector("#work-area");
 
     if (window.innerWidth > 700) {
-      const search_height = document.querySelector("#search").offsetHeight;;
-      const header_height = document.querySelector("header").offsetHeight;;
-      const footer_height = document.querySelector("footer").offsetHeight;;
+      const search_height = document.querySelector("#search").offsetHeight;
+      const header_height = document.querySelector("header").offsetHeight;
+      const footer_height = document.querySelector("footer").offsetHeight;
 
       const extra_space = window.innerHeight - (search_height + header_height + footer_height);
       work_area.setAttribute("style", "height: " + extra_space.toString() + "px");
