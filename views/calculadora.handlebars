@@ -66,13 +66,13 @@
               <img src="https://cdn.glitch.global/0b13a06d-0a08-4c26-8355-bf1bfe0115b1/hormigon.jpg?v=1677788715934">
               <div class="nombre">{{loud @key}}</div>
               <div class="descripcion" id="nombre-{{@index}}">Haga click en una opción</div>
-              <div class="precio" id="precio-{{@index}}" PEN="0" USD="0">S/ 0.00</div>
+              <div class="precio" id="precio-{{@index}}" PEN="0" USD="0">S/&nbsp;0.00</div>
             </div>
             <div class="subopciones" id="subop-{{@index}}">
               {{#each this}}
                 <div class="sub-opcion" option_id="{{@../index}}" onclick="selectSubopcion(this)">
                   <div class="descripcion">{{this.nombre}}</div>
-                  <div class="precio" PEN="{{this.PEN}}" USD="{{this.USD}}">S/ {{this.PEN}}</div>
+                  <div class="precio" PEN="{{this.PEN}}" USD="{{this.USD}}">S/&nbsp;{{this.PEN}}</div>
                 </div>
               {{/each}}
             </div>
@@ -84,8 +84,8 @@
             <span class="slider">S/</span>
           </label>
           <div id="totales">
-            <div><b>Total: </b><span id="total">S/ 0.00</span></div>
-            <div><b>Total x m<sup>2</sup>: </b><span id="totalm2">S/ 0.00</span></div>
+            <div><b>Total: </b><span id="total">S/&nbsp;0.00</span></div>
+            <div><b>Total x m<sup>2</sup>: </b><span id="totalm2">S/&nbsp;0.00</span></div>
           </div>
         </div>
       </div>

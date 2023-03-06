@@ -68,7 +68,7 @@ input#m2:focus {
   width: 100%;
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-template-rows: 1fr 2fr 1fr;
+  grid-template-rows: 1fr auto 1fr;
   align-items: start;
   column-gap: 1rem;
   margin-block-end: 5px;
@@ -85,12 +85,13 @@ input#m2:focus {
 
 .nombre {
   color: var(--enfasis);
-  font-size: 16px;
-  line-height: 18px;
+  font-size: 19px;
+  line-height: 19px;
 }
 
 .descripcion, .precio {
-  font-size: 13px;
+  font-size: 15px;
+  line-height: 19px;
 }
 
 .precio {
@@ -101,23 +102,10 @@ input#m2:focus {
 /* ============================================= subopciones */
 .subopciones {
   padding: 1em;
-  max-height: 500px;
-  height: auto;
-  transition: all 1s ease;
 }
 
 .opcion.oculta+.subopciones {
-  height: 0;
-  max-height: 0;
-  opacity: 0;
-  padding: 0;
-}
-
-.opcion.oculta+.subopciones>.sub-opcion {
-  height: 0;
-  max-height: 0;
-  opacity: 0;
-  padding: 0;
+  display: none;
 }
 
 .sub-opcion {
@@ -137,17 +125,6 @@ input#m2:focus {
   }
   #calculadora>h1 {
     margin-bottom: 5px;
-  }
-  .opcion>img {
-    width: 89px;
-    height: 59px;
-  }
-  .nombre {
-    font-size: 14px;
-    line-height: 18px;
-  }
-  .descripcion, .precio {
-    font-size: 10px;
   }
   #grid {
     display: flex;
