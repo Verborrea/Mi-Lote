@@ -43,6 +43,14 @@ article {
   align-items: baseline;
   gap: 25px;
 }
+
+.fa-print:before {
+  color: var(--enfasis);
+}
+
+.fa-print:hover:before {
+  color: var(--hover-enfasis);
+}
 /* ============================================= area */
 input#m2 {
   border: none;
