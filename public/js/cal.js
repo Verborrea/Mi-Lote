@@ -1,9 +1,9 @@
-let total = 0;
-let costo_opciones = {};  //objeto que guarda las opciones escogidas en ambas monedas
-let area = 0;
+var total = 0;
+var opciones_escogidas = {};  //objeto que guarda las opciones escogidas en ambas monedas
+var area = 0;
 let area_input = document.getElementById("m2");
-let currency = 'PEN';
-let symbol = 'S/';
+var currency = 'PEN';
+var symbol = 'S/';
 
 const url = new URL(window.location.href);
 
@@ -16,17 +16,17 @@ const grid_layout = ['1fr','1fr','1fr','1fr','1fr','1fr','1fr'];  //grid-auto-la
 
   input.style.width = min+'px';
   input.onkeypress = input.onkeydown = input.onkeyup = function(){
-      let input = this;
-      setTimeout(function(){
-          let tmp = document.createElement('div');
-          tmp.style.cssText = 'font-size: 16px;border: none;padding: 0 5px;position: absolute;';
-          tmp.innerHTML = input.value.replace(/ /g, '&nbsp;');
-          input.parentNode.appendChild(tmp);
-          let width = tmp.clientWidth;
-          tmp.parentNode.removeChild(tmp);
-          if(min <= width && width <= max)
-              input.style.width = width+'px';
-      }, 1);
+    let input = this;
+    setTimeout(function(){
+      let tmp = document.createElement('div');
+      tmp.style.cssText = 'font-size: 16px;border: none;padding: 0 5px;position: absolute;';
+      tmp.innerHTML = input.value.replace(/ /g, '&nbsp;');
+      input.parentNode.appendChild(tmp);
+      let width = tmp.clientWidth;
+      tmp.parentNode.removeChild(tmp);
+      if(min <= width && width <= max)
+        input.style.width = width+'px';
+    }, 1);
   }
 
 })();
@@ -38,8 +38,8 @@ function formatPrecio(precio) {
 
 function actualizarTotal() {
   total = 0;
-  for (const opcion in costo_opciones) {
-    const costo = costo_opciones[opcion][currency];
+  for (const opcion in opciones_escogidas) {
+    const costo = opciones_escogidas[opcion][currency];
     total += Number(costo);
   }
   document.querySelector('#total').innerText = formatPrecio(total * area);
@@ -104,14 +104,16 @@ function selectSubopcion(subopcion) {
   precio_div.setAttribute('PEN',precio.getAttribute('PEN'));
   precio_div.setAttribute('USD',precio.getAttribute('USD'));
 
-  costo_opciones[opcion_id] = {
+  opciones_escogidas[opcion_id] = {
+    'categoria': document.getElementById(opcion_id).querySelector('.nombre').innerText,
+    'descripcion': nombre,
     'PEN' : precio.getAttribute('PEN'),
     'USD' : precio.getAttribute('USD')
   };
   actualizarTotal();
 
   // abrir panel de subopciones de la siguiente opcion
-  if (Object.keys(costo_opciones).length < 7 && opcion_id < 6) {
+  if (Object.keys(opciones_escogidas).length < 7 && opcion_id < 6) {
     toggleOpcion(Number(opcion_id) + 1);
   }
 }
