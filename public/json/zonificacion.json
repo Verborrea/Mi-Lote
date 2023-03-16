@@ -19,7 +19,7 @@
 	"RDM-1": {
 		"nombre": "Residencial de Densidad Media 1",
 		"descripcion": "Viviendas tratadas individualmente o en conjunto que permiten una concentración poblacional media a través de unidades unifamiliares y multifamiliares.",
-		"compatibles": ["RDM-1", "CV", "CS", "E1", "H1", "ZR"],
+		"compatibles": ["RDM-1", "CV", "CS", "E-1", "H-1", "ZR"],
 		"tipo": "Residencial",
 		"info" : {
 			"Unifamiliar": {
@@ -47,7 +47,7 @@
 	"RDM-2": {
 		"nombre": "Residencial de Densidad Media 2",
 		"descripcion": "Viviendas tratadas individualmente o en conjunto que permiten una concentración poblacional media a través de unidades multifamiliares.",
-		"compatibles": ["RDM-2", "CV", "CS", "CZ", "E1", "H1", "H2", "ZR"],
+		"compatibles": ["RDM-2", "CV", "CS", "CZ", "E-1", "H-1", "H-2", "ZR"],
 		"tipo": "Residencial",
 		"info": {
 			"Multifamiliar": {
@@ -75,7 +75,7 @@
 	"RDA-1": {
 		"nombre": "Residencial de Densidad Alta 1",
 		"descripcion": "Viviendas tratadas en conjunto que permitan la obtención de una alta concentración poblacional.",
-		"compatibles": ["RDA-1", "CV", "CS", "CZ", "E1", "H1", "H2", "ZR"],
+		"compatibles": ["RDA-1", "CV", "CS", "CZ", "E-1", "H-1", "H-2", "ZR"],
 		"tipo": "Residencial",
 		"info": {
 			"Multifamiliar": {
@@ -103,7 +103,7 @@
 	"RDA-2": {
 		"nombre": "Residencial de Densidad Alta 2",
 		"descripcion": "Viviendas tratadas en conjunto que permitan la obtención de una alta concentración poblacional.",
-		"compatibles": ["RDA-2", "CZ", "CM", "E1", "H1", "H2", "ZR"],
+		"compatibles": ["RDA-2", "CZ", "CM", "E-1", "H-1", "H-2", "ZR"],
 		"tipo": "Residencial",
 		"info": {
 			"Multifamiliar*": {
@@ -148,7 +148,7 @@
 	"CE": {
 		"nombre": "Comercio Especializado",
 		"descripcion": "Toda actividad comercial-industrial que no pueda considerarse molesta o peligrosa por sus propias características.",
-		"compatibles": ["RDA-1", "RDA-2", "CE", "CV", "CS", "I1", "I2", "E1", "H1", "H2"],
+		"compatibles": ["RDA-1", "RDA-2", "CE", "CV", "CS", "I1", "I2", "E-1", "H-1", "H-2"],
 		"tipo": "Comercial",
 		"info": {
 			"Nivel de servicio": "De 1000 a 200'000",
@@ -162,7 +162,7 @@
 	"CV": {
 		"nombre": "Comercio Vecinal",
 		"descripcion": "Es el tipo de comercio destinado a ofrecer bienes de consumo diario, especialmente alimentos y artículos o servicios de primera necesidad.",
-		"compatibles": ["RDM-2", "CV", "I1", "E1", "H1", "H2"],
+		"compatibles": ["RDM-2", "CV", "I1", "E-1", "H-1", "H-2"],
 		"tipo": "Comercial",
 		"info": {
 			"Nivel de servicio": "De 2000 a 7500",
@@ -176,7 +176,7 @@
 	"CS": {
 		"nombre": "Comercio Sectorial",
 		"descripcion": "Es el tipo de comercio que se dan en la periferia de las Zonas Comerciales Zonales, pero a una escala menor en cuanto a volumen de ventas y radio de servicio.",
-		"compatibles": ["RDM-2", "CV", "CS", "I1", "I2", "E1", "E2", "H1", "H2"],
+		"compatibles": ["RDM-2", "CV", "CS", "I1", "I2", "E-1", "E-2", "H-1", "H-2"],
 		"tipo": "Comercial",
 		"info": {
 			"Nivel de servicio": "De 7500 a 30'000",
@@ -190,7 +190,7 @@
 	"CZ": {
 		"nombre": "Comercio Zonal",
 		"descripcion": "Es el tipo de comercio que se da a lo largo de vías principales o en sus intersecciones. Se caracteriza por el grado de especialización comercial en función de su área: residencial y/o industrial.",
-		"compatibles": ["RDA-1", "RDA-2", "CE", "CV", "CS", "CZ", "I1", "I2", "E1", "E2", "H1", "H2"],
+		"compatibles": ["RDA-1", "RDA-2", "CE", "CV", "CS", "CZ", "I1", "I2", "E-1", "E-2", "H-1", "H-2"],
 		"tipo": "Comercial",
 		"info": {
 			"Nivel de servicio": "De 30'000 a 300'000",
@@ -204,7 +204,7 @@
 	"CIn": {
 		"nombre": "Comercio Industrial",
 		"descripcion": "Es toda actividad comercial directamente vinculada con la industria o que requiere servicio permanente o frecuente de vehículos pesados de transporte de carga y provoque ruidos o vibraciones. Es una actividad de venta de equipo industrial y no de reparación.",
-		"compatibles": ["RDA-2", "I1R", "CE", "CZ", "CIn", "CM", "I1", "I2", "E1", "E2", "H1", "H2"],
+		"compatibles": ["RDA-2", "I1R", "CE", "CZ", "CIn", "CM", "I1", "I2", "E-1", "E-2", "H-1", "H-2"],
 		"tipo": "Comercial",
 		"info": {
 			"Nivel de servicio": "Metropolitano y regional",
@@ -218,7 +218,7 @@
 	"CM": {
 		"nombre": "Comercio Metropolitano",
 		"descripcion": "Es el conjunto comercial en el que los establecimientos, por su importancia y localización responden a las necesidades y los recursos de la población metropolitana y su región. Incluye la mayoría de los servicios comerciales.",
-		"compatibles": ["RDA-2", "CE", "CV", "CS", "CZ", "CIn", "CM", "I1", "I2", "E1", "E2", "H1", "H2"],
+		"compatibles": ["RDA-2", "CE", "CV", "CS", "CZ", "CIn", "CM", "I1", "I2", "E-1", "E-2", "H-1", "H-2"],
 		"tipo": "Comercial",
 		"info": {
 			"Nivel de servicio": "De 300'000 a 1'000'000",
@@ -232,7 +232,7 @@
 	"I1": {
 		"nombre": "Zonas de Industria Elemental",
 		"descripcion": "Es la zona destinada para establecimientos industriales complementarios o de apoyo a industria de mayor escala. La industria debe poseer un grado tecnológico medio, producción en serie y dirigida al comercio mayorista, capital de operación reducido, tenencia aglomerante en el área urbana y no ser molesta ni peligrosa.",
-		"compatibles": ["RDM-1", "RDM-2", "RDA-1", "I1R", "CE", "I1", "E1", "E2", "H1", "H2"],
+		"compatibles": ["RDM-1", "RDM-2", "RDA-1", "I1R", "CE", "I1", "E-1", "E-2", "H-1", "H-2"],
 		"tipo": "Industrial",
 		"info": {
 			"Lote Mínimo": "300 m<sup>2</sup>",
@@ -245,7 +245,7 @@
 	"I2": {
 		"nombre": "Zonas de Industria Liviana",
 		"descripcion": "Zona destinada para establecimientos industriales que se orienta al área del mercado local y a la infraestructura vial urbana. Posee contacto con el área central, venta al por mayor, dimensión económica media y no es molesta, ni peligrosa.",
-		"compatibles": ["RDM-1", "RDM-2", "RDA-1", "CE", "CZ", "I1", "I2", "I3","E1", "E2", "H1", "H2"],
+		"compatibles": ["RDM-1", "RDM-2", "RDA-1", "CE", "CZ", "I1", "I2", "I3","E-1", "E-2", "H-1", "H-2"],
 		"tipo": "Industrial",
 		"info": {
 			"Lote Mínimo": "1000 m<sup>2</sup>",
@@ -281,67 +281,67 @@
 			"Área Libre": "Según proyecto"
 		}
 	},
-	"E1": {
+	"E-1": {
 		"nombre": "Educación 1",
 		"descripcion": "Educación Básica",
-		"compatibles": ["E1", "CV", "ZR"],
+		"compatibles": ["E-1", "CV", "ZR"],
 		"tipo": "Educación",
 		"info": {
-			"Nivel de servicio": "Inicial hasta 7000<br> E1 hasta 30'000",
+			"Nivel de servicio": "Inicial hasta 7000<br> E-1 hasta 30'000",
 			"Espacios de Estacionamiento": "1 c/20 alumnos + 1 c/3 trabajadores docentes y administrativos, ubicados dentro del predio. 1 de los cuales como mínimo deberá ser para personas con movilidad reducida"
 		}
 	},
-	"E2": {
+	"E-2": {
 		"nombre": "Educación 2",
 		"descripcion": "Educación Superior Tecnológica",
-		"compatibles": ["E2", "CV", "ZR"],
+		"compatibles": ["E-2", "CV", "ZR"],
 		"tipo": "Educación",
 		"info": {
 			"Nivel de servicio": "Hasta 50'000",
 			"Espacios de Estacionamiento": "1 c/20 alumnos + 1 c/3 trabajadores docentes y administrativos, ubicados dentro del predio. 1 de los cuales como mínimo deberá ser para personas con movilidad reducida"
 		}
 	},
-	"E3": {
+	"E-3": {
 		"nombre": "Educación tipo 3",
 		"descripcion": "Educación Superior Universitaria",
-		"compatibles": ["E3", "CV", "ZR"],
+		"compatibles": ["E-3", "CV", "ZR"],
 		"tipo": "Educación",
 		"info": {
 			"Nivel de servicio": "Más de 50'000",
 			"Espacios de Estacionamiento": "1 c/20 alumnos + 1 c/3 trabajadores docentes y administrativos, ubicados dentro del predio. 1 de los cuales como mínimo deberá ser para personas con movilidad reducida"
 		}
 	},
-	"H1": {
+	"H-1": {
 		"nombre": "Salud 1",
 		"descripcion": "Posta Médica",
 		"tipo": "Salud",
-		"compatibles": ["H1"],
+		"compatibles": ["H-1"],
 		"info": {
 			"Nivel de servicio": "2000 a 7000 hab"
 		}
 	},
-	"H2": {
+	"H-2": {
 		"nombre": "Salud 2",
 		"descripcion": "Centro de Salud",
-		"compatibles": ["H2"],
+		"compatibles": ["H-2"],
 		"tipo": "Salud",
 		"info": {
 			"Nivel de servicio": "20'000 a 50'000 hab"
 		}
 	},
-	"H3": {
+	"H-3": {
 		"nombre": "Salud tipo 3",
 		"descripcion": "Hospital General",
-		"compatibles": ["H3"],
+		"compatibles": ["H-3"],
 		"tipo": "Salud",
 		"info": {
 			"Nivel de servicio": "30'000 a 125'000 hab"
 		}
 	},
-	"H4": {
+	"H-4": {
 		"nombre": "Salud tipo 4",
 		"descripcion": "Hospital Especializado",
-		"compatibles": ["H4"],
+		"compatibles": ["H-4"],
 		"tipo": "Salud",
 		"info": {
 			"Nivel de servicio": "125'000 hab"

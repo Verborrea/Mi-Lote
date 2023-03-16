@@ -45,8 +45,7 @@ const iconColors = [
   'Comercial','#e32f2f','tienda.svg',
   'Industrial','#2f8de3','fabrica.svg',
   'Recreación','#80de81','parque.svg',
-  'Educación','#2f8de3','parque.svg',
-  'Salud','#2f8de3','parque.svg',
+  'Salud','#2f8de3','salud.svg'
 ]
 
 function getIconData(zona) {
