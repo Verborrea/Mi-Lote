@@ -128,10 +128,10 @@
 		"area_libre":1,
 		"area_techada":1
 	},
-	"I1R": {
+	"I-1R": {
 		"nombre": "Vivienda Taller",
 		"descripcion": "Es la zona destinada a vivienda compatible con la Industria elemental.",
-		"compatibles": ["RDB", "I1R", "CV", "CS", "I1"],
+		"compatibles": ["RDB", "I-1R", "CV", "CS", "I-1"],
 		"tipo": "Residencial",
 		"info": {
 			"Densidad": "Hasta 900 hab/ha",
@@ -148,7 +148,7 @@
 	"CE": {
 		"nombre": "Comercio Especializado",
 		"descripcion": "Toda actividad comercial-industrial que no pueda considerarse molesta o peligrosa por sus propias características.",
-		"compatibles": ["RDA-1", "RDA-2", "CE", "CV", "CS", "I1", "I2", "E-1", "H-1", "H-2"],
+		"compatibles": ["RDA-1", "RDA-2", "CE", "CV", "CS", "I-1", "I-2", "E-1", "H-1", "H-2"],
 		"tipo": "Comercial",
 		"info": {
 			"Nivel de servicio": "De 1000 a 200'000",
@@ -162,7 +162,7 @@
 	"CV": {
 		"nombre": "Comercio Vecinal",
 		"descripcion": "Es el tipo de comercio destinado a ofrecer bienes de consumo diario, especialmente alimentos y artículos o servicios de primera necesidad.",
-		"compatibles": ["RDM-2", "CV", "I1", "E-1", "H-1", "H-2"],
+		"compatibles": ["RDM-2", "CV", "I-1", "E-1", "H-1", "H-2"],
 		"tipo": "Comercial",
 		"info": {
 			"Nivel de servicio": "De 2000 a 7500",
@@ -176,7 +176,7 @@
 	"CS": {
 		"nombre": "Comercio Sectorial",
 		"descripcion": "Es el tipo de comercio que se dan en la periferia de las Zonas Comerciales Zonales, pero a una escala menor en cuanto a volumen de ventas y radio de servicio.",
-		"compatibles": ["RDM-2", "CV", "CS", "I1", "I2", "E-1", "E-2", "H-1", "H-2"],
+		"compatibles": ["RDM-2", "CV", "CS", "I-1", "I-2", "E-1", "E-2", "H-1", "H-2"],
 		"tipo": "Comercial",
 		"info": {
 			"Nivel de servicio": "De 7500 a 30'000",
@@ -190,7 +190,7 @@
 	"CZ": {
 		"nombre": "Comercio Zonal",
 		"descripcion": "Es el tipo de comercio que se da a lo largo de vías principales o en sus intersecciones. Se caracteriza por el grado de especialización comercial en función de su área: residencial y/o industrial.",
-		"compatibles": ["RDA-1", "RDA-2", "CE", "CV", "CS", "CZ", "I1", "I2", "E-1", "E-2", "H-1", "H-2"],
+		"compatibles": ["RDA-1", "RDA-2", "CE", "CV", "CS", "CZ", "I-1", "I-2", "E-1", "E-2", "H-1", "H-2"],
 		"tipo": "Comercial",
 		"info": {
 			"Nivel de servicio": "De 30'000 a 300'000",
@@ -204,7 +204,7 @@
 	"CIn": {
 		"nombre": "Comercio Industrial",
 		"descripcion": "Es toda actividad comercial directamente vinculada con la industria o que requiere servicio permanente o frecuente de vehículos pesados de transporte de carga y provoque ruidos o vibraciones. Es una actividad de venta de equipo industrial y no de reparación.",
-		"compatibles": ["RDA-2", "I1R", "CE", "CZ", "CIn", "CM", "I1", "I2", "E-1", "E-2", "H-1", "H-2"],
+		"compatibles": ["RDA-2", "I-1R", "CE", "CZ", "CIn", "CM", "I-1", "I-2", "E-1", "E-2", "H-1", "H-2"],
 		"tipo": "Comercial",
 		"info": {
 			"Nivel de servicio": "Metropolitano y regional",
@@ -218,7 +218,7 @@
 	"CM": {
 		"nombre": "Comercio Metropolitano",
 		"descripcion": "Es el conjunto comercial en el que los establecimientos, por su importancia y localización responden a las necesidades y los recursos de la población metropolitana y su región. Incluye la mayoría de los servicios comerciales.",
-		"compatibles": ["RDA-2", "CE", "CV", "CS", "CZ", "CIn", "CM", "I1", "I2", "E-1", "E-2", "H-1", "H-2"],
+		"compatibles": ["RDA-2", "CE", "CV", "CS", "CZ", "CIn", "CM", "I-1", "I-2", "E-1", "E-2", "H-1", "H-2"],
 		"tipo": "Comercial",
 		"info": {
 			"Nivel de servicio": "De 300'000 a 1'000'000",
@@ -229,10 +229,10 @@
 		},
 		"area_techada":1
 	},
-	"I1": {
+	"I-1": {
 		"nombre": "Zonas de Industria Elemental",
 		"descripcion": "Es la zona destinada para establecimientos industriales complementarios o de apoyo a industria de mayor escala. La industria debe poseer un grado tecnológico medio, producción en serie y dirigida al comercio mayorista, capital de operación reducido, tenencia aglomerante en el área urbana y no ser molesta ni peligrosa.",
-		"compatibles": ["RDM-1", "RDM-2", "RDA-1", "I1R", "CE", "I1", "E-1", "E-2", "H-1", "H-2"],
+		"compatibles": ["RDM-1", "RDM-2", "RDA-1", "I-1R", "CE", "I-1", "E-1", "E-2", "H-1", "H-2"],
 		"tipo": "Industrial",
 		"info": {
 			"Lote Mínimo": "300 m<sup>2</sup>",
@@ -242,10 +242,10 @@
 			"Área Libre": "Según proyecto"
 		}
 	},
-	"I2": {
+	"I-2": {
 		"nombre": "Zonas de Industria Liviana",
 		"descripcion": "Zona destinada para establecimientos industriales que se orienta al área del mercado local y a la infraestructura vial urbana. Posee contacto con el área central, venta al por mayor, dimensión económica media y no es molesta, ni peligrosa.",
-		"compatibles": ["RDM-1", "RDM-2", "RDA-1", "CE", "CZ", "I1", "I2", "I3","E-1", "E-2", "H-1", "H-2"],
+		"compatibles": ["RDM-1", "RDM-2", "RDA-1", "CE", "CZ", "I-1", "I-2", "I-3","E-1", "E-2", "H-1", "H-2"],
 		"tipo": "Industrial",
 		"info": {
 			"Lote Mínimo": "1000 m<sup>2</sup>",
@@ -255,10 +255,10 @@
 			"Área Libre": "Según proyecto"
 		}
 	},
-	"I3": {
+	"I-3": {
 		"nombre": "Zonas de Gran Industria",
 		"descripcion": "Concentraciones industriales que utilizan gran volumen de materia prima. Poseen orientación hacia la infraestructura vial regional o a la producción a gran escala. Por lo que las áreas periféricas, economías externas y relaciones interindustriales satisfacen mejor sus necesidades. Son molestas y/o con cierto grado de peligrosidad.",
-		"compatibles": ["I1", "I2", "I3"],
+		"compatibles": ["I-1", "I-2", "I-3"],
 		"tipo": "Industrial",
 		"info": {
 			"Lote Mínimo": "2500 m<sup>2</sup>",
@@ -268,10 +268,10 @@
 			"Área Libre": "Según proyecto"
 		}
 	},
-	"I4": {
+	"I-4": {
 		"nombre": "Zonas de Gran Industria Pesada",
 		"descripcion": "Zona destinada para establecimientos industriales que producen insumos para otras industrias. Conformada por industrias de proceso básico en gran escala, de gran dimensión económica, orientadas hacia la infraestructura regional y grandes mercados. Estas son molestas y peligrosas (producen ruidos, vibraciones, vapores, gases, malos olores, etc. también pueden usar materiales altamente inflamables o detonantes).",
-		"compatibles": ["I4"],
+		"compatibles": ["I-4"],
 		"tipo": "Industrial",
 		"info": {
 			"Lote Mínimo": "Según necesidad",
@@ -376,6 +376,7 @@
 		"nombre": "Zona de Reglamentación Especial Centro Histórico",
 		"descripcion": "Se desarrollará el Plan Específico del Centro Histórico y su Área de Amortiguamiento, siendo responsable de ello la Gerencia de Centro Histórico y Zona Monumental de la Municipalidad Provincial de Arequipa, el mismo que será evaluado por el Instituto Municipal de Planeamiento y recibirá la conformidad correspondiente.",
 		"compatibles": ["ZRE-CH"],
+		"tipo": "Centro",
 		"info": {
 			"Nota": "Se regirá por los parámetros que se establezcan en el plan específico que las generen."
 		}
@@ -417,18 +418,18 @@
 			"Nota": "Se regirá por los parámetros que se establezcan en el plan específico que las generen."
 		}
 	},
-	"ZRE-RI1": {
+	"ZRE-RI-1": {
 		"nombre": "Zona de Reglamentación Especial por Riesgos Muy Altos con restricciones a su consolidación",
 		"descripcion": "Conformada por las áreas identificadas como de alto riesgo no mitigable y en donde el grado de consolidación es escaso. Se deberán desarrollar políticas para su recuperación física y ambiental y tratamiento como espacios públicos verdes y de forestación. Cualquier edificación existente deberá ser reubicada paulatinamente.",
-		"compatibles": ["ZRE-RI1"],
+		"compatibles": ["ZRE-RI-1"],
 		"info": {
 			"Nota": "Zonas que contienen usos no conformes: no están autorizadas nuevas obras ni cambios de uso."
 		}
 	},
-	"ZRE-RI2": {
+	"ZRE-RI-2": {
 		"nombre": "Zona de Reglamentación Especial por Riesgos Muy Altos de paulatina desocupación",
 		"descripcion": "Conformada por las áreas identificadas como de alto riesgo no mitigable y en donde el grado de consolidación es escaso. Se deberán desarrollar políticas para su recuperación física y ambiental y tratamiento como espacios públicos verdes y de forestación. Cualquier edificación existente deberá ser reubicada paulatinamente.",
-		"compatibles": ["ZRE-RI2"],
+		"compatibles": ["ZRE-RI-2"],
 		"info": {
 			"Nota": "No urbanizable ni edificable. Zonas de recuperación física y ambiental y tratamiento como espacios públicos verdes y de forestación."
 		}
@@ -461,6 +462,7 @@
 		"nombre": "Reserva Paisajista",
 		"descripcion": "Definida por los espacios aledaños a los cauces ribereños y las áreas identificadas con alto valor natural, cultural y patrimonial. Incluye la ronda hidráulica, el área de manejo y preservación ambiental y las andenerías prehispánicas. <strong>No es urbanizable ni edificable</strong>, solamente se permitirán obras de pequeña envergadura (caminerías, estares, servicios básicos y similares) que complementen su carácter paisajista, proyectados bajo el criterio de planificación integral, previa evaluación y conformidad del Instituto Municipal de Planeamiento (IMPLA).",
 		"compatibles": ["ZR","RP","ZA"],
+		"tipo": "Recreación",
 		"info": {
 			"Nota": "No urbanizable ni edificable."
 		}
